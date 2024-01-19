@@ -1,9 +1,9 @@
 ---
 title: 'Blog Post General Information'
-date: 2014-1-19
-permalink: /posts/blog-general
+date: 2024-01-19
+permalink: /posts/blog-general/
 tags:
-  - Index
+  - index
 ---
 
 关于博客文章的整体介绍
