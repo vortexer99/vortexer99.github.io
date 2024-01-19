@@ -1,7 +1,7 @@
 ---
 title: 'Blog Post General Information'
 date: 2024-01-19
-permalink: /posts/blog-general/
+permalink: /posts/2024/01/blog-general/
 tags:
   - index
 ---
