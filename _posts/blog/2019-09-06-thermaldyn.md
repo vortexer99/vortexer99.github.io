@@ -5,6 +5,7 @@ permalink: /posts/2019/09/thermal-dyn/
 tags:
   - Blogpost
   - Mathematic
+  - Physic
   - Thermal-Dynamic
   - 11-30 Pages
 ---
