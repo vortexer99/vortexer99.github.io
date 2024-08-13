@@ -187,9 +187,9 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
-  conferences:
-    output: true
-    permalink: /:collection/:path/
+  # conferences:
+  #   output: true
+  #   permalink: /:collection/:path/
 
 
 
@@ -249,13 +249,13 @@ defaults:
       author_profile: true
       share: true
   # _conferences
-  - scope:
-      path: ""
-      type: conferences
-    values:
-      layout: single
-      author_profile: true
-      share: true
+  # - scope:
+  #     path: ""
+  #     type: conferences
+  #   values:
+  #     layout: single
+  #     author_profile: true
+  #     share: true
 
 # Sass/SCSS
 sass:
