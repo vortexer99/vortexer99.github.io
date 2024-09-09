@@ -11,10 +11,13 @@ redirect_from:
 
 # 庄逸 Yi Zhuang
 
+***
+
 EDUCATION
 ======
 * B.S. in Theoretical and Applied Mechanics, University of Chinese Academy of Sciences, 2021
 * Ph.D in Meteorology, IAP/CAS, 2026 (expected)
+
 ***
 
 PUBLICATIONS
@@ -27,6 +30,7 @@ Co-authored:
 * None
 
 ***
+
 RESEARCH EXPERIENCES
 ======
 **Predictability of the Martian atmosphere**
@@ -57,6 +61,7 @@ Advisor: Prof. Zhan Wang
 * description
 
 ***
+
 CONFERENCES
 ======
 
@@ -72,6 +77,7 @@ CONFERENCES
 1. **2020 BASC Symposium**. 2020/02. UC Berkeley, USA.
 
 ***
+
 PERSONAL INTEREST PROJECTS
 ======
 1. **A calculator for a specific use**. 2024/04. *Mostly done, not continuing for now*.
@@ -95,6 +101,7 @@ PERSONAL INTEREST PROJECTS
   * Tencent Cloud (Student) for server，Wordpress for engine, with MySQL & PHP.
 
 ***
+
 PROFESSIONAL SKILLS
 ======
 * Scientific Computing and Academic Tools
@@ -105,15 +112,18 @@ PROFESSIONAL SKILLS
   * Chinese (native), English (fluent), French (Basic), Japanese (Basic)
 
 ***
+
 SELECTED AWARDS AND HONORS
 ======
 
 ***
+
 EXTRACURRICULAR ACTIVITIES
 ======
 1. President of the LASG Student Union Presidium at IAP from 2023/03 to 2024/02.
 
 ***
+
 HOBBYS
 ======
 * **Personal interest projects (See above)**
