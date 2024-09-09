@@ -116,7 +116,7 @@ PERSONAL INTEREST PROJECTS
 
 PROFESSIONAL SKILLS
 ======
-* Scientific Computing and Academic Tools
+* Main Scientific Computing and Academic Tools
   * Numerical Simulation: Matlab, Mathematica
   * Programming: Python, Fortran, Bash
   * Other: LaTeX, ChatGPT
