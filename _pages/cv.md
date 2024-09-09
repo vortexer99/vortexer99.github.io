@@ -40,14 +40,37 @@ CONFERENCES
 1. **第二届非线性最优化方法夏季讲习班**. 2020/08. Online.
 1. **2020 BASC Symposium**. 2020/02. UC Berkeley, USA.
 
+PERSONAL INTEREST PROJECTS
+======
+1. **A calculator for a specific use**. 2024/04. *Mostly done, not continuing for now*.
+  * Calculation by tag-matching from data. 
+  * Vue.js for UI, JavaScript for core logic. YAML for storing data. 
+1. **Personal Website**. 2023/10. *Still updating*
+  * [Current website](https://vortexer99.github.io)
+  * Jekyll and Github Pages for deployment, academicpages for template.
+1. **A simulator for a specific use**. 2023/03. *Mostly done, not continuing for now*.
+  * Step forward in time to simulate state changes, event series and rules given.
+  * wxPython for UI, python for core logic. 
+1. **LMD Mars PCM Simulation Controller**. 2022/11. *Still updating*.
+  * To quickly initialize, submit and collect large amount of LMD Mars PCM experiments.
+  Parameters can be easily assigned. Also perform required actions for BV & RP.
+  * YAML for config settings, Shell and python for actions.
+1. **A calculator and a simulator for a specific use**. 2021/10. *Done*.
+  * Calculate from adjustable basic settings. Simulate from event series and rules given.
+  * Excel for calculator, Mathematica for simulator.
+
+
+
 PROFESSIONAL SKILLS
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Scientific Computing and Academic Tools
+  * Numerical Simulation: Matlab, Mathematica
+  * Programming: Python, Fortran, Bash
+  * Other: LaTeX, ChatGPT
+* Language
+  * Chinese (native), English (fluent), French (Basic), Japanese (Basic)
+
+
 
 SELECTED AWARDS AND HONORS
 ======
