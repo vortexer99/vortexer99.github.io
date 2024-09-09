@@ -15,6 +15,7 @@ EDUCATION
 ======
 * B.S. in Theoretical and Applied Mechanics, University of Chinese Academy of Sciences, 2021
 * Ph.D in Meteorology, IAP/CAS, 2026 (expected)
+***
 
 PUBLICATIONS
 ======
@@ -25,6 +26,7 @@ First-authored or corresponding-authored:
 Co-authored:
 * None
 
+***
 RESEARCH EXPERIENCES
 ======
 **Predictability of the Martian atmosphere**
@@ -54,6 +56,7 @@ Advisor: Prof. Zhan Wang
 * description
 * description
 
+***
 CONFERENCES
 ======
 
@@ -68,6 +71,7 @@ CONFERENCES
 1. **第二届非线性最优化方法夏季讲习班**. 2020/08. Online.
 1. **2020 BASC Symposium**. 2020/02. UC Berkeley, USA.
 
+***
 PERSONAL INTEREST PROJECTS
 ======
 1. **A calculator for a specific use**. 2024/04. *Mostly done, not continuing for now*.
@@ -90,7 +94,7 @@ PERSONAL INTEREST PROJECTS
   * 庄逸的数学和技术屋
   * Tencent Cloud (Student) for server，Wordpress for engine, with MySQL & PHP.
 
-
+***
 PROFESSIONAL SKILLS
 ======
 * Scientific Computing and Academic Tools
@@ -100,10 +104,24 @@ PROFESSIONAL SKILLS
 * Language
   * Chinese (native), English (fluent), French (Basic), Japanese (Basic)
 
-
+***
 SELECTED AWARDS AND HONORS
 ======
 
+***
 EXTRACURRICULAR ACTIVITIES
 ======
 1. President of the LASG Student Union Presidium at IAP from 2023/03 to 2024/02.
+
+***
+HOBBYS
+======
+* **Personal interest projects (See above)**
+  * Numerical Modeling, simulations, optimizations
+  * Theorycrafting
+  * Programming techniques
+* **General**
+  * Tea, Coffee, Foods & Cooking
+  * Knowledge of Digital Devices and Technology (e.g. Hardware & Software, Network, Peripherals)
+  * Exhibit collection of ornaments
+  * Go wherever I am interested in just by myself
