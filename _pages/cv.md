@@ -80,10 +80,20 @@ CONFERENCES
 
 PERSONAL INTEREST PROJECTS
 ======
+1. **Simple model for Atmosphere**. TBD. *Concept*.
+  * Dynamical core + Radiative transfer. Study atmosphere dynamics under various conditions.
+  * Python for simulations.
+1. **Evolution equation simulation, but random variables**. TBD. *Concept*.
+  * PDE simulation, but initial value is randomly given according to certain distribution, what is the evolution of the distribution?
+  * First diffusion eq. (Linear), then Bergers equation or Lorenz models (Nonlinear).
+  * Still searching for tools.
 1. **A calculator for a specific use**. 2024/04. *Mostly done, not continuing for now*.
   * Calculation by tag-matching from data. 
   * Vue.js for UI, JavaScript for core logic. YAML for storing data. 
-1. **Personal Website**. 2023/10. *Still updating*
+1. **Fast-changing BV tests**. 2023/12. *Mostly done, not continuing for now*.
+  * Simple models. If the fast-growing direction changes very fast, would BV able to catch up?
+  * Matlab for simulation.
+1. **Personal Website**. 2023/10. *Still updating*.
   * [Current website](https://vortexer99.github.io)
   * Jekyll and Github Pages for deployment, academicpages for template, Markdown for texts.
 1. **A simulator for a specific use**. 2023/03. *Finish*.
@@ -99,7 +109,9 @@ PERSONAL INTEREST PROJECTS
 1. **Personal Website**. 2018/04-2022/09. *Terminate*
   * 庄逸的数学和技术屋
   * Tencent Cloud (Student) for server，Wordpress for engine, with MySQL & PHP.
-
+1. **My Math handbook**. 2016/11-2017/09. *Finish*.
+  * “高中数学学习参考” or 《学霸带你玩转高中数学》
+  * Word for formatting. 
 ***
 
 PROFESSIONAL SKILLS
