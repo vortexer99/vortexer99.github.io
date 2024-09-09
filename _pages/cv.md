@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-庄逸 Yi Zhuang
+# 庄逸 Yi Zhuang
 
 EDUCATION
 ======
