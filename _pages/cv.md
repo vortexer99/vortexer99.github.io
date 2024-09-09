@@ -47,18 +47,20 @@ PERSONAL INTEREST PROJECTS
   * Vue.js for UI, JavaScript for core logic. YAML for storing data. 
 1. **Personal Website**. 2023/10. *Still updating*
   * [Current website](https://vortexer99.github.io)
-  * Jekyll and Github Pages for deployment, academicpages for template.
-1. **A simulator for a specific use**. 2023/03. *Mostly done, not continuing for now*.
+  * Jekyll and Github Pages for deployment, academicpages for template, Markdown for texts.
+1. **A simulator for a specific use**. 2023/03. *Finish*.
   * Step forward in time to simulate state changes, event series and rules given.
-  * wxPython for UI, python for core logic. 
+  * wxPython for UI, Python for core logic. 
 1. **LMD Mars PCM Simulation Controller**. 2022/11. *Still updating*.
   * To quickly initialize, submit and collect large amount of LMD Mars PCM experiments.
   Parameters can be easily assigned. Also perform required actions for BV & RP.
-  * YAML for config settings, Shell and python for actions.
-1. **A calculator and a simulator for a specific use**. 2021/10. *Done*.
+  * YAML for config settings, Shell and Python for actions.
+1. **A calculator and a simulator for a specific use**. 2021/10. *Finish*.
   * Calculate from adjustable basic settings. Simulate from event series and rules given.
   * Excel for calculator, Mathematica for simulator.
-
+1. **Personal Website**. 2018/04-2022/09. *Terminate*
+  * 庄逸的数学和技术屋
+  * Tencent Cloud (Student) for server，Wordpress for engine, with MySQL & PHP.
 
 
 PROFESSIONAL SKILLS
