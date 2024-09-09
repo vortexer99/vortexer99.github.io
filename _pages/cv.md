@@ -9,6 +9,8 @@ redirect_from:
 
 {% include base_path %}
 
+庄逸 Yi Zhuang
+
 EDUCATION
 ======
 * B.S. in Theoretical and Applied Mechanics, University of Chinese Academy of Sciences, 2021
@@ -25,6 +27,32 @@ Co-authored:
 
 RESEARCH EXPERIENCES
 ======
+**Predictability of the Martian atmosphere**
+
+2022/08 - present. IAP/CAS, China
+
+Advisor: Prof. Wansuo Duan
+
+* description
+* description
+
+**Effects of Topography on Nonlinear Internal Wave in Three-layer Flows**
+
+2020/08 - 2021/06. UCAS, China
+
+Advisor: Prof. Zhan Wang
+
+* description
+* description
+
+**Material transport ability of flow induced by ocean internal waves**
+
+2019/08 - 2020/12. UCAS, China
+
+Advisor: Prof. Zhan Wang
+
+* description
+* description
 
 CONFERENCES
 ======
@@ -73,9 +101,9 @@ PROFESSIONAL SKILLS
   * Chinese (native), English (fluent), French (Basic), Japanese (Basic)
 
 
-
 SELECTED AWARDS AND HONORS
 ======
 
 EXTRACURRICULAR ACTIVITIES
 ======
+1. President of the LASG Student Union Presidium at IAP from 2023/03 to 2024/02.
