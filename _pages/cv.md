@@ -145,5 +145,7 @@ HOBBYS
 * **General**
   * Tea, Coffee, Foods & Cooking
   * Knowledge of Digital Devices and Technology (e.g. Hardware & Software, Network, Peripherals)
+  * Scientific fictions, movies and video games (Three Body, DSP, NMS)
   * Exhibit collection of ornaments
+  * New Age music
   * Go wherever I am interested in just by myself
