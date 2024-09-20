@@ -6,6 +6,7 @@ tags:
   - Lecnote
   - Mathematic
   - Nonlinear Dynamics
+  - Dynamical System
   - 31-100 Pages
 ---
 
