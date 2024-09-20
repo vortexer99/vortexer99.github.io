@@ -17,12 +17,10 @@ main:
   # - title: "Portfolio"
   #   url: /portfolio/
 
-  - title: "Conferences"
-    url: /conferences/
-
   - title: "Blog Posts"
     url: /year-archive/
-    
+  - title: "PIP"
+    url: /pip/  
   - title: "CV"
     url: /cv/
     
