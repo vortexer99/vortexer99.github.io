@@ -7,6 +7,8 @@ tags:
   - Mathematics
   - Dynamical system
   - Not in pages
+header-includes:
+  - \usepackage{bm}
 ---
 
 # Liouville 方程

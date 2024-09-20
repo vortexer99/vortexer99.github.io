@@ -1,0 +1,280 @@
+<h1 id="liouville-方程">Liouville 方程</h1>
+<p>对于如下方程描述的动力系统 <span class="math display">$$
+  \frac{\mathrm{d}\bm{X}}{\mathrm{d}t}=\bm{\Phi}(\bm{X}).
+$$</span> <span class="math inline"><strong>X</strong></span>是<span
+class="math inline"><em>N</em></span>维的向量，<span
+class="math inline"><strong>Φ</strong></span>是<span
+class="math inline"><em>N</em></span>维空间到<span
+class="math inline"><em>N</em></span>维空间的映射。如果给定初始时刻的变量<span
+class="math inline"><strong>X</strong></span>的概率密度函数<span
+class="math inline"><em>ρ</em><sub>0</sub>(<strong>X</strong>)</span>，那么其演化满足Liouville方程
+<span class="math display">$$
+\frac{\partial \rho(\bm{X},t)}{\partial
+t}+\sum_{k=1}^N\bm{\Phi}_k(\bm{X})\frac{\partial
+\rho(\bm{X},t)}{\partial X_k}=-\Psi(\bm{X})\rho(\bm{X},t),\qquad
+\Psi(\bm{X})=\sum_{k=1}^N\frac{\partial \Phi_k(\bm{X})}{\partial X_k}.
+$$</span> 它关于未知量<span
+class="math inline"><em>ρ</em>(<strong>X</strong>, <em>t</em>)</span>是一阶线性方程，其解的表达式为
+<span
+class="math display"><em>ρ</em>(<strong>X</strong>, <em>t</em>) = <em>ρ</em><sub>0</sub>(<strong>K</strong>)exp (−∫<sub>0</sub><sup><em>t</em></sup><em>Ψ</em>(<strong>X</strong>(<strong>K</strong>, <em>t</em>′)) d<em>t</em>′).</span>
+其中<span class="math inline"><strong>K</strong></span>是<span
+class="math inline"><strong>X</strong></span>在初始时刻的位置。原文这种表达式对于初学者不太好理解，为此，需要先介绍<strong>相轨迹</strong>的概念。对于开头所示的动力系统而言，在初始时刻的每一个状态<span
+class="math inline"><strong>K</strong></span>，都将对应一条独特的演化轨迹，或称为<span
+class="math inline"><em>N</em> + 1</span>维相空间中的相轨迹。显然，我们可以假定这条相轨迹可以如下形式地描述：
+<span
+class="math display"><strong>X</strong> = <strong>Q</strong>(<strong>K</strong>, <em>t</em>),  <em>t</em> ≥ 0.</span>
+同时它也是满足动力系统控制方程的解。这表示系统初始态<span
+class="math inline"><strong>K</strong></span>在经过时间<span
+class="math inline"><em>t</em></span>演化后变为<span
+class="math inline"><strong>X</strong></span>。由于演化轨迹具有唯一性（对于一般性质较好的系统来说），给定任意时刻<span
+class="math inline"><em>t</em></span>的状态<span
+class="math inline"><strong>K</strong></span>，它在初始时刻的状态也是确定的，并且我们可以定义如下的映射来反演它。
+<span
+class="math display"><strong>K</strong> = <strong>P</strong>(<strong>X</strong>, <em>t</em>).</span>
+上式同时也表明，同一条相轨迹上的点，它在映射<span
+class="math inline"><strong>P</strong></span>的作用下都有相同的值<span
+class="math inline"><strong>K</strong></span>，因此也称相轨迹为特征线，因为沿着这一条线系统的某种特征<span
+class="math inline"><strong>P</strong>(<strong>X</strong>, <em>t</em>)</span>不发生变化。</p>
+<p>此时对于解表达式中的<span
+class="math inline"><strong>K</strong></span>，可以更好地进行理解。采用我们上面的记号，将表达式改写为
+<span
+class="math display"><em>ρ</em>(<strong>X</strong>, <em>t</em>) = <em>ρ</em><sub>0</sub>(<strong>K</strong>)exp (−∫<sub>0</sub><sup><em>t</em></sup><em>Ψ</em>(<strong>Q</strong>(<strong>K</strong>, <em>t</em>′)) d<em>t</em>′) = <em>ρ</em><sub>0</sub>(<strong>P</strong>(<strong>X</strong>, <em>t</em>))exp (−∫<sub>0</sub><sup><em>t</em></sup><em>Ψ</em>(<strong>Q</strong>(<strong>P</strong>(<strong>X</strong>, <em>t</em>), <em>t</em>′)) d<em>t</em>′).</span>
+首先，左半部分的<span
+class="math inline"><em>ρ</em><sub>0</sub>(<strong>K</strong>)</span>即可在已知<span
+class="math inline"><strong>X</strong>, <em>t</em></span>的情形下用<span
+class="math inline"><strong>P</strong>(<strong>X</strong>, <em>t</em>)</span>直接计算。而右半部分的指数为<span
+class="math inline"><em>Ψ</em></span>的积分。而<span
+class="math inline"><em>Ψ</em></span>是一个从<span
+class="math inline"><em>N</em></span>维空间到实数域的映射，其变量原本为<span
+class="math inline"><strong>X</strong>(<strong>K</strong>, <em>t</em>′)</span>，表示初始为<span
+class="math inline"><strong>K</strong></span>的状态在<span
+class="math inline"><em>t</em>′</span>时刻的状态。故在计算时，首先要使用映射<span
+class="math inline"><strong>P</strong></span>获得<span
+class="math inline"><strong>X</strong></span>对应的初始态，然后再使用<span
+class="math inline"><strong>Q</strong></span>获得其在<span
+class="math inline"><em>t</em>′</span>时刻的状态，再使用<span
+class="math inline"><em>Ψ</em></span>进行计算。而<span
+class="math inline"><em>t</em>′</span>从<span
+class="math inline">0</span>到<span
+class="math inline"><em>t</em></span>的积分，则说明了这个积分的意义是<span
+class="math inline"><em>Ψ</em></span>函数在状态<span
+class="math inline"><strong>X</strong></span>所对应的这段相轨迹上的积分。
+## <span class="math inline"><em>Ψ</em></span>函数的理解</p>
+<h1
+id="自治线性动力系统的长期性质讨论">自治线性动力系统的长期性质讨论</h1>
+<p>首先需要点明的是，线性情形下，<strong>单变量高阶微分方程</strong>和<strong>多变量一阶微分方程</strong>具有相同的性质。具体而言，多变量一阶微分方程具有如下的一般形式：
+<span class="math display">$$
+\frac{\mathrm{d}\bm{X}}{\mathrm{d}t}=\bm{AX}+\bm{B}.
+$$</span> 其中<span
+class="math inline"><strong>X</strong>, <strong>B</strong></span>为<span
+class="math inline"><em>N</em></span>维向量，<span
+class="math inline"><em>A</em></span>为<span
+class="math inline"><em>N</em> × <em>N</em></span>的矩阵。它和如下的单变量<span
+class="math inline"><em>N</em></span>阶微分方程可以互相转化。 <span
+class="math display">$$
+a_N\frac{\mathrm{d}^Nx}{\mathrm{d}t^N}+a_{N-1}\frac{\mathrm{d}^{N-1}x}{\mathrm{d}t^{N-1}}+\cdots+a_1\frac{\mathrm{d}x}{\mathrm{d}t}+a_0x=b.
+$$</span> 其中<span
+class="math inline"><em>a</em><sub>0</sub></span>直到<span
+class="math inline"><em>a</em><sub><em>N</em></sub></span>均为常数。注意，上面的<span
+class="math inline"><em>B</em></span>或<span
+class="math inline"><em>b</em></span>可以包含时间，但这里暂时不讨论含时的非自治系统。如上所示的单变量高阶线性微分方程，我们熟知它可以通过特征根法解，当然也可以借由特征根来推断方程的性质（相应于多元一阶形式中<span
+class="math inline"><strong>A</strong></span>的特征值）。因此，<span
+class="math inline"><em>N</em></span>维变量的一阶线性方程的性质，可以直接通过<span
+class="math inline"><em>N</em></span>次多项式根的性质得到。</p>
+<p>由于这里研究动力系统的目的是<strong>通过简单模型来探讨实际大气海洋运动或其他物理系统中可能存在的性质</strong>，因此系统至少需要能够稳定存在较长的时间，故凡是e指数增长或衰减的成分都是我们所不感兴趣的。</p>
+<h2 id="n1时"><span class="math inline"><em>N</em> = 1</span>时</h2>
+<p>特征方程为 <span
+class="math display"><em>a</em><sub>1</sub><em>λ</em> + <em>a</em><sub>0</sub> = 0.</span>
+此时特征根仅有一个确定的值，当它为正时，<span
+class="math inline"><em>x</em></span>的绝对值将逐渐增加，趋向于无穷；为负时，<span
+class="math inline"><em>x</em></span>的绝对值将逐渐减小，趋向于<span
+class="math inline">0</span>。除此之外，这个系统没有任何其他特别的性质。
+## <span class="math inline"><em>N</em> = 2</span>时 特征方程为 <span
+class="math display"><em>a</em><sub>2</sub><em>λ</em><sup>2</sup> + <em>a</em><sub>1</sub><em>λ</em> + <em>a</em><sub>0</sub> = 0.</span>
+对于二次方程，根据判别式存在三种情况的根：两个不等实根，重根，一对共轭复根。对于两不等实根而言，系统的表现和<span
+class="math inline"><em>N</em> = 1</span>时没有太大区别，如果两实根均为负，那么整个系统将衰减；如果至少有一个为正，那么对于单变量而言，负特征根对应的部分（如有）在发展一定时间后将变得可忽略，从而只留下正特征根对应的增长规律。对于双变量的一阶系统而言，说明系统至少会沿着一个方向增长。</p>
+<p>对于重根的情形，解具有<span
+class="math inline"><em>t</em>e<sup><em>λ</em><em>t</em></sup></span>的形式。此时，无论<span
+class="math inline"><em>λ</em></span>的正负性，当时间足够长时系统的性质都主要由<span
+class="math inline">e<sup><em>λ</em><em>t</em></sup></span>所决定。</p>
+<p>对于一对共轭复根的情形，其实部仍然表示增长或衰减，但此时其虚部的存在使得系统具有<strong>振动</strong>或<strong>周期运动</strong>的特征。我们考虑实部为零的情况，即振幅不会增长或衰减，那么系统将永远保持周期运动的状态。对于单变量二阶系统而言，<span
+class="math inline"><em>x</em></span>值会在一个区间内来回波动；对于双变量的一阶系统而言，我们能看到系统相点在相平面上作圆周运动。</p>
+<p>虽然，这一个周期运动是<span
+class="math inline"><em>N</em> = 2</span>系统相对<span
+class="math inline"><em>N</em> = 1</span>系统额外能够具有的特征（思考题，如何通过反证法说明任意一阶系统，即使是非线性的都无法形成振动？因为振动需要状态点来回经过同一个位置，在这个位置上具有相反的速度，这与一阶系统的方程形式矛盾。），但是它仍然是无趣的。由于此时系统最多只能具有一个周期，这就意味着所有性质在一个周期后都将完全一致地重复，而不具有空间特殊性。举例而言，一些人以相同速度绕着圆形跑道跑步，由于内圈短，外圈长，我们能观察到这些人组成的线发生变形；而对于二阶系统描述的周期运行来说，这根线只会绕着圆心旋转，而观察不到更多有意思的现象。</p>
+<p>想要克服这一点，必须具有一个以上的“周期”。对于实系数方程，这至少要到<span
+class="math inline"><em>N</em> = 4</span>的情形，下面再进行讨论。</p>
+<h2 id="n3时"><span class="math inline"><em>N</em> = 3</span>时</h2>
+<p>特征方程为 <span
+class="math display"><em>a</em><sub>3</sub><em>λ</em><sup>3</sup> + <em>a</em><sub>2</sub><em>λ</em><sup>2</sup> + <em>a</em><sub>1</sub><em>λ</em> + <em>a</em><sub>0</sub> = 0.</span>
+对于三次方程，根的性质有以下几种情况：三个不等实根，两个重根和一个实根，三个重根，一个实根和一对共轭复根。</p>
+<p>由此可以看出，三阶系统并没有比二阶系统多出更引人注目的特性。对于实根和重根而言，在时间足够长时要么趋向无穷，掩盖其他项的性质；要么趋向零，被其他项掩盖。于此同时，三次方程最多也只能有一对共轭根，说明它的振动性质也与二阶系统无异。</p>
+<h2 id="n4时"><span class="math inline"><em>N</em> = 4</span>时</h2>
+<p>对于四次方程，事情终于开始变得有趣起来。它的根的性质有以下几种情况：四个实根，两个实根和一对共轭复根，两对共轭复根。同样忽略无趣的实根和重根，一对共轭复根的情形与二阶系统相同，而两对共轭复根相应于<strong>两种振动频率</strong>，是四阶及以上系统独有的性质。变量的演化将类似如下的表达式：
+<span
+class="math display"><em>x</em>(<em>t</em>) = <em>A</em><sub>1</sub>sin (<em>ω</em><sub>1</sub><em>t</em> + <em>ϕ</em><sub>1</sub>) + <em>A</em><sub>2</sub>sin (<em>ω</em><sub>2</sub><em>t</em> + <em>ϕ</em><sub>2</sub>).</span>
+其中一部分的周期为<span
+class="math inline">2<em>π</em>/<em>ω</em><sub>1</sub></span>，另一部分为<span
+class="math inline">2<em>π</em>/<em>ω</em><sub>2</sub></span>。如果<span
+class="math inline"><em>ω</em><sub>1</sub>, <em>ω</em><sub>2</sub></span>都是有理数，那么在时间足够长时，通过肉眼观察系统的波动，可以看出系统的周期性。而如果其中一个为无理数，或两个无理数（不能相差有理数倍），那么系统将不具有严格意义上的周期，其表现看似具有非常大的随机性，必须通过谱分析才能发现其振动规律（见后面的例子）。</p>
+<h1 id="线性情形的具体例子">线性情形的具体例子</h1>
+<h2 id="最简单的情况">最简单的情况</h2>
+<p>考虑一个最简单的单变量一阶线性自治系统： <span
+class="math display">$$
+\frac{\mathrm{d}x}{\mathrm{d}t}= x.
+$$</span> 它的相轨迹方程为<span
+class="math inline"><em>x</em> = <em>x</em><sub>0</sub>e<sup><em>t</em></sup></span>或<span
+class="math inline"><em>x</em><sub>0</sub> = <em>x</em>e<sup>−<em>t</em></sup></span>。考虑这一系统对应的Liouville方程的解，这里<span
+class="math inline"><em>Φ</em>(<em>x</em>) = <em>x</em></span>，故<span
+class="math inline"><em>Ψ</em>(<em>x</em>) ≡ 1</span>，因而概率密度分布演化的表达式为
+<span
+class="math display"><em>ρ</em>(<em>x</em>, <em>t</em>) = <em>ρ</em><sub>0</sub>(<em>P</em>(<em>x</em>, <em>t</em>))e<sup>−<em>t</em></sup> = <em>ρ</em><sub>0</sub>(<em>x</em>e<sup>−<em>t</em></sup>)e<sup>−<em>t</em></sup>.</span>
+这表示概率密度在随着特征线演化的同时，还随着时间以<span
+class="math inline">e<sup>−<em>t</em></sup></span>衰减。然而，对于同一时刻的不同<span
+class="math inline"><em>x</em></span>值，<span
+class="math inline">e<sup>−<em>t</em></sup></span>可以看作一个相同的系数，因此在概率密度随时间演化的同时并没有改变概率密度分布的“形状”，即
+<span
+class="math display"><em>ρ</em><sub>0</sub>(<em>x</em><sub>1</sub>) &gt; <em>ρ</em><sub>0</sub>(<em>x</em><sub>2</sub>)  ⇒  <em>ρ</em>(<em>Q</em>(<em>x</em><sub>1</sub>, <em>t</em>), <em>t</em>) &gt; <em>ρ</em>(<em>Q</em>(<em>x</em><sub>2</sub>, <em>t</em>), <em>t</em>).</span>
+其中<span class="math inline"><em>Q</em></span>表示初始<span
+class="math inline"><em>x</em><sub>1</sub></span>或<span
+class="math inline"><em>x</em><sub>2</sub></span>沿着相轨迹经过时间<span
+class="math inline"><em>t</em></span>到达的状态。</p>
+<p>以下三个图分别展示了初始均值为<span
+class="math inline">0</span>和<span
+class="math inline">1</span>的正态分布，以及<span
+class="math inline">−1</span>到<span
+class="math inline">1.5</span>的均匀分布随时间的演化。左图中纵坐标表示时间，红线表示相轨迹或特征线。
+<img src="2024-09-18-liouville-5.png" alt="简单情形1" /> <img
+src="2024-09-18-liouville-6.png" alt="简单情形2" /> <img
+src="2024-09-18-liouville-7.png" alt="简单情形3" /> ##
+二元一阶系统，其中<span class="math inline"><em>Ψ</em> = 0</span>
+考虑如下系统 <span class="math display">$$
+\frac{\mathrm{d}}{\mathrm{d}t}\begin{pmatrix}x_1\\x_2\end{pmatrix}=\begin{pmatrix}1&amp;0\\0&amp;-1\end{pmatrix}\begin{pmatrix}x_1\\x_2\end{pmatrix}.
+$$</span> 这一系统的两个变量其实各自满足简单的演化方程，直接观察可知
+<span class="math display">$$
+\begin{pmatrix}x_1\\x_2\end{pmatrix}=\begin{pmatrix}x_{10}\mathrm{e}^t\\x_{20}\mathrm{e}^{-t}\end{pmatrix}
+$$</span> 这就是这一系统的相轨迹方程。对于这一系统，我们发现<span
+class="math inline"><em>Ψ</em> ≡ 0</span>，这表示由于这一系统在它的一个维度上“伸展”，在另一个维度上“收缩”，导致净的概率密度流具有一种守恒性。对于这种情况，<span
+class="math inline"><em>ρ</em>(<em>x</em>, <em>t</em>)</span>就直接等于对应初始时刻状态点的概率密度，即
+<span
+class="math display"><em>ρ</em>(<em>x</em><sub>1</sub>, <em>x</em><sub>2</sub>, <em>t</em>) = <em>ρ</em><sub>0</sub>(<em>x</em><sub>1</sub>e<sup>−<em>t</em></sup>, <em>x</em><sub>2</sub>e<sup><em>t</em></sup>)</span></p>
+<p>下图给出初始均值为<span
+class="math inline">(0.1, 8)</span>的正态分布以及均匀分布随时间的演化图。这里的横纵坐标分别表示两个维度，红色的线为相轨迹，状态点沿着相轨迹从上到下运动。不同时间的分布标示在图上。
+<img src="2024-09-18-liouville-8.png" alt="二元系统1" />
+由这两个分布的演化可以看出<span
+class="math inline"><em>Ψ</em> = 0</span>情形下概率密度演化的一个重要特点，就是只有分布的形状发生变化。这一点从上面的表达式中很容易看出，也符合Liouville方程类似流体连续性方程的性质。</p>
+<h2 id="四阶系统">四阶系统</h2>
+<p>考虑如下的四阶线性微分方程 <span
+class="math display"><em>x</em>⁗ + 3<em>x</em>″ + 2<em>x</em> = 0.</span>
+通过如下的变换 <span
+class="math display"><em>x</em> = <em>x</em><sub>1</sub>,  <em>x</em><sub>1</sub>′ = <em>x</em><sub>2</sub>,  <em>x</em><sub>2</sub>′ = <em>x</em><sub>3</sub>,  <em>x</em><sub>3</sub>′ = <em>x</em><sub>4</sub>.</span>
+可化为等价的四元一阶方程 <span class="math display">$$
+\bm{X}'=\bm{AX},\quad
+\bm{X}=\left(\begin{matrix}
+x_1 \\
+x_2 \\
+x_3 \\
+x_4
+\end{matrix}\right),\quad \bm{A}=\left(\begin{matrix}
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 \\
+-2 &amp; 0 &amp; -3 &amp; 0
+\end{matrix}\right).
+$$</span></p>
+<p>现在我们讨论它的性质并求解。原四阶方程的特征值方程为 <span
+class="math display"><em>λ</em><sup>4</sup> + 3<em>λ</em><sup>2</sup> + 2 = 0.</span>
+显然可分解为 <span
+class="math display">(<em>λ</em><sup>2</sup> + 1)(<em>λ</em><sup>2</sup> + 2) = 0.</span>
+因此方程有两对共轭复根，<span
+class="math inline">$\mathrm{i},-\mathrm{i},\sqrt{2}\mathrm{i},-\sqrt{2}\mathrm{i}$</span>，对应系统存在两个振动周期，即<span
+class="math inline">2<em>π</em></span>和<span
+class="math inline">$\sqrt{2}\pi$</span>。值得注意的是，该系统一般不存在表观的周期性，即找不到<span
+class="math inline"><em>T</em></span>使得对任意<span
+class="math inline"><em>t</em></span>满足<span
+class="math inline"><strong>X</strong>(<em>t</em>) = <strong>X</strong>(<em>t</em> + <em>T</em>)</span>，因为无法找到共同周期，即不存在正整数<span
+class="math inline"><em>m</em>, <em>n</em></span>使得<span
+class="math inline">$m=\sqrt{2}n$</span>。后面通过图示可以看出这一性质。</p>
+<p>四元一阶线性方程的解为 <span
+class="math display"><strong>X</strong> = e<sup><strong>A</strong><em>t</em></sup><strong>X</strong><sub>0</sub>.</span>
+其中<span
+class="math inline">e<sup><strong>A</strong><em>t</em></sup></span>是矩阵指数函数，它具有如下的定义和性质：
+<span class="math display">$$
+\mathrm{e}^{\bm{A}t}=\sum_{n=0}^{\infty}\frac{\bm{A}^nt^n}{n!},\qquad
+\frac{\mathrm{d}\mathrm{e}^{\bm{A}t}}{\mathrm{d}t}=\bm{A}\mathrm{e}^{\bm{A}t}.
+$$</span> 理论分析中可以采用特征值分解来计算矩阵指数，假设存在分解<span
+class="math inline"><strong>A</strong> = <strong>V</strong><strong>Λ</strong><strong>V</strong><sup>−1</sup></span>，由于正交矩阵的性质，可知<span
+class="math inline"><strong>A</strong><sup><em>n</em></sup> = <strong>V</strong><strong>Λ</strong><sup><strong>n</strong></sup><strong>V</strong><sup>−1</sup></span>。对于特征矩阵<span
+class="math inline"><strong>Λ</strong></span>而言， <span
+class="math display"><strong>Λ</strong><sup><em>n</em></sup> = (diag (<em>λ</em><sub>1</sub>, …, <em>λ</em><sub><em>m</em></sub>))<sup><em>n</em></sup> = diag (<em>λ</em><sub>1</sub><sup><em>n</em></sup>, …, <em>λ</em><sub><em>m</em></sub><sup><em>n</em></sup>).</span>
+故有 <span class="math display">$$
+\mathrm{e}^{\bm{A}t}=\sum_{n=0}^{\infty}\frac{\bm{A}^nt^n}{n!}=\sum_{n=0}^{\infty}\frac{\bm{V\Lambda^n
+V}^{-1}t^n}{n!}=\bm{V}\left(\sum_{n=0}^{\infty}\frac{\bm{\Lambda^n
+}t^n}{n!}\right)\bm{V}^{-1}=\bm{V}\operatorname{diag}(\mathrm{e}^{\lambda_1},\dots,\mathrm{e}^{\lambda_m})\bm{V}^{-1}.
+$$</span>
+对于实际数值计算，在MATLAB中可通过expm函数直接得到矩阵的指数函数。</p>
+<p>我们任意地给定初始状态<span
+class="math inline"><strong>X</strong><sub>0</sub></span>，<span
+class="math inline"><strong>X</strong> = e<sup><strong>A</strong><em>t</em></sup><strong>X</strong><sub>0</sub></span>或<span
+class="math inline"><strong>X</strong><sub>0</sub> = e<sup>−<strong>A</strong><em>t</em></sup><strong>X</strong></span>就给出了对应的相轨迹。我们取<span
+class="math inline"><strong>X</strong><sub>0</sub> = (1, −1, 0.3, 0.6)</span>，则四个变量的演化规律及其在四维空间中的相轨迹如下图所示（我们只能用三维空间对应<span
+class="math inline"><em>x</em><sub>1</sub>, <em>x</em><sub>2</sub>, <em>x</em><sub>3</sub></span>以及让颜色维对应<span
+class="math inline"><em>x</em><sub>4</sub></span>来表示四维空间的相轨迹）</p>
+<p><img src="2024-09-18-liouville-3.png" alt="四个变量随时间的演变" />
+<img src="2024-09-18-liouville-4.png" alt="四阶系统相图" /></p>
+<p>现在研究概率密度的演化即Liouville方程的解。注意到<span
+class="math inline"><em>Ψ</em></span>的定义，有 <span
+class="math display">$$
+\Psi(\bm{X})=\sum_{k=1}^N\frac{\partial \Phi_k(\bm{X})}{\partial x_k}=
+\sum_{k=1}^N\frac{\partial (\bm{AX})_k}{\partial
+x_k}=\sum_{k=1}^N\frac{\partial \bm{A}_k\bm{X}}{\partial x_k}.
+$$</span> 其中<span
+class="math inline"><strong>A</strong><sub><em>k</em></sub></span>是矩阵<span
+class="math inline"><strong>A</strong></span>的第<span
+class="math inline"><em>k</em></span>行，而由于 <span
+class="math inline"><strong>X</strong> = (<em>x</em><sub>1</sub>, <em>x</em><sub>2</sub>, <em>x</em><sub>3</sub>, <em>x</em><sub>4</sub>)<sup>T</sup></span>，因此这里的<span
+class="math inline"><em>Ψ</em></span>其实就是<span
+class="math inline">tr (<strong>A</strong>)</span>。而这里<span
+class="math inline">tr (<strong>A</strong>) = 0</span>。这表示了系统的运动是一种没有伸缩的纯“旋转”运动，只不过在这里这个旋转运动是在四维空间中体现的。</p>
+<p>对于<span
+class="math inline"><em>Ψ</em> ≡ 0</span>的情况，Liouville方程的解的表达式中的指数项就直接消除了。其剩余部分
+<span
+class="math display"><em>ρ</em>(<strong>X</strong>) = <em>ρ</em><sub>0</sub>(<strong>K</strong>),  <strong>K</strong> = <em>P</em>(<strong>X</strong>, <em>t</em>)</span>
+表示概率密度的分布将直接沿着相轨迹演化，而不会产生额外的聚集或消散（这里，额外指的是由于相轨迹本身聚集或离散而导致的概率密度分布集中或消散）。由于我们已经算出相轨迹方程<span
+class="math inline"><em>P</em>(<strong>X</strong>, <em>t</em>) = e<sup>−<strong>A</strong><em>t</em></sup><strong>X</strong></span>，因此结合初始概率密度分布，可以直接计算出<span
+class="math inline"><em>t</em></span>时刻的概率密度分布。</p>
+<p>但是，这个分布是四维空间加一维时间的函数，无法直接展示出来。为此，取离散的时间和<span
+class="math inline"><em>x</em><sub>4</sub></span>值，并作出<span
+class="math inline"><em>ρ</em>(<em>x</em><sub>1</sub>, <em>x</em><sub>2</sub>, <em>x</em><sub>3</sub>, <em>x</em><sub>4</sub><sup>*</sup>, <em>t</em><sup>*</sup>) = <em>C</em></span>的等值面来间接展示。我们取的初始分布为简单的正态分布：
+<span class="math display">$$
+\rho_0(x_1,x_2,x_3,x_4)=\frac{1}{4\pi^2\sigma^4}\operatorname{exp}\left(-\frac{1}{2}\sum_{i=1}^4\frac{(x_i-x_{0i})^2}{\sigma^2}\right),\quad
+\sigma=0.2.
+$$</span> 在初始时刻，概率密度函数在四维空间是球对称的，且距离<span
+class="math inline"><strong>X</strong><sub>0</sub></span>越近，概率密度越大。它的等值面在三维空间的投影是一个球面，半径则取决于<span
+class="math inline"><em>x</em><sub>4</sub></span>。<span
+class="math inline"><em>x</em><sub>4</sub></span>越接近<span
+class="math inline"><em>x</em><sub>40</sub></span>，球面的半径越大。在经过一段时间之后，由于这个系统的概率密度的分布直接沿着相轨迹演化，我们可以猜测某些性质仍然能够得以保留，例如概率密度总是由中心相点向外递减等。这有助于我们理解概率密度函数在四维空间中的演化规律。</p>
+<p>下面给出概率密度的演化图。图最中心表示<span
+class="math inline"><em>t</em> = 0</span>的起始位置，球面表示初始概率密度的等值面。对于第四维的取值，分别取<span
+class="math inline"><em>x</em><sub>4</sub>(<em>t</em>), <em>x</em><sub>4</sub>(<em>t</em>) + <em>Δ</em><sub>4</sub>, <em>x</em><sub>4</sub>(<em>t</em>) − <em>Δ</em><sub>4</sub></span>，作出青，黄，蓝三个等值面。其中<span
+class="math inline"><em>Δ</em><sub>4</sub> = 0.5</span>，<span
+class="math inline"><em>x</em><sub>4</sub>(<em>t</em>)</span>表示初始点演化到<span
+class="math inline"><em>t</em></span>时刻时第四维的坐标。在初始时刻，黄色和蓝色等值面相同，均被青色球面包裹，和前面的分析一致。随着时间演化，给出了<span
+class="math inline"><em>t</em> = 0, 20, 31, 50, 75</span>五个时刻的概率密度等值面。其中最中间的球面为<span
+class="math inline"><em>t</em> = 0</span>时，另外两个椭球面分别为<span
+class="math inline"><em>t</em> = 50, 75</span>时。 <img
+src="2024-09-18-liouville-1.png" alt="四阶系统概率密度演化图" /></p>
+<p>从图中我们发现两个直观信息： 1.
+概率密度分布从最初的球对称，逐渐演化成了扁平的形状，而在特定的时间又会回到类似原有结构的椭球面。这应当是由于相轨迹的分布特征导致的。虽然系统不存在真正的周期，但是仍有近似的周期（<span
+class="math inline">10<em>π</em></span>是第一个近似周期，因为<span
+class="math inline">$10\pi\approx
+7\times\sqrt{2}\pi$</span>），在达到近似周期时，系统的性质和最初比较相近，因而概率密度分布的结构也更加类似。
+1.
+初始时刻青色球面包裹蓝色和黄色球面，但随着时间演化它们发生了分离，有点类似三维空间中椭球体的旋转导致其在某一个面上投影发生的变化。</p>
+<p>为了更仔细地考察信息1，这里进一步给出初始时刻附近的演化情况。此时取<span
+class="math inline"><em>σ</em> = 0.02, <em>Δ</em><sub>4</sub> = 0.08</span>，给出<span
+class="math inline"><em>t</em> = 0, 0.3, …, 1.8</span>时的概率分布。下图更加精细地展示了概率密度由球对称分布演化到低维子空间上的情形。</p>
+<figure>
+<img src="2024-09-18-liouville-2.png" alt="四阶系统概率密度演化图2" />
+<figcaption aria-hidden="true">四阶系统概率密度演化图2</figcaption>
+</figure>
