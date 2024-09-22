@@ -102,7 +102,7 @@ EXTRACURRICULAR ACTIVITIES
 
 HOBBYS
 ======
-* **Personal interest projects (See above)**
+* **Personal interest projects (See [PIP](/pip/))**
   * Numerical Modeling, simulations, optimizations
   * Theorycrafting
   * Programming techniques

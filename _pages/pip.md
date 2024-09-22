@@ -1,12 +1,15 @@
 ---
-title: "Personal Interest Projects"
+title: "PERSONAL INTEREST PROJECTS"
 permalink: /pip/
 author_profile: true
 redirect_from: 
     - /projects/
 ---
 
-PERSONAL INTEREST PROJECTS
+# What is PIP？
+TODO
+
+PIPs
 ======
 1. **Simple model for Atmosphere**. TBD. *Concept*.
   * Dynamical core + Radiative transfer. Study atmosphere dynamics under various conditions.

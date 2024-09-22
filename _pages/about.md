@@ -8,9 +8,9 @@ redirect_from:
   - /about.html
 ---
 
-This is Yi Zhuang's new home on the web!
+This is Yi Zhuang's new home on the web! (Still under construction though)
 
-关于我
+关于我 About me
 ======
 欢迎来到庄逸的个人主页。我是一名就读于[中国科学院大气物理研究所](https://iap.cas.cn/)的四年级博士研究生，导师为[段晚锁研究员](http://duanws.lasg.ac.cn/)，研究方向是**火星大气可预报性**。
 具体而言，我所进行的研究工作主要包括以下几个方面。
@@ -18,7 +18,18 @@ This is Yi Zhuang's new home on the web!
 1. 火星大气基本性质，重要动力、物理过程的剖析；
 1. 火星模式（目前主要使用[LMD Mars PCM](http://www-planets.lmd.jussieu.fr/)）的应用。
 
-Getting started
+在研究工作之外，我经常撰写一些和数学物理有关的[博文](/year-archive/)，或者探究一些[个人兴趣项目](/pip/)。可以通过链接了解相关信息。
+
+***
+
+Welcome to Yi Zhuang's personal website. I am a fourth year PhD student in [IAP-CAS]((https://iap.cas.cn/)) and my supervisor is [Prof. Wansuo Duan](http://duanws.lasg.ac.cn/index/index/enindex.html). Currently I am researching on **the predictability of the Martian atmosphere**. More specifically, my research mainly includes the following aspects.
+1. How to quantify predictability and associated numerical methods, as well as improving forecast skills.
+1. Understanding the properties of the Martian atmosphere and important dynamical & physical processes.
+1. Running Martian atmosphere model (Currently [LMD Mars PCM](http://www-planets.lmd.jussieu.fr/)).
+
+Aside from main research works, I often write [blogs](/year-archive/) of mathematical or physical problems, or explore [personal interest projects](/pip/). You may refer to these link for more information.
+
+<!-- Getting started
 ======
 1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
 1. Fork [this repository](https://github.com/academicpages/academicpages.github.io) by clicking the "fork" button in the top right. 
@@ -49,4 +60,4 @@ Example: editing a markdown file for a talk
 
 For more info
 ------
-More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful. -->
