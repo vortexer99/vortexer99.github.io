@@ -2,7 +2,20 @@
 layout: default
 ---
 
+{% include base_path %}
+
+{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
+  {% include page__hero.html %}
+{% endif %}
+
+{% if page.url != "/" and site.breadcrumbs %}
+  {% unless paginator %}
+    {% include breadcrumbs.html %}
+  {% endunless %}
+{% endif %}
+
 <h1>{{ page.title }}</h1>
+{% include sidebar.html %}
 
 <div class="gallery">
   {% for image in site.static_files %}
