@@ -7,7 +7,7 @@ redirect_from:
 ---
 
 # What is PIP？
-**A Personal Interest Project (PIP) is a self-driven exploration fueled by curiosity and passion, much like an intellectual hobby.** These projects allow me to dive deep into new mathematical concepts, programming frameworks, or other technical topics that capture my interest. While I may seek guidance or discussions with others, the core work is independently pursued. Given their exploratory nature, these projects often demand sustained effort—sometimes spanning weeks of focused work or evolving intermittently over years. Each PIP serves as a testament to self-directed learning, persistence, and the joy of discovery.
+**A Personal Interest Project (PIP) is a self-driven exploration fueled by curiosity and passion, much like an intellectual hobby.** These projects allow me to dive deep into **new mathematical concepts, programming frameworks, or other technical topics** that capture my interest. While I may seek guidance or discussions with others, the core work is independently pursued. Given their exploratory nature, these projects often demand sustained effort—sometimes spanning weeks of focused work or evolving intermittently over years. Each PIP serves as a testament to self-directed learning, persistence, and the joy of discovery.
 
 PIPs
 ======
@@ -19,7 +19,7 @@ PIPs
   * First diffusion eq. (Linear), then Bergers equation or Lorenz models (Nonlinear).
   * Still learning mathematical tools.
   * Currently start with ODE first.
-  * See [Relevant blogposts](https://vortexer99.github.io/tags/#PIP-RANDPDE).
+  * See [Relevant blogposts](/tags/#pip-randpde).
 1. **Personal Website**. 2023/10. *Still updating*.
   * [Current website](https://vortexer99.github.io)
   * Jekyll and Github Pages for deployment, academicpages for template, Markdown for texts.

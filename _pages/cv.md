@@ -84,15 +84,15 @@ CONFERENCES
 
 PROFESSIONAL SKILLS
 ======
-* Run Mars PCM atmospheric model
+* **Run Mars PCM atmospheric model**
   * Use Python and Shell script to initialize and control experiments
   * Calculate BV or CNOP based on the model
   * For CNOP, SPG2 algorithm is implemented with Python
-* Use MATLAB and Python for data analysis
+* **Use MATLAB and Python for data analysis**
   * Access MCD via Python interface
   * Post-processing and visualize model results, e.g. BV structure from MY25-32
   * Perform numerical simulations, e.g. Recharge-ossilator, DJL internal waves
-* Profound understanding of certain concepts (Which I could give a simple lecture anytime)
+* **Profound understanding of certain concepts** (Which I could give a simple lecture anytime)
   * Predictablility, Errors and CNOP
   * Special features of the Martian Atmosphere
   * Dynamical systems, stablility analysis, Liouville equation
