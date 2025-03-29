@@ -6,14 +6,14 @@ tags:
   - index
 ---
 
-关于博客文章的整体介绍
-======
+# 关于博客文章的整体介绍
+
 以后再写
 
-标签分类
-======
-按类型分
-------
+# 标签分类
+
+## 按类型分
+
 | [index](/tags/#index)
 | [blogpost](/tags/#blogpost)
 | [lecture note](/tags/#lecnote)
@@ -21,8 +21,7 @@ tags:
 | [life-exp](/tags/#life-exp)
 | [tools](/tags/#tools)
 
-按内容分
-------
+## 按内容分
 感觉还有点混乱，以后再整理整理
 
 | [mathematic](/tags/#mathematic)
@@ -48,8 +47,7 @@ tags:
 | [optimization](/tags/#optimization)
 | [humanity](/tags/#humanity)
 
-按长度分
-------
+## 按长度分
 | [1-5 Pages](/tags/#1-5-pages)
 | [6-10 Pages](/tags/#6-10-pages)
 | [11-30 Pages](/tags/#11-30-pages)
@@ -58,10 +56,9 @@ tags:
 | [31-60 Slides](/tags/#31-60-slides)
 | [not in pages](/tags/#not-in-pages)
 
-按PIP分
-------
+## 按PIP分
+
 | [PIP-RANDPDE](/tags/#pip-randpde)
 
-Blog list
-======
+# Blog list
 施工中。。。
