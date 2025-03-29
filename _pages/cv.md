@@ -15,6 +15,7 @@ redirect_from:
 
 EDUCATION
 ======
+* Exchange student in UC Berkeley in 2020 Spring
 * B.S. in Theoretical and Applied Mechanics, University of Chinese Academy of Sciences, 2021
 * Ph.D in Meteorology, IAP/CAS, 2026 (expected)
 
@@ -37,7 +38,7 @@ RESEARCH EXPERIENCES
 
 2022/08 - present. IAP/CAS, China
 
-Advisor: Prof. Wansuo Duan
+Advisor: [Prof. Wansuo Duan](http://duanws.lasg.ac.cn/)
 
 * description
 * description
@@ -46,7 +47,7 @@ Advisor: Prof. Wansuo Duan
 
 2020/08 - 2021/06. UCAS, China
 
-Advisor: Prof. Zhan Wang
+Advisor: [Prof. Zhan Wang](https://imech.cas.cn/people/zgj/default_94777.html?id=731)
 
 * description
 * description
@@ -55,7 +56,7 @@ Advisor: Prof. Zhan Wang
 
 2019/08 - 2020/12. UCAS, China
 
-Advisor: Prof. Zhan Wang
+Advisor: [Prof. Zhan Wang](https://imech.cas.cn/people/zgj/default_94777.html?id=731)
 
 * description
 * description
@@ -64,7 +65,8 @@ Advisor: Prof. Zhan Wang
 
 CONFERENCES
 ======
-1. **2024全国行星科学大会**. 2024/10. 中国·南京, China.
+1. **AOGS-2025**. 2025/07. Singapore. **Looking forward to presenting my work!**
+1. **2024全国行星科学大会**. 2024/10. 中国·南京.
 1. **Distinguished Lectures on Planetary Atmospheres 2024**. 2024/08. Peking University, China.
 1. **非线性大气-海洋动力学和可预报性研讨会**. 2024/08. 中国·延吉. *poster*. 庄逸, 段晚锁. **火星大气的可预报性障碍现象**
 1. **“大气科学中的非线性数学问题”研讨会**. 2023/11. North University of China.
@@ -81,10 +83,23 @@ CONFERENCES
 
 PROFESSIONAL SKILLS
 ======
-* Main Scientific Computing and Academic Tools
-  * Numerical Simulation: Matlab, Mathematica
-  * Programming: Python, Fortran, Bash
-  * Other: LaTeX, ChatGPT
+* Run Mars PCM atmospheric model
+  * Use Python and Shell script to initialize and control experiments
+  * Calculate BV or CNOP based on the model
+  * For CNOP, SPG2 algorithm is implemented with Python
+* Use MATLAB and Python for data analysis
+  * Access MCD via Python interface
+  * Post-processing and visualize model results, e.g. BV structure from MY25-32
+  * Perform numerical simulations, e.g. Recharge-ossilator, DJL internal waves
+* Profound understanding of certain concepts (Which I could give a simple lecture anytime)
+  * Predictablility, Errors and CNOP
+  * Special features of the Martian Atmosphere
+  * Dynamical systems, stablility analysis, Liouville equation
+* Others 
+  * Use LaTeX to format mathematical blogposts
+  * Use Vue.js to build tools and deploy via Github Pages
+  * Use Wordpress or Jekyll to build my personal website
+  * Learning with AI
 * Language
   * Chinese (native), English (fluent), French (Basic), Japanese (Basic)
 
@@ -92,6 +107,8 @@ PROFESSIONAL SKILLS
 
 SELECTED AWARDS AND HONORS
 ======
+1. sth
+1. sth
 
 ***
 
@@ -105,8 +122,8 @@ HOBBYS
 ======
 * **Personal interest projects (See [PIP](/pip/))**
   * Numerical Modeling, simulations, optimizations
-  * Theorycrafting
   * Programming techniques
+  * Theorycrafting
 * **General**
   * Tea, Coffee, Foods & Cooking
   * Knowledge of Digital Devices and Technology (e.g. Hardware & Software, Network, Peripherals)

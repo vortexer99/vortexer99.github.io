@@ -18,7 +18,7 @@ This is Yi Zhuang's new home on the web! (Still under construction though)
 1. 火星大气基本性质，重要动力、物理过程的剖析；
 1. 火星模式（目前主要使用[LMD Mars PCM](http://www-planets.lmd.jussieu.fr/)）的应用。
 
-在研究工作之外，我经常撰写一些和数学物理有关的[博文](/year-archive/)，或者探究一些[个人兴趣项目](/pip/)。可以通过链接了解相关信息。
+在研究工作之外，我会撰写一些和数学物理有关的[博文](/year-archive/)，或者探究一些[个人兴趣项目](/pip/)。也可以通过[CV](/cv/)了解更多信息。
 
 ***
 
@@ -27,7 +27,7 @@ Welcome to Yi Zhuang's personal website. I am a fourth year PhD student in [IAP-
 1. Understanding the properties of the Martian atmosphere and important dynamical & physical processes.
 1. Running Martian atmosphere model (Currently [LMD Mars PCM](http://www-planets.lmd.jussieu.fr/)).
 
-Aside from main research works, I often write [blogs](/year-archive/) of mathematical or physical problems, or explore [personal interest projects](/pip/). You may refer to these link for more information.
+Aside from main research works, I often write [blogs](/year-archive/) of mathematical or physical problems, or explore [personal interest projects](/pip/). You may also refer to [CV](/cv/) for more information.
 
 <!-- Getting started
 ======
