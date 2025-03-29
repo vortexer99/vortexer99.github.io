@@ -67,6 +67,7 @@ CONFERENCES
 ======
 1. **AOGS-2025**. 2025/07. Singapore. **Looking forward to presenting my work!**
 1. **2024全国行星科学大会**. 2024/10. 中国·南京.
+1. **2024年全国大气科学研究生学术论坛**. 2024/11. 中国·苏州. *oral*. 庄逸, 段晚锁. **火星大气的天气可预报性障碍现象**
 1. **Distinguished Lectures on Planetary Atmospheres 2024**. 2024/08. Peking University, China.
 1. **非线性大气-海洋动力学和可预报性研讨会**. 2024/08. 中国·延吉. *poster*. 庄逸, 段晚锁. **火星大气的可预报性障碍现象**
 1. **“大气科学中的非线性数学问题”研讨会**. 2023/11. North University of China.
