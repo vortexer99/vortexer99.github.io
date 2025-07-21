@@ -65,7 +65,9 @@ Advisor: [Prof. Zhan Wang](https://imech.cas.cn/people/zgj/default_94777.html?id
 
 CONFERENCES
 ======
-1. **AOGS-2025**. 2025/07. Singapore. **Looking forward to presenting my work!**
+1. **第八届“非线性大气-海洋科学研讨会”**. 2025/08. 中国·内蒙古. TBD
+1. **Distinguished Lectures on Atmospheric & Oceanic Sciences at Peking University 2025**. 2025/08. Peking University, China.
+1. **AOGS-2025**. 2025/07. Singapore. *oral*. Yi Zhuang, Wansuo Duan* and Li Dong. **Season-dependent Weather Predictability Barrier (S-WPB) phenomenon in the Martian atmosphere**.
 1. **2024全国行星科学大会**. 2024/10. 中国·南京.
 1. **2024年全国大气科学研究生学术论坛**. 2024/11. 中国·苏州. *oral*. 庄逸, 段晚锁. **火星大气的天气可预报性障碍现象**
 1. **Distinguished Lectures on Planetary Atmospheres 2024**. 2024/08. Peking University, China.
