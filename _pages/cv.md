@@ -15,15 +15,17 @@ redirect_from:
 
 EDUCATION
 ======
-* Exchange student in UC Berkeley in 2020 Spring
-* B.S. in Theoretical and Applied Mechanics, University of Chinese Academy of Sciences, 2021
-* Ph.D in Meteorology, IAP/CAS, 2026 (expected)
 
+* Ph.D in Meteorology, IAP/CAS, 2026 (expected)
+* B.S. in Theoretical and Applied Mechanics, University of Chinese Academy of Sciences, 2021
+* Exchange student in UC Berkeley in 2020 Spring
+* Hang Zhou No.4 High school 2014-2017
 ***
 
 PUBLICATIONS
 ======
 First-authored or corresponding-authored:
+1. Yi Zhuang, Wanduo Duan\*, Li Dong. **Season-dependent Weather predictability barrier phenomenon in the Martian atmosphere**, *submitted*
 1. 庄逸. (2017). **学霸带你玩转高中数学**. 浙江工商大学出版社.
 1. 庄逸, 朱晋业 &  马敏锐. (2017). **以数驭形 以形辅数——数形结合在压轴题中的运用**. *中学数学月刊* (07), 51-52.
 
@@ -40,8 +42,7 @@ RESEARCH EXPERIENCES
 
 Advisor: [Prof. Wansuo Duan](http://duanws.lasg.ac.cn/)
 
-* description
-* description
+* description under construction
 
 **Effects of Topography on Nonlinear Internal Wave in Three-layer Flows**
 
@@ -49,8 +50,8 @@ Advisor: [Prof. Wansuo Duan](http://duanws.lasg.ac.cn/)
 
 Advisor: [Prof. Zhan Wang](https://imech.cas.cn/people/zgj/default_94777.html?id=731)
 
-* description
-* description
+* description under construction
+* [link for thesis](/posts/2021/06/thesis)
 
 **Material transport ability of flow induced by ocean internal waves**
 
@@ -58,8 +59,8 @@ Advisor: [Prof. Zhan Wang](https://imech.cas.cn/people/zgj/default_94777.html?id
 
 Advisor: [Prof. Zhan Wang](https://imech.cas.cn/people/zgj/default_94777.html?id=731)
 
-* description
-* description
+* description under construction
+* [link for report](/posts/2021/01/internalwave)
 
 ***
 
