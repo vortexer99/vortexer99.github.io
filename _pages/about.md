@@ -12,7 +12,7 @@ This is Yi Zhuang's new home on the web! (Still under construction though)
 
 关于我 About me
 ======
-欢迎来到庄逸的个人主页。我是一名就读于[中国科学院大气物理研究所](https://iap.cas.cn/)的四年级博士研究生，导师为[段晚锁研究员](http://duanws.lasg.ac.cn/)，研究方向是**火星大气可预报性**。
+欢迎来到庄逸的个人主页。我是一名就读于[中国科学院大气物理研究所](https://iap.cas.cn/)的五年级博士研究生，导师为[段晚锁研究员](https://labesm-staff.iap.ac.cn/duanws/)，研究方向是**火星大气可预报性**。
 具体而言，我所进行的研究工作主要包括以下几个方面。
 1. 可预报性的具体研究内容与数值研究方法，提高预报技巧的手段；
 1. 火星大气基本性质，重要动力、物理过程的剖析；
@@ -22,7 +22,7 @@ This is Yi Zhuang's new home on the web! (Still under construction though)
 
 ***
 
-Welcome to Yi Zhuang's personal website. I am a fourth year PhD student in [IAP-CAS]((https://iap.cas.cn/)) and my supervisor is [Prof. Wansuo Duan](http://duanws.lasg.ac.cn/index/index/enindex.html). Currently I am researching on **the predictability of the Martian atmosphere**. More specifically, my research mainly includes the following aspects.
+Welcome to Yi Zhuang's personal website. I am a fifth year PhD student in [IAP-CAS](http://english.iap.cas.cn) and my supervisor is [Prof. Wansuo Duan](https://labesm-staff.iap.ac.cn/duanws/index/index/enindex.html). Currently I am researching on **the predictability of the Martian atmosphere**. More specifically, my research mainly includes the following aspects.
 1. How to quantify predictability and associated numerical methods, as well as improving forecast skills.
 1. Understanding the properties of the Martian atmosphere and important dynamical & physical processes.
 1. Running Martian atmosphere model (Currently [LMD Mars PCM](http://www-planets.lmd.jussieu.fr/)).
