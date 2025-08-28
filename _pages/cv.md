@@ -42,7 +42,9 @@ RESEARCH EXPERIENCES
 
 Advisor: [Prof. Wansuo Duan](http://duanws.lasg.ac.cn/)
 
-* description under construction
+* We reveal a novel season-dependent weather predictability barrier phenomenon in the Martian atmosphere.
+* We build numerical optimization program adapting the Spectral Projection Gradient method to solve the Conditional Nonlinear Optimal Perturbation (CNOP) in the LMD Mars model. The CNOP represents initial errors which induce largest forecast error, and indicates predictability limit for Martian atmosphere.
+* With the help of CNOP, We conduct Observing System Simulation Experiment (OSSE) to quantify the improvement of forecast level through assimilation with targeted observation. (*planned*)
 
 **Effects of Topography on Nonlinear Internal Wave in Three-layer Flows**
 
@@ -50,7 +52,7 @@ Advisor: [Prof. Wansuo Duan](http://duanws.lasg.ac.cn/)
 
 Advisor: [Prof. Zhan Wang](https://imech.cas.cn/people/zgj/default_94777.html?id=731)
 
-* description under construction
+*  Through asymptotic analysis, we derive governing equations for weakly nonlinear long wave (KdV and KP equation up to 5th order) in a three-layer shallow water model with topography. Then, we illustrate numerical results with selected representative topography settings.
 * [link for thesis](/posts/2021/06/thesis)
 
 **Material transport ability of flow induced by ocean internal waves**
@@ -59,14 +61,15 @@ Advisor: [Prof. Zhan Wang](https://imech.cas.cn/people/zgj/default_94777.html?id
 
 Advisor: [Prof. Zhan Wang](https://imech.cas.cn/people/zgj/default_94777.html?id=731)
 
-* description under construction
+*  We derived the mathematical expression for material transport by wave-induced flows. Then, we explore the characteristics of flows induced by KdV, MCC and DJL type internal waves, and discuss their ability in material transport and contributing factors respectively.
 * [link for report](/posts/2021/01/internalwave)
 
 ***
 
 CONFERENCES
 ======
-1. **第八届“非线性大气-海洋科学研讨会”**. 2025/08. 中国·内蒙古. *poster*. 庄逸, 段晚锁*, 董理. **火星大气的季节性天气可预报性障碍现象**.
+1. **Mars Through Time**. 2025/10. Paris, France. *poster*. Looking forward to presenting my work!
+1. **第八届“非线性大气-海洋科学研讨会”**. 2025/08. 中国·内蒙古. *Outstanding poster*. 庄逸, 段晚锁*, 董理. **火星大气的季节性天气可预报性障碍现象**.
 1. **Distinguished Lectures on Atmospheric & Oceanic Sciences at Peking University 2025**. 2025/08. Peking University, China.
 1. **AOGS-2025**. 2025/07. Singapore. *oral*. Yi Zhuang, Wansuo Duan* and Li Dong. **Season-dependent Weather Predictability Barrier (S-WPB) phenomenon in the Martian atmosphere**.
 1. **2024全国行星科学大会**. 2024/10. 中国·南京.
@@ -87,25 +90,21 @@ CONFERENCES
 
 PROFESSIONAL SKILLS
 ======
-* **Run Mars PCM atmospheric model**
-  * Use Python and Shell script to initialize and control experiments
-  * Calculate BV or CNOP based on the model
-  * For CNOP, SPG2 algorithm is implemented with Python
-* **Use MATLAB and Python for data analysis**
-  * Access MCD via Python interface
-  * Post-processing and visualize model results, e.g. BV structure from MY25-32
-  * Perform numerical simulations, e.g. Recharge-ossilator, DJL internal waves
-* **Profound understanding of certain concepts** (Which I could give a simple lecture anytime)
-  * Predictablility, Errors and CNOP
-  * Special features of the Martian Atmosphere
-  * Dynamical systems, stablility analysis, Liouville equation
-* Others 
-  * Use LaTeX to format mathematical blogposts
-  * Use Vue.js to build tools and deploy via Github Pages
-  * Use Wordpress or Jekyll to build my personal website
-  * Learning with AI
+* **Conduct Experiments with LMD Mars Planetary Climate Model**
+  * Develop Python and Shell scripts or modify model codes to achieve diverse objectives.
+  * Develop simple assimilation scheme and EGB-SPG optimization program for CNOP calculation.
+* **Process data and Conduct Numerical Experiments with Python and Matlab**
+  * Obtain data from Martian Climate Database (MCD) through Python interface.
+  * Post-process and visuallization of atmospheric reanalysis and model experiment data.
+  * Explore topics numerically, e.g. ENSO recharge ossilator, DJL internal wave simulation.
+* **Profound Understanding of Research Fundamentals** (Which I am eager to give a simple lecture anytime)
+  * Predictability study, origin of forecast errors, concept and application of CNOP.
+  * Characteristics and key processes of Martian atmosphere.
+  * Normal and stochastic dynamical system, PDF evolution governed by Liouville equation.
+  * Mathematical skills for solving ODE/PDE and deriving atmospheric equations.
+* Other practiced technical skills: LATEX, Git, Vue.js, Mathematica, WordPress, etc.
 * Language
-  * Chinese (native), English (fluent), French (Basic), Japanese (Basic)
+  * Language: English (TOEFL 100), Novice French (CEFR-early A1) and Japanese.
 
 ***
 
@@ -116,11 +115,13 @@ SELECTED AWARDS AND HONORS
 
 ***
 
-EXTRACURRICULAR ACTIVITIES
+TRANSFERRABLE SKILLS
 ======
-1. President of the LASG Student Union Presidium at IAP from 2023/03 to 2024/02.
-
-***
+1. Managed research group’s multimedia equipment to ensure seamless hybrid (online/offline) meetings.
+1. Assisted in hosting 3 visiting international scholars, coordinating their tours and gift exchanges.
+1. As a member of the LASG Student Union Presidium, lead information collection and equipment man-
+agement for commencement ceremonies and graduate academic forums.
+1. Participate in conference logistics including registration, materials distribution, and poster mounting.
 
 HOBBYS
 ======
