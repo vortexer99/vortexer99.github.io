@@ -8,7 +8,7 @@ tags:
 
 # 关于博客文章的整体介绍
 
-以后再写
+Under construction
 
 # 标签分类
 
@@ -59,6 +59,15 @@ tags:
 ## 按PIP分
 
 · [PIP-RANDPDE](/tags/#pip-randpde)
+
+# 计划中 Planned
+计划中的意思就是我已经大概想好内容了，只不过一直没空写，但应该迟早会写的。
+* 使用基底，通过系数控制物理场的数学原理
+* 经验库的设计思路与EGB-SPG CNOP算法
+* 随机动力学方程之三：探讨随机变量分布统计量的动力系统演变
+* From Genshin to CNOP: Compute graph and adjoint model
+* 戴森球总线设计的算法
+* CNWP: 条件非线性最差扰动
 
 # Blog list
 施工中。。。
