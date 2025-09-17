@@ -12,7 +12,7 @@ This is Yi Zhuang's new home on the web! (Still under construction though)
 
 关于我 About me
 ======
-欢迎来到庄逸的个人主页。我是一名就读于[中国科学院大气物理研究所](https://iap.cas.cn/)的五年级博士研究生，导师为[段晚锁研究员](https://labesm-staff.iap.ac.cn/duanws/)，研究方向是**火星大气可预报性**。
+欢迎来到庄逸的个人主页。我是一名就读于[中国科学院大气物理研究所](https://iap.cas.cn/)的五年级博士研究生，导师为[段晚锁研究员](https://labesm-staff.iap.ac.cn/duanws/)，研究方向是**火星大气可预报性**。我也是世界上从古至今唯一一个计算在火星大气CNOP（条件非线性最优扰动）的人类。
 具体而言，我所进行的研究工作主要包括以下几个方面。
 1. 可预报性的具体研究内容与数值研究方法，提高预报技巧的手段；
 1. 火星大气基本性质，重要动力、物理过程的剖析；
