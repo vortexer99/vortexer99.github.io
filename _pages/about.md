@@ -22,7 +22,8 @@ This is Yi Zhuang's new home on the web! (Still under construction though)
 
 ***
 
-Welcome to Yi Zhuang's personal website. I am a fifth year PhD student in [IAP-CAS](http://english.iap.cas.cn) and my supervisor is [Prof. Wansuo Duan](https://labesm-staff.iap.ac.cn/duanws/index/index/enindex.html). Currently I am researching on **the predictability of the Martian atmosphere**. More specifically, my research mainly includes the following aspects.
+Welcome to Yi Zhuang's personal website. I am a fifth year PhD student in [IAP-CAS](http://english.iap.cas.cn) and my supervisor is [Prof. Wansuo Duan](https://labesm-staff.iap.ac.cn/duanws/index/index/enindex.html). Currently I am researching on **the predictability of the Martian atmosphere**. I am also the only people who calculate CNOP of Martian atmosphere all over the world and from past to present.
+More specifically, my research mainly includes the following aspects.
 1. How to quantify predictability and associated numerical methods, as well as improving forecast skills.
 1. Understanding the properties of the Martian atmosphere and important dynamical & physical processes.
 1. Running Martian atmosphere model (Currently [LMD Mars PCM](http://www-planets.lmd.jussieu.fr/)).
