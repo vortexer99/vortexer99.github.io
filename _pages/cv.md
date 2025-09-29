@@ -25,7 +25,7 @@ EDUCATION
 PUBLICATIONS
 ======
 First-authored or corresponding-authored:
-1. Yi Zhuang, Wanduo Duan\*, Li Dong. **Season-dependent Weather predictability barrier phenomenon in the Martian atmosphere**, *submitted*
+1. Yi Zhuang, Wanduo Duan\*, Li Dong. **Season-dependent Weather predictability barrier phenomenon in the Martian atmosphere**, *Geophysical Research Letters*, Under Review.
 1. 庄逸. (2017). **学霸带你玩转高中数学**. 浙江工商大学出版社.
 1. 庄逸, 朱晋业 &  马敏锐. (2017). **以数驭形 以形辅数——数形结合在压轴题中的运用**. *中学数学月刊* (07), 51-52.
 

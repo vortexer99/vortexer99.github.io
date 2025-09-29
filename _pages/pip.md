@@ -25,21 +25,22 @@ PIPs
   * Jekyll and Github Pages for deployment, academicpages for template, Markdown for texts.
 1. **LMD Mars PCM Simulation Controller**. 2022/11. *Still updating*.
   * To quickly initialize, submit and collect large amount of LMD Mars PCM experiments.
-  Parameters can be easily assigned. 
+  Parameters can be easily assigned.
+  * Group management, integrate with Slurm system.
   * Also perform required actions for BV & RP & CNOP.
   * YAML for config settings, Shell and Python for actions.
 
 PIPs (Inactive)
 ======
-1. **A calculator for a specific use**. 2024/04. *Finish*.
-  * Calculation by tag-matching from data. 
+1. **Damage calculator for Honkai Impact 3**. 2024/04. *Finish*.
+  * Calculation by tag-matching from provided settings. 
   * Vue.js for UI, JavaScript for core logic. YAML for storing data.
   * Deployed via GitHub Pages.
 1. **Fast-changing BV tests**. 2023/12. *Mostly done, not continuing for now*.
   * Simple models. If the fast-growing direction changes very fast, would BV able to catch up?
   * Matlab for simulation.
-1. **A simulator for a specific use**. 2023/03. *Finish*.
-  * Step forward in time to simulate state changes, event series and rules given.
+1. **Element reaction simulator for Genshin Impact**. 2023/03. *Finish*.
+  * Step forward in time to simulate state changes, given event series and rules.
   * wxPython for UI, matplotlib for display, Python for core logic. 
 1. **A calculator and a simulator for a specific use**. 2021/10. *Finish*.
   * Calculate from adjustable basic settings. Simulate from event series and rules given.

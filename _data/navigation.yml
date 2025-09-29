@@ -21,10 +21,13 @@ main:
     url: /year-archive/
   - title: "Gallery"
     url: /gallery/  
+  - title: "Milestones"
+    url: /milestones/
   - title: "PIP"
     url: /pip/  
   - title: "CV"
     url: /cv/
+  
     
   # - title: "Guide"
   #   url: /markdown/
