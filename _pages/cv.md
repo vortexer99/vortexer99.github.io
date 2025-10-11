@@ -13,6 +13,8 @@ redirect_from:
 
 ***
 
+[PDF version](/files/resume-en.pdf)
+
 EDUCATION
 ======
 
