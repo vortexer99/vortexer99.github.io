@@ -26,11 +26,12 @@ EDUCATION
 PUBLICATIONS
 ======
 First-authored:
-1. Yi Zhuang, Wanduo Duan\*, Li Dong. **Season-dependent Weather predictability barrier phenomenon in the Martian atmosphere**, *Journal of Geophysical Research: Planets*, Under Review.
+1. Yi Zhuang, Wanduo Duan\*, Li Dong. **Season-dependent Weather predictability barrier phenomenon in the Martian atmosphere**, *Journal of Geophysical Research: Planets*, Under Consideration.
 
 <!-- Co-authored:
 * None
  -->
+
 Acknowledged for Contribution:
 1. 穆穆, 段晚锁, & 秦晓昊. (2025). 确定性天气预报和气候预测的幻灭与新生: 洛伦兹经典混沌论文解读. 中国科学: 地球科学, 55(10), 3541–3551. https://doi.org/10.1360/SSTe-2025-0253
 
@@ -50,7 +51,7 @@ Advisor: [Prof. Wansuo Duan](http://duanws.lasg.ac.cn/)
 
 * We reveal a novel season-dependent weather predictability barrier phenomenon in the Martian atmosphere by applying the Bred Vector method to the LMD Mars PCM model. Its mechanism is analyzed from dynamical and physical aspects.
 * We build numerical optimization program adapting the Spectral Projection Gradient method to solve the Conditional Nonlinear Optimal Perturbation (CNOP) in the LMD Mars model. The CNOP represents initial errors which induce largest forecast error.
-* The CNOP is better in capturing initial instabilities, and a new mechanism is revealed.
+* The CNOP is better in capturing initial instabilities, and a new mechanism is revealed. Its further application demonstrates the characteristics of fast-growing initial errors across different sizes and forecast lengths.
 * (*planned for future research*) With the help of CNOP, we may propose the predictability limit for Martian atmosphere.
 * (*planned for future research*) With the help of CNOP, We conduct Observing System Simulation Experiment (OSSE) to quantify the improvement of forecast level through assimilation with targeted observation. 
 
