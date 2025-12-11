@@ -253,17 +253,17 @@
   /* 强制拉大文章之间的垂直距离 */
   margin-bottom: 3em !important;
   
-  /* 给文章底部留出空间，为了画分割线 */
-  padding-bottom: 2em;
+  // /* 给文章底部留出空间，为了画分割线 */
+  // padding-bottom: 2em;
   
-  /* 添加一条虚线分割线，让区分更明显 */
-  border-bottom: 1px dashed $border-color;
+  // /* 添加一条虚线分割线，让区分更明显 */
+  // border-bottom: 1px dashed $border-color;
 
-  /* 最后一个文章不要分割线 */
-  &:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-  }
+  // /* 最后一个文章不要分割线 */
+  // &:last-child {
+  //   border-bottom: none;
+  //   margin-bottom: 0;
+  // }
 }
 
 /* 2. 解决 Tag 和日期字体太小的问题 */
@@ -278,7 +278,7 @@
   margin-top: 0.5em !important;
   
   /* 如果觉得灰色太浅看不清，可以将 $gray 改为 #333 */
-  color: $gray; 
+  color: #333; 
 }
 
 /* 3. (可选) 优化标题与下方摘要的间距 */
