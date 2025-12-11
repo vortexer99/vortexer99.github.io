@@ -8,7 +8,9 @@ tags:
 
 # 关于博客文章的整体介绍
 
-Under construction
+这里是博客文章的完整归档。 内容主要涵盖数学与物理（流体力学、热力学、动力系统）的课程笔记与理论推导、科研过程中遇到的编程与模拟问题记录（如Slurm、MATLAB），以及部分人文课程作业和生活随笔。所有文章均按年份倒序排列，记录了从本科到研究生阶段的学习与思考轨迹。你也可以点击这篇文章查看博客的标签分类。
+
+This is a complete archive of my blog posts. The content primarily covers course notes and theoretical derivations in mathematics and physics (Fluid Dynamics, Thermodynamics, Dynamical Systems), as well as troubleshooting records related to programming and simulation in research (e.g., Slurm, MATLAB). It also includes selected coursework from humanities classes and personal essays. All posts are listed in reverse chronological order, documenting my academic and intellectual path from undergraduate studies to graduate research. You can also click this post to browse the tag index.
 
 # 标签分类
 
@@ -74,4 +76,4 @@ Under construction
 * CNWP: 条件非线性最差扰动
 
 # Blog list
-施工中。。。
+Under construction
