@@ -243,3 +243,50 @@
     }
   }
 }
+
+/* ==========================================================================
+   CUSTOM OVERRIDES (Added to fix spacing and font size)
+   ========================================================================== */
+
+/* 1. 解决文章间距和分割线问题 */
+.list__item, .archive__item {
+  /* 强制拉大文章之间的垂直距离 */
+  margin-bottom: 3em !important;
+  
+  /* 给文章底部留出空间，为了画分割线 */
+  padding-bottom: 2em;
+  
+  /* 添加一条虚线分割线，让区分更明显 */
+  border-bottom: 1px dashed $border-color;
+
+  /* 最后一个文章不要分割线 */
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+}
+
+/* 2. 解决 Tag 和日期字体太小的问题 */
+.page__meta {
+  /* !important 确保覆盖掉默认的微小字体 */
+  font-size: 0.9rem !important; 
+  
+  /* 稍微增加行高 */
+  line-height: 1.5;
+  
+  /* 确保它独占一行或与标题有间距 */
+  margin-top: 0.5em !important;
+  
+  /* 如果觉得灰色太浅看不清，可以将 $gray 改为 #333 */
+  color: $gray; 
+}
+
+/* 3. (可选) 优化标题与下方摘要的间距 */
+.archive__item-title {
+  margin-bottom: 0.5em; /* 拉大标题和下面文字的距离 */
+}
+
+/* 4. (可选) 优化摘要文字大小 */
+.archive__item-excerpt {
+  font-size: 1rem; /* 如果摘要也觉得小，可以改为 1rem */
+}
