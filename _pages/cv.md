@@ -22,7 +22,6 @@ EDUCATION
 * **B.S. in Theoretical and Applied Mechanics**, University of Chinese Academy of Sciences, 2021
 * **Exchange student**, UC Berkeley, 2020 Spring
 * Hang Zhou No.4 High school 2014-2017
-***
 
 PUBLICATIONS
 ======
@@ -38,6 +37,7 @@ Acknowledged for Contribution:
 Past-publications:
 1. 庄逸. (2017). **学霸带你玩转高中数学**. 浙江工商大学出版社.
 1. 庄逸, 朱晋业 &  马敏锐. (2017). **以数驭形 以形辅数——数形结合在压轴题中的运用**. *中学数学月刊* (07), 51-52.
+
 ***
 
 RESEARCH EXPERIENCES
@@ -96,6 +96,7 @@ Minor (for career)：
 1. **台风目标观测研究与外场试验研讨会**. 2022/07. Online.
 1. **第三届非线性最优化方法夏季讲习班**. 2021/08. Online.
 1. **第三届大气、海洋可预报性研讨会**. 2021/06. 中国·扬州
+
 ***
 
 PROFESSIONAL SKILLS
@@ -114,7 +115,7 @@ PROFESSIONAL SKILLS
   * Mathematical skills for solving ODE/PDE and deriving atmospheric equations.
 * Other practiced technical skills: \LATEX, Git, Vue.js, Mathematica (Wolfram Language Certified Level I), WordPress, etc.
 * Language
-  * Language: English (TOEFL 100 in 2020), Novice French  and Japanese.
+  * Language: English (TOEFL 100 in 2020), Novice French and Japanese.
 
 ***
 
@@ -125,6 +126,7 @@ SELECTED AWARDS AND HONORS
 1. Freshman Scholarship of IAP-CAS in 2020
 1. Guo Yonghuai Mechanics Honors Scholarship and Competition-Based Scholarship of UCAS 2019
 1. Mathematical Contest In modeling (2019) Successful Participant
+
 ***
 
 TRANSFERRABLE SKILLS
@@ -145,6 +147,5 @@ HOBBYS
   * Tea, Coffee, Foods & Cooking
   * Knowledge of Digital Devices and Technology (e.g. Hardware & Software, Network, Peripherals)
   * Scientific fictions, movies and video games (Three Body, DSP, NMS)
-  * Exhibit collection of ornaments
+  * Collection Management and Exhibition
   * New Age music
-  * Go wherever I am interested in just by myself

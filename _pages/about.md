@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-This is Yi Zhuang's new home on the web! (Still under construction though)
+This is Yi Zhuang's new home on the web!
 
 关于我 About me
 ======
@@ -30,9 +30,12 @@ More specifically, my research mainly includes the following aspects.
 
 Aside from main research works, I often write [blogs](/year-archive/) of mathematical or physical problems, or explore [personal interest projects](/pip/). You may also refer to [CV](/cv/) for more information. For future research, I am willing to explore planetary atmosphere dynamics, numerical modelling, predictability and nonlinear dynamic topics.
 
+***
 
 ![Equation Speaks Louder Than Words](/images/logo1.png)
 ![Computability Is The Soul of Universe](/images/logo2.png)
+
+
 <!-- Getting started
 ======
 1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
