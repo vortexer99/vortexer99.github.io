@@ -42,7 +42,7 @@ Past-publications:
 
 RESEARCH EXPERIENCES
 ======
-**Predictability of the Martian atmosphere**
+**The Predictability Barrier of Martian Atmosphere and its Mechanism**
 
 2022/08 - present. IAP/CAS, China
 
