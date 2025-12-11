@@ -17,6 +17,6 @@ Under construction. Due to limited time, you can refer to the following file.
 * 2021 - Applied Mathematics for Undergraduate
 * 2024 - Net Exchange Matrix of Longwave Radiation
 * 2025 - EGB-SPG Framework for CNOP Calculation
-* 2025 - International Conference
+* 2025 - International Conferences (Under construction)
 ***
 

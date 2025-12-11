@@ -12,7 +12,7 @@ Under construction
 
 # 标签分类
 
-## 按类型分
+## 按类型分 (By type)
 
 · [index](/tags/#index)
 · [blogpost](/tags/#blogpost)
@@ -21,7 +21,9 @@ Under construction
 · [life-exp](/tags/#life-exp)
 · [tools](/tags/#tools)
 
-## 按内容分
+[课程作业的介绍 Introduction to **homework** type](/posts/2024/09/hmwkindex)
+
+## 按学科主题分 (By Subject)
 感觉还有点混乱，以后再整理整理
 
 · [mathematic](/tags/#mathematic)
@@ -47,7 +49,7 @@ Under construction
 · [optimization](/tags/#optimization)
 · [humanity](/tags/#humanity)
 
-## 按长度分
+## 按长度分 (By Length)
 · [1-5 Pages](/tags/#1-5-pages)
 · [6-10 Pages](/tags/#6-10-pages)
 · [11-30 Pages](/tags/#11-30-pages)
@@ -56,9 +58,11 @@ Under construction
 · [31-60 Slides](/tags/#31-60-slides)
 · [not in pages](/tags/#not-in-pages)
 
-## 按PIP分
+## 按PIP分 (By PIP)
 
 · [PIP-RANDPDE](/tags/#pip-randpde)
+
+[WHAT is PIP?](/pip)
 
 # 计划中 Planned
 计划中的意思就是我已经大概想好内容了，只不过一直没空写，但应该迟早会写的。

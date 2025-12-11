@@ -17,7 +17,7 @@ PIPs
 1. **Evolution equation simulation, but random variables**. 2024/09. **Still updating**.
   * PDE simulation, but initial value is randomly given according to certain distribution, what is the evolution of the distribution?
   * First diffusion eq. (Linear), then Bergers equation or Lorenz models (Nonlinear).
-  * Still learning mathematical tools.
+  * Still learning mathematical tools (So difficult!).
   * Currently start with ODE first.
   * See [Relevant blogposts](/tags/#pip-randpde).
 1. **Personal Website**. 2023/10. *Still updating*.
@@ -29,6 +29,10 @@ PIPs
   * Group management, integrate with Slurm system.
   * Also perform required actions for BV & RP & CNOP.
   * YAML for config settings, Shell and Python for actions.
+1. **Fast-changing BV tests**. 2023/12. *Mostly done, not continuing for now*.
+  * Simple models. If the fast-growing direction changes very fast, would BV able to catch up?
+  * Matlab for simulation.
+  * An interesting drawback of BV method is observed and studied when I apply BV and CNOP to Martian atmosphere. But I have not reproduced it in simple models.
 
 PIPs (Inactive)
 ======
@@ -36,9 +40,7 @@ PIPs (Inactive)
   * Calculation by tag-matching from provided settings. 
   * Vue.js for UI, JavaScript for core logic. YAML for storing data.
   * Deployed via GitHub Pages.
-1. **Fast-changing BV tests**. 2023/12. *Mostly done, not continuing for now*.
-  * Simple models. If the fast-growing direction changes very fast, would BV able to catch up?
-  * Matlab for simulation.
+
 1. **Element reaction simulator for Genshin Impact**. 2023/03. *Finish*.
   * Step forward in time to simulate state changes, given event series and rules.
   * wxPython for UI, matplotlib for display, Python for core logic. 
