@@ -1,6 +1,6 @@
 ---
 title: Blog
-view: article-grid
+view: date-title-summary
 aliases:
   - /year-archive/
 ---

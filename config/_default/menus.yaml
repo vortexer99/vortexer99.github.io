@@ -7,15 +7,18 @@ main:
   - name: Blog
     url: blog/
     weight: 20
+  - name: Tech
+    url: tech/
+    weight: 30
   - name: Gallery
     url: gallery/
-    weight: 30
+    weight: 40
   - name: Milestones
     url: milestones/
-    weight: 40
+    weight: 50
   - name: PIP
     url: pip/
-    weight: 50
+    weight: 60
   - name: CV
     url: cv/
-    weight: 60
+    weight: 70

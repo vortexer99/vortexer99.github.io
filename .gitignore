@@ -4,6 +4,9 @@ public/
 resources/
 .hugo_build.lock
 .codex_tmp_hugoblox/
+.codex_tmp_hugoblox_kit/
+.codex_tmp_llm_cabinet/
+.codex_tmp_github_radar/
 
 # Ignore the directory for local files during development
 local/

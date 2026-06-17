@@ -170,3 +170,126 @@ aside a,
   font-size: 0.9rem;
   line-height: 1.35;
 }
+
+.tech-showcase {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.tech-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid rgb(229 231 235);
+  border-radius: 8px;
+  background: rgb(255 255 255);
+}
+
+.dark .tech-card {
+  border-color: rgb(63 63 70);
+  background: rgb(24 24 27);
+}
+
+.tech-card__media {
+  display: block;
+  background: rgb(243 244 246);
+}
+
+.dark .tech-card__media {
+  background: rgb(39 39 42);
+}
+
+.tech-card__media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top left;
+}
+
+.tech-card__body {
+  padding: 1.1rem;
+}
+
+.tech-card__eyebrow {
+  margin: 0 0 0.35rem;
+  color: rgb(107 114 128);
+  font-size: 0.82rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.tech-card h2 {
+  margin: 0 0 0.55rem;
+  font-size: 1.15rem;
+  line-height: 1.3;
+}
+
+.tech-card h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.tech-card__body p {
+  color: rgb(75 85 99);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.dark .tech-card__body p {
+  color: rgb(212 212 216);
+}
+
+.tech-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.9rem;
+}
+
+.tech-card__tags span {
+  border: 1px solid rgb(229 231 235);
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+  color: rgb(75 85 99);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.dark .tech-card__tags span {
+  border-color: rgb(82 82 91);
+  color: rgb(212 212 216);
+}
+
+.tech-card__links {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.tech-card__links a {
+  color: rgb(37 99 235);
+  font-size: 0.92rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.tech-card__links a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+@media (min-width: 900px) {
+  .tech-card {
+    grid-template-columns: minmax(280px, 0.95fr) minmax(0, 1.05fr);
+  }
+
+  .tech-card__media img {
+    height: 100%;
+  }
+
+  .tech-card__body {
+    padding: 1.35rem;
+  }
+}
