@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Yi Zhuang site icon">
+  <rect width="512" height="512" rx="112" fill="#172033"/>
+  <circle cx="256" cy="256" r="118" fill="#d96b4c"/>
+  <path d="M156 222c48 24 122 30 196 10 4 20 2 42-6 64-78 18-154 10-203-22 0-18 4-36 13-52Z" fill="#f2a35f" opacity=".86"/>
+  <path d="M191 332c41 24 91 28 132 10-18 20-42 32-67 32-26 0-48-13-65-42Z" fill="#9d3f3f" opacity=".6"/>
+  <path d="M80 290c76 55 235 62 356 16" fill="none" stroke="#f3d9a5" stroke-width="30" stroke-linecap="round"/>
+  <path d="M80 290c76 55 235 62 356 16" fill="none" stroke="#172033" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="365" cy="158" r="20" fill="#f3d9a5"/>
+</svg>

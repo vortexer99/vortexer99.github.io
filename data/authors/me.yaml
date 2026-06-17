@@ -21,7 +21,7 @@ affiliations:
     url: https://iap.cas.cn/
 
 links:
-  - icon: at-symbol
+  - icon: envelope
     url: mailto:zhuangyi17@mails.ucas.ac.cn
     label: E-mail Me
   - icon: brands/github

@@ -138,7 +138,7 @@ jobs:
       run: |
         # Check if site uses Pagefind search
         if [ -f "package.json" ] && grep -q "pagefind" package.json; then
-          pnpm run pagefind || npx pagefind --site "public"
+          pnpm run pagefind || npx pagefind --site "public" --force-language zh
         fi
 
     - name: Upload artifact

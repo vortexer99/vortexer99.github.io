@@ -171,15 +171,81 @@ aside a,
   line-height: 1.35;
 }
 
+.tech-page {
+  margin-top: 1.35rem;
+}
+
+.tech-tab-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.tech-tabs {
+  display: inline-flex;
+  gap: 0.25rem;
+  border: 1px solid rgb(229 231 235);
+  border-radius: 8px;
+  padding: 0.25rem;
+  background: rgb(249 250 251);
+}
+
+.dark .tech-tabs {
+  border-color: rgb(63 63 70);
+  background: rgb(24 24 27);
+}
+
+.tech-tabs label {
+  min-width: 6.25rem;
+  border-radius: 6px;
+  padding: 0.42rem 0.8rem;
+  color: rgb(75 85 99);
+  cursor: pointer;
+  font-size: 0.92rem;
+  font-weight: 650;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.dark .tech-tabs label {
+  color: rgb(212 212 216);
+}
+
+#tech-view-projects:checked ~ .tech-tabs label[for="tech-view-projects"],
+#tech-view-notes:checked ~ .tech-tabs label[for="tech-view-notes"] {
+  background: rgb(255 255 255);
+  color: rgb(17 24 39);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.08);
+}
+
+.dark #tech-view-projects:checked ~ .tech-tabs label[for="tech-view-projects"],
+.dark #tech-view-notes:checked ~ .tech-tabs label[for="tech-view-notes"] {
+  background: rgb(39 39 42);
+  color: rgb(244 244 245);
+}
+
+.tech-panels {
+  margin-top: 1.35rem;
+}
+
+.tech-panel {
+  display: none;
+}
+
+#tech-view-projects:checked ~ .tech-panels .tech-panel--projects,
+#tech-view-notes:checked ~ .tech-panels .tech-panel--notes {
+  display: block;
+}
+
 .tech-showcase {
   display: grid;
   gap: 1.25rem;
-  margin-top: 1.5rem;
 }
 
 .tech-card {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
   overflow: hidden;
   border: 1px solid rgb(229 231 235);
   border-radius: 8px;
@@ -193,6 +259,8 @@ aside a,
 
 .tech-card__media {
   display: block;
+  overflow: hidden;
+  aspect-ratio: 3 / 2;
   background: rgb(243 244 246);
 }
 
@@ -203,13 +271,18 @@ aside a,
 .tech-card__media img {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 100%;
   object-fit: cover;
   object-position: top left;
+  transition: transform 0.2s ease-in-out;
+}
+
+.tech-card__media:hover img {
+  transform: scale(1.025);
 }
 
 .tech-card__body {
-  padding: 1.1rem;
+  padding: 1.15rem;
 }
 
 .tech-card__eyebrow {
@@ -241,14 +314,16 @@ aside a,
   color: rgb(212 212 216);
 }
 
-.tech-card__tags {
+.tech-card__tags,
+.tech-note__tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
   margin-top: 0.9rem;
 }
 
-.tech-card__tags span {
+.tech-card__tags span,
+.tech-note__tags span {
   border: 1px solid rgb(229 231 235);
   border-radius: 999px;
   padding: 0.2rem 0.55rem;
@@ -257,7 +332,8 @@ aside a,
   line-height: 1.35;
 }
 
-.dark .tech-card__tags span {
+.dark .tech-card__tags span,
+.dark .tech-note__tags span {
   border-color: rgb(82 82 91);
   color: rgb(212 212 216);
 }
@@ -268,28 +344,183 @@ aside a,
   margin-top: 1rem;
 }
 
+.tech-card__links a,
+.tech-note h2 a {
+  color: rgb(37 99 235);
+  font-weight: 650;
+  text-decoration: none;
+}
+
 .tech-card__links a {
+  font-size: 0.92rem;
+}
+
+.tech-card__links a:hover,
+.tech-note h2 a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.tech-notes {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid rgb(229 231 235);
+}
+
+.dark .tech-notes {
+  border-color: rgb(63 63 70);
+}
+
+.tech-note {
+  display: grid;
+  gap: 0.4rem;
+  border-bottom: 1px solid rgb(229 231 235);
+  padding: 1rem 0;
+}
+
+.dark .tech-note {
+  border-color: rgb(63 63 70);
+}
+
+.tech-note time {
+  color: rgb(107 114 128);
+  font-size: 0.84rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.tech-note h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.tech-note p {
+  margin: 0;
+  color: rgb(75 85 99);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.dark .tech-note p {
+  color: rgb(212 212 216);
+}
+
+@media (min-width: 900px) {
+  .tech-showcase {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tech-card__body {
+    padding: 1.25rem;
+  }
+
+  .tech-note {
+    grid-template-columns: 8.5rem minmax(0, 1fr);
+    column-gap: 1.25rem;
+  }
+
+  .tech-note h2,
+  .tech-note p,
+  .tech-note__tags {
+    grid-column: 2;
+  }
+
+  .tech-note time {
+    grid-row: 1 / span 3;
+  }
+}
+
+.tag-index__header,
+.tag-term__header {
+  margin-bottom: 1.75rem;
+}
+
+.tag-index__header h1,
+.tag-term__header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3.2vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.tag-index__intro,
+.tag-term__header p {
+  margin-top: 0.65rem;
+  color: rgb(75 85 99);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.dark .tag-index__intro,
+.dark .tag-term__header p {
+  color: rgb(212 212 216);
+}
+
+.tag-index__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.tag-index__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid rgb(229 231 235);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  background: rgb(255 255 255);
+  color: rgb(31 41 55);
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.tag-index__item:hover {
+  border-color: rgb(37 99 235);
+  color: rgb(37 99 235);
+}
+
+.dark .tag-index__item {
+  border-color: rgb(63 63 70);
+  background: rgb(24 24 27);
+  color: rgb(228 228 231);
+}
+
+.tag-index__item small {
+  display: inline-flex;
+  min-width: 1.35rem;
+  height: 1.35rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgb(243 244 246);
+  color: rgb(75 85 99);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.dark .tag-index__item small {
+  background: rgb(39 39 42);
+  color: rgb(212 212 216);
+}
+
+.tag-term__back {
+  display: inline-block;
+  margin-bottom: 0.7rem;
   color: rgb(37 99 235);
   font-size: 0.92rem;
   font-weight: 650;
   text-decoration: none;
 }
 
-.tech-card__links a:hover {
+.tag-term__back:hover {
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
 
-@media (min-width: 900px) {
-  .tech-card {
-    grid-template-columns: minmax(280px, 0.95fr) minmax(0, 1.05fr);
-  }
-
-  .tech-card__media img {
-    height: 100%;
-  }
-
-  .tech-card__body {
-    padding: 1.35rem;
-  }
+.tag-term__posts {
+  margin-top: 1.25rem;
 }
