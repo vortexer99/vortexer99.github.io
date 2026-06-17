@@ -5,11 +5,10 @@ aliases:
   - /projects/
 ---
 
-# What is PIP？
+## What is PIP?
 **A Personal Interest Project (PIP) is a self-driven exploration fueled by curiosity and passion, much like an intellectual hobby.** These projects allow me to dive deep into **new mathematical concepts, programming frameworks, or other technical topics** that capture my interest. While I may seek guidance or discussions with others, the core work is independently pursued. Given their exploratory nature, these projects often demand sustained effort—sometimes spanning weeks of focused work or evolving intermittently over years. Each PIP serves as a testament to self-directed learning, persistence, and the joy of discovery.
 
-PIPs
-======
+## PIPs
 1. **Simple model for Atmosphere**. TBD. *Concept*.
   * Dynamical core + Radiative transfer. Study atmosphere dynamics under various conditions.
   * Python for simulations, which may make it easier for grad-calc in CNOP.
@@ -33,8 +32,7 @@ PIPs
   * Matlab for simulation.
   * An interesting drawback of BV method is observed and studied when I apply BV and CNOP to Martian atmosphere. But I have not reproduced it in simple models.
 
-PIPs (Inactive)
-======
+## PIPs (Inactive)
 1. **Damage calculator for Honkai Impact 3**. 2024/04. *Finish*.
   * Calculation by tag-matching from provided settings. 
   * Vue.js for UI, JavaScript for core logic. YAML for storing data.

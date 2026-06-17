@@ -11,16 +11,14 @@ aliases:
 
 [PDF version](/files/resume-en.pdf)
 
-EDUCATION
-======
+## Education
 
 * **Ph.D in Meteorology**, IAP/CAS, 2026 (expected)
 * **B.S. in Theoretical and Applied Mechanics**, University of Chinese Academy of Sciences, 2021
 * **Exchange student**, UC Berkeley, 2020 Spring
 * Hang Zhou No.4 High school 2014-2017
 
-PUBLICATIONS
-======
+## Publications
 First-authored:
 1. Yi Zhuang, Wanduo Duan\*, Li Dong. **Season-dependent Weather predictability barrier phenomenon in the Martian atmosphere**, *Journal of Geophysical Research: Planets*, Under Consideration.
 
@@ -37,8 +35,7 @@ Past-publications:
 
 ***
 
-RESEARCH EXPERIENCES
-======
+## Research Experiences
 **The Predictability Barrier of Martian Atmosphere and its Mechanism**
 
 2022/08 - present. IAP/CAS, China
@@ -71,8 +68,7 @@ Advisor: [Prof. Zhan Wang](https://imech.cas.cn/people/zgj/default_94777.html?id
 
 ***
 
-CONFERENCES
-======
+## Conferences
 Major (for career):
 1. **Mars Through Time**. 2025/10. Paris, France. *poster*. Yi Zhuang, Wansuo Duan* and Li Dong. **Season-dependent Weather Predictability Barrier (S-WPB) phenomenon in the Martian atmosphere**.
 1. **第八届“非线性大气-海洋科学研讨会”**. 2025/08. 中国·内蒙古. *Outstanding poster (6/32)*. 庄逸, 段晚锁*, 董理. **火星大气的季节性天气可预报性障碍现象**.
@@ -96,8 +92,7 @@ Minor (for career)：
 
 ***
 
-PROFESSIONAL SKILLS
-======
+## Professional Skills
 * **Conduct Experiments with LMD Mars Planetary Climate Model**
   * Develop Python and Shell scripts or modify model codes to achieve diverse objectives.
   * Develop simple assimilation scheme and EGB-SPG optimization program for CNOP calculation.
@@ -116,8 +111,7 @@ PROFESSIONAL SKILLS
 
 ***
 
-SELECTED AWARDS AND HONORS
-======
+## Selected Awards and Honors
 1. Merit Student of University of Chinese Academy of Sciences (UCAS) in 2024 & 2019
 1. Outstanding President of the LASG Student Union Presidium in 2024
 1. Freshman Scholarship of IAP-CAS in 2020
@@ -126,16 +120,14 @@ SELECTED AWARDS AND HONORS
 
 ***
 
-TRANSFERRABLE SKILLS
-======
+## Transferrable Skills
 1. Managed research group’s multimedia equipment to ensure seamless hybrid (online/offline) meetings.
 1. Assisted in hosting 3 visiting international scholars, coordinating their tours and gift exchanges.
 1. As a member of the LASG Student Union Presidium, lead information collection and equipment man-
 agement for commencement ceremonies and graduate academic forums.
 1. Participate in conference logistics including registration, materials distribution, and poster mounting.
 
-HOBBYS
-======
+## Hobbies
 * **Personal interest projects (See [PIP](/pip/))**
   * Numerical Modeling, simulations, optimizations
   * Programming techniques
