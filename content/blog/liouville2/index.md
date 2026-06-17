@@ -19,7 +19,7 @@ topics:
   - ensemble-forecasting
   - linear-algebra
   - nonlinear-dynamics
-projects:
+project_tags:
   - pip-randpde
 lengths:
   - 11-30-pages

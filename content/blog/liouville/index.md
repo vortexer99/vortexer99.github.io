@@ -17,7 +17,7 @@ topics:
   - dynamical-systems
   - ensemble-forecasting
   - linear-algebra
-projects:
+project_tags:
   - pip-randpde
 lengths:
   - 11-30-pages

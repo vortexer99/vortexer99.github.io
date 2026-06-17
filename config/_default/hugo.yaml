@@ -56,7 +56,7 @@ taxonomies:
   tag: tags
   content_type: types
   topic: topics
-  project: projects
+  project_tag: project_tags
   length: lengths
   publication_type: publication_types
 markup:

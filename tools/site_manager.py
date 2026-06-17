@@ -144,7 +144,7 @@ EDITABLE_ORDER = [
     "tags",
     "types",
     "topics",
-    "projects",
+    "project_tags",
     "lengths",
     "authors",
     "aliases",
@@ -525,6 +525,9 @@ class SiteManager(QMainWindow):
         )
 
     def reload(self) -> None:
+        if self.dirty and not self.confirm_discard_changes():
+            return
+        self.set_dirty(False)
         self.items = scan_content(ROOT)
         self.populate_filters()
         self.apply_filters()
@@ -638,7 +641,10 @@ class SiteManager(QMainWindow):
     def show_current(self, row: int) -> None:
         if row < 0 or row >= len(self.filtered):
             return
-        if self.current and self.dirty:
+        target = self.filtered[row]
+        if self.current and self.dirty and target.rel_path == self.current.rel_path:
+            return
+        if self.current and self.dirty and target.rel_path != self.current.rel_path:
             previous = self.current.rel_path
             if not self.confirm_discard_changes():
                 previous_row = next((i for i, item in enumerate(self.filtered) if item.rel_path == previous), -1)
@@ -647,7 +653,7 @@ class SiteManager(QMainWindow):
                     self.item_list.setCurrentRow(previous_row)
                     self.item_list.blockSignals(False)
                 return
-        self.current = self.filtered[row]
+        self.current = target
         self.detail_title.setText(self.current.title or self.current.rel_path)
         self.detail_browser.setHtml(detail_html(self.current))
         self.load_editor(self.current)
@@ -666,18 +672,160 @@ class SiteManager(QMainWindow):
         if not QDesktopServices.openUrl(QUrl(url)):
             webbrowser.open(url)
 
+    def load_editor(self, item: ContentItem) -> None:
+        self.loading_editor = True
+        self.title_edit.setText(item.title)
+        self.date_edit.setText(item.date)
+        self.url_edit.setText(item.url)
+        self.authors_edit.setText(list_to_text(item.authors))
+        self.tags_edit.setText(list_to_text(item.tags))
+        self.types_edit.setText(list_to_text(item.types))
+        self.topics_edit.setText(list_to_text(item.topics))
+        self.projects_edit.setText(list_to_text(item.projects))
+        self.lengths_edit.setText(list_to_text(item.lengths))
+        self.aliases_edit.setText(list_to_text(item.aliases))
+        self.page_type_edit.setText(item.content_type)
+        self.body_edit.setPlainText(item.body)
+
+        for widget in [
+            self.title_edit,
+            self.date_edit,
+            self.url_edit,
+            self.authors_edit,
+            self.tags_edit,
+            self.types_edit,
+            self.topics_edit,
+            self.projects_edit,
+            self.lengths_edit,
+            self.aliases_edit,
+            self.page_type_edit,
+            self.body_edit,
+            self.normalize_button,
+            self.save_button,
+            self.revert_button,
+        ]:
+            widget.setEnabled(item.editable)
+        self.save_action.setEnabled(item.editable)
+        self.revert_action.setEnabled(item.editable)
+
+        self.loading_editor = False
+        self.set_dirty(False)
+        if not item.editable:
+            self.status.showMessage("This page has complex front matter; use Open File for manual edits.", 4000)
+
+    def clear_editor(self) -> None:
+        self.loading_editor = True
+        for widget in [
+            self.title_edit,
+            self.date_edit,
+            self.url_edit,
+            self.authors_edit,
+            self.tags_edit,
+            self.types_edit,
+            self.topics_edit,
+            self.projects_edit,
+            self.lengths_edit,
+            self.aliases_edit,
+            self.page_type_edit,
+        ]:
+            widget.clear()
+            widget.setEnabled(False)
+        self.body_edit.clear()
+        self.body_edit.setEnabled(False)
+        self.normalize_button.setEnabled(False)
+        self.save_button.setEnabled(False)
+        self.revert_button.setEnabled(False)
+        self.save_action.setEnabled(False)
+        self.revert_action.setEnabled(False)
+        self.loading_editor = False
+        self.set_dirty(False)
+
+    def mark_dirty(self) -> None:
+        if not self.loading_editor and self.current and self.current.editable:
+            self.set_dirty(True)
+
+    def set_dirty(self, dirty: bool) -> None:
+        self.dirty = dirty
+        suffix = " *" if dirty else ""
+        if self.current:
+            self.detail_title.setText((self.current.title or self.current.rel_path) + suffix)
+
+    def confirm_discard_changes(self) -> bool:
+        result = QMessageBox.question(
+            self,
+            "Unsaved changes",
+            "Discard unsaved changes to the current file?",
+            QMessageBox.Discard | QMessageBox.Cancel,
+            QMessageBox.Cancel,
+        )
+        return result == QMessageBox.Discard
+
+    def normalize_current_taxonomy(self) -> None:
+        tags = text_to_list(self.tags_edit.text())
+        self.types_edit.setText(list_to_text(map_tags(tags, TYPE_TAGS)))
+        self.topics_edit.setText(list_to_text(map_tags(tags, TOPIC_TAGS)))
+        self.projects_edit.setText(list_to_text(map_tags(tags, PROJECT_TAGS)))
+        self.lengths_edit.setText(list_to_text(map_tags(tags, LENGTH_TAGS)))
+        self.set_dirty(True)
+
+    def revert_current(self) -> None:
+        if self.current:
+            self.load_editor(self.current)
+            self.detail_browser.setHtml(detail_html(self.current))
+            self.status.showMessage("Reverted editor fields", 3000)
+
+    def save_current(self) -> None:
+        if not self.current:
+            return
+        if not self.current.editable:
+            QMessageBox.information(
+                self,
+                "Read-only page",
+                "This page has complex front matter. Open the file and edit it manually.",
+            )
+            return
+
+        meta = parse_simple_yaml(self.current.raw_front_matter)
+        set_meta_scalar(meta, "title", self.title_edit.text())
+        set_meta_scalar(meta, "date", self.date_edit.text())
+        set_meta_scalar(meta, "url", self.url_edit.text())
+        set_meta_list(meta, "tags", text_to_list(self.tags_edit.text()))
+        set_meta_list(meta, "types", text_to_list(self.types_edit.text()))
+        set_meta_list(meta, "topics", text_to_list(self.topics_edit.text()))
+        set_meta_list(meta, "project_tags", text_to_list(self.projects_edit.text()))
+        set_meta_list(meta, "lengths", text_to_list(self.lengths_edit.text()))
+        set_meta_list(meta, "authors", text_to_list(self.authors_edit.text()))
+        set_meta_list(meta, "aliases", text_to_list(self.aliases_edit.text()))
+        set_meta_scalar(meta, "type", self.page_type_edit.text())
+
+        body = self.body_edit.toPlainText()
+        new_text = "---\n" + serialize_front_matter(meta) + "---\n\n" + body.lstrip("\n")
+        self.current.path.write_text(new_text, encoding="utf-8", newline="\n")
+        self.set_dirty(False)
+        selected_path = self.current.rel_path
+        self.reload()
+        for row, item in enumerate(self.filtered):
+            if item.rel_path == selected_path:
+                self.item_list.setCurrentRow(row)
+                break
+        self.status.showMessage(f"Saved {selected_path}", 5000)
+
 
 def scan_content(root: Path) -> list[ContentItem]:
-    tech_note_urls = parse_tech_note_urls(root / "content" / "tech" / "index.md")
+    tech_note_urls = parse_tech_note_urls(root / "content" / "tech" / "_index.md")
     items: list[ContentItem] = []
     for path in sorted((root / "content").rglob("*.md")):
         if path.name.startswith("."):
             continue
         text = read_text(path)
-        meta, body = split_front_matter(text)
+        meta, body, raw_front_matter = split_front_matter(text)
         section = content_section(root, path)
         url = str(meta.get("url") or infer_url(root, path, section))
         tags = as_list(meta.get("tags"))
+        types = as_list(meta.get("types"))
+        topics = as_list(meta.get("topics"))
+        projects = as_list(meta.get("project_tags"))
+        lengths = as_list(meta.get("lengths"))
         aliases = as_list(meta.get("aliases"))
         authors = as_list(meta.get("authors"))
         title = str(meta.get("title") or fallback_title(path))
@@ -693,12 +841,18 @@ def scan_content(root: Path) -> list[ContentItem]:
                 rel_path=rel_path,
                 url=url,
                 tags=tags,
+                types=types,
+                topics=topics,
+                projects=projects,
+                lengths=lengths,
                 authors=authors,
                 aliases=aliases,
                 content_type=str(meta.get("type") or ""),
                 summary=summary,
                 body=body,
                 in_tech_notes=url in tech_note_urls,
+                raw_front_matter=raw_front_matter,
+                editable=is_simple_front_matter(raw_front_matter),
             )
         )
     return items
@@ -713,13 +867,14 @@ def parse_tech_note_urls(path: Path) -> set[str]:
     return {normalize_site_url(url) for url in urls}
 
 
-def split_front_matter(text: str) -> tuple[dict[str, object], str]:
+def split_front_matter(text: str) -> tuple[dict[str, object], str, str]:
     if not text.startswith("---"):
-        return {}, text
+        return {}, text, ""
     match = re.match(r"^---\s*\n(.*?)\n---\s*\n?(.*)$", text, flags=re.S)
     if not match:
-        return {}, text
-    return parse_simple_yaml(match.group(1)), match.group(2)
+        return {}, text, ""
+    raw_front_matter = match.group(1)
+    return parse_simple_yaml(raw_front_matter), match.group(2), raw_front_matter
 
 
 def parse_simple_yaml(raw: str) -> dict[str, object]:
@@ -749,6 +904,20 @@ def parse_simple_yaml(raw: str) -> dict[str, object]:
     return result
 
 
+def is_simple_front_matter(raw: str) -> bool:
+    if not raw.strip():
+        return False
+    for line in raw.splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
+            continue
+        if re.match(r"^\s{4,}\S", line):
+            return False
+        if re.match(r"^[A-Za-z_][\w-]*:\s*(\|-?|\>-?)\s*$", line):
+            return False
+    return True
+
+
 def clean_scalar(value: str) -> str:
     value = value.strip()
     if len(value) >= 2 and value[0] == value[-1] and value[0] in ("'", '"'):
@@ -766,6 +935,68 @@ def as_list(value: object) -> list[str]:
             return []
         return [part.strip() for part in re.split(r"[,，;；]", value) if part.strip()]
     return [str(value)]
+
+
+def list_to_text(values: list[str]) -> str:
+    return ", ".join(values)
+
+
+def text_to_list(value: str) -> list[str]:
+    return unique_list(part.strip() for part in re.split(r"[,，;；]\s*", value) if part.strip())
+
+
+def unique_list(values) -> list[str]:
+    seen = set()
+    result = []
+    for value in values:
+        if value not in seen:
+            seen.add(value)
+            result.append(value)
+    return result
+
+
+def map_tags(tags: list[str], mapping: dict[str, str]) -> list[str]:
+    return unique_list(mapping[tag] for tag in tags if tag in mapping)
+
+
+def set_meta_scalar(meta: dict[str, object], key: str, value: str) -> None:
+    value = value.strip()
+    if value:
+        meta[key] = value
+    else:
+        meta.pop(key, None)
+
+
+def set_meta_list(meta: dict[str, object], key: str, values: list[str]) -> None:
+    if values:
+        meta[key] = values
+    else:
+        meta.pop(key, None)
+
+
+def serialize_front_matter(meta: dict[str, object]) -> str:
+    keys = [key for key in EDITABLE_ORDER if key in meta]
+    keys.extend(key for key in meta if key not in keys)
+    lines: list[str] = []
+    for key in keys:
+        value = meta[key]
+        if isinstance(value, list):
+            if not value:
+                continue
+            lines.append(f"{key}:")
+            lines.extend(f"  - {yaml_scalar(str(item))}" for item in value)
+        elif value not in (None, ""):
+            lines.append(f"{key}: {yaml_scalar(str(value))}")
+    return "\n".join(lines) + "\n"
+
+
+def yaml_scalar(value: str) -> str:
+    if value == "":
+        return "''"
+    if re.match(r"^[A-Za-z0-9_./@+-]+$", value):
+        return value
+    escaped = value.replace("'", "''")
+    return f"'{escaped}'"
 
 
 def read_text(path: Path) -> str:
@@ -824,6 +1055,10 @@ def item_matches_query(item: ContentItem, query: str) -> bool:
             item.url,
             item.summary,
             " ".join(item.tags),
+            " ".join(item.types),
+            " ".join(item.topics),
+            " ".join(item.projects),
+            " ".join(item.lengths),
             " ".join(item.authors),
         ]
     ).lower()
@@ -846,7 +1081,8 @@ def parse_date(value: str) -> datetime | None:
 
 
 def format_list_label(item: ContentItem) -> str:
-    tags = ", ".join(item.tags[:3]) if item.tags else "no tags"
+    taxonomy = item.topics or item.types or item.tags
+    tags = ", ".join(taxonomy[:3]) if taxonomy else "no taxonomy"
     date = item.date or "no date"
     return f"{item.title}\n{date} / {tags}"
 
@@ -854,20 +1090,27 @@ def format_list_label(item: ContentItem) -> str:
 def build_stats_text(all_items: list[ContentItem], filtered: list[ContentItem]) -> str:
     sections: dict[str, int] = {}
     tag_count = 0
+    topic_count = 0
     for item in all_items:
         sections[item.display_section] = sections.get(item.display_section, 0) + 1
         tag_count += len(item.tags)
+        topic_count += len(item.topics)
     section_text = "\n".join(f"{name}: {count}" for name, count in sorted(sections.items()))
     return (
         f"Total files: {len(all_items)}\n"
         f"Filtered: {len(filtered)}\n"
-        f"Tag assignments: {tag_count}\n\n"
+        f"Legacy tag assignments: {tag_count}\n"
+        f"Topic assignments: {topic_count}\n\n"
         f"{section_text}"
     )
 
 
 def detail_html(item: ContentItem) -> str:
     tags = ", ".join(item.tags) or "None"
+    types = ", ".join(item.types) or "None"
+    topics = ", ".join(item.topics) or "None"
+    projects = ", ".join(item.projects) or "None"
+    lengths = ", ".join(item.lengths) or "None"
     authors = ", ".join(item.authors) or "None"
     aliases = ", ".join(item.aliases) or "None"
     preview = html.escape(markdown_summary(item.body, max_chars=1200)).replace("\n", "<br>")
@@ -922,13 +1165,18 @@ def detail_html(item: ContentItem) -> str:
     <table>
       <tr><td>Section</td><td>{html.escape(item.display_section)}</td></tr>
       <tr><td>Date</td><td>{html.escape(item.date or "None")}</td></tr>
-      <tr><td>Tags</td><td>{html.escape(tags)}</td></tr>
+      <tr><td>Legacy tags</td><td>{html.escape(tags)}</td></tr>
+      <tr><td>Types</td><td>{html.escape(types)}</td></tr>
+      <tr><td>Topics</td><td>{html.escape(topics)}</td></tr>
+      <tr><td>Projects</td><td>{html.escape(projects)}</td></tr>
+      <tr><td>Lengths</td><td>{html.escape(lengths)}</td></tr>
       <tr><td>Authors</td><td>{html.escape(authors)}</td></tr>
-      <tr><td>Type</td><td>{html.escape(item.content_type or "None")}</td></tr>
+      <tr><td>Page type</td><td>{html.escape(item.content_type or "None")}</td></tr>
       <tr><td>URL</td><td><a href="{html.escape(item.url)}">{html.escape(item.url or "None")}</a></td></tr>
       <tr><td>Aliases</td><td>{html.escape(aliases)}</td></tr>
       <tr><td>File</td><td>{html.escape(item.rel_path)}</td></tr>
       <tr><td>Size</td><td>{body_lines} lines / {body_chars} chars</td></tr>
+      <tr><td>Editable</td><td>{"Yes" if item.editable else "Open file manually"}</td></tr>
     </table>
     <h2>Content Preview</h2>
     <div class="preview">{preview or "No preview text."}</div>
@@ -938,6 +1186,31 @@ def detail_html(item: ContentItem) -> str:
 def restore_combo(combo: QComboBox, value: object) -> None:
     index = combo.findData(value)
     combo.setCurrentIndex(index if index >= 0 else 0)
+
+
+def populate_value_filter(
+    combo: QComboBox,
+    all_label: str,
+    empty_label: str,
+    values: list[str],
+    current_value: object,
+) -> None:
+    combo.blockSignals(True)
+    combo.clear()
+    combo.addItem(all_label, "all")
+    combo.addItem(empty_label, "__empty__")
+    for value in values:
+        combo.addItem(value, value)
+    restore_combo(combo, current_value)
+    combo.blockSignals(False)
+
+
+def filter_by_list_value(items: list[ContentItem], value: object, attr: str) -> list[ContentItem]:
+    if value == "__empty__":
+        return [item for item in items if not getattr(item, attr)]
+    if value and value != "all":
+        return [item for item in items if value in getattr(item, attr)]
+    return items
 
 
 def preferred_font_family() -> str:

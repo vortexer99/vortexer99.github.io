@@ -4,7 +4,7 @@ date: 2025-04-15
 url: /posts/2025/04/srun/
 tags:
   - Blogpost
-  - Software Engineering
+  - 'Software Engineering'
   - not-in-pages
 types:
   - blogpost

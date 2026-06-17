@@ -5,4 +5,4 @@ aliases:
   - /year-archive/
 ---
 
-[Types](/types/) · [Topics](/topics/) · [Projects](/projects/) · [Lengths](/lengths/) · [Legacy tags](/tags/)
+[Types](/types/) · [Topics](/topics/) · [Projects](/project_tags/) · [Lengths](/lengths/) · [Legacy tags](/tags/)

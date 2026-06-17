@@ -67,7 +67,7 @@ This is a complete archive of my blog posts. The content primarily covers course
 
 ## 按PIP分 (By PIP)
 
-· [PIP-RANDPDE](/projects/pip-randpde/)
+· [PIP-RANDPDE](/project_tags/pip-randpde/)
 
 [WHAT is PIP?](/pip)
 
