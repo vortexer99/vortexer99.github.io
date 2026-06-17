@@ -2,35 +2,49 @@
 layout: default
 ---
 
-<h1>{{ page.title }}</h1>
+{% include base_path %}
 
-<div class="gallery">
-  {% for image in site.static_files %}
-    {% if image.path contains page.gallery_folder %}
-      <div class="gallery-item">
-        <a href="{{ image.path }}" data-lightbox="gallery">
-          <img src="{{ image.path }}" alt="{{ image.basename }}">
-        </a>
-        <p>{{ image.basename }}</p>
-      </div>
-    {% endif %}
-  {% endfor %}
+{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
+  {% include page__hero.html %}
+{% endif %}
+
+{% if page.url != "/" and site.breadcrumbs %}
+  {% unless paginator %}
+    {% include breadcrumbs.html %}
+  {% endunless %}
+{% endif %}
+
+<div id="main" role="main">
+  {% include sidebar.html %}
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+
+    <div class="page__inner-wrap">
+      {% unless page.header.overlay_color or page.header.overlay_image %}
+        <header>
+          {% if page.title %}<h1 class="page__title" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
+        </header>
+      {% endunless %}
+
+      <section class="page__content" itemprop="text">
+        {{ content }}
+
+        <div class="gallery-grid">
+          {% assign gallery_images = site.static_files | sort: "path" %}
+          {% for image in gallery_images %}
+            {% if image.path contains page.gallery_folder %}
+              <figure class="gallery-grid__item">
+                <a href="{{ image.path | prepend: base_path }}">
+                  <img src="{{ image.path | prepend: base_path }}" alt="{{ image.basename }}">
+                </a>
+                <figcaption>{{ image.basename }}</figcaption>
+              </figure>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </section>
+    </div>
+  </article>
 </div>
-
-<style>
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 15px;
-  padding: 15px;
-}
-.gallery-item img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  transition: transform 0.3s;
-}
-.gallery-item img:hover {
-  transform: scale(1.05);
-}
-</style>
