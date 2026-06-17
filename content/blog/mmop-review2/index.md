@@ -1,4 +1,4 @@
-﻿---
+---
 title: '数理方法期中复习-常微分方程与偏微分方程'
 date: 2019-01-13
 url: /posts/2019/01/mmop-review/
@@ -18,5 +18,3 @@ authors:
 第一版于 2019 年 1 月完成。
 
 [Click to download](/files/lecnote/rommop-2.pdf)
-
-

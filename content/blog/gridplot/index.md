@@ -1,4 +1,4 @@
-﻿---
+---
 title: '庄啾的格点绘图助手'
 date: 2018-12-24
 url: /posts/2018/12/gridplot/
@@ -15,4 +15,3 @@ authors:
 使用时填入真实数据值，然后填入你想让最小和最大的真实数据对应几格就行。如果不符合要求，还能手动指定每格代表多少之类的来调整。
 
 [Click to download](/files/blog/gridplot.xlsx)
-

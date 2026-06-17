@@ -1,4 +1,4 @@
-﻿---
+---
 title: '数学分析2期末复习'
 date: 2018-07-01
 url: /posts/2018/07/mareview/
@@ -15,5 +15,3 @@ authors:
 矢量分析，曲线和曲面积分，极限过渡
 
 [Click to download](/files/blog/ma-review.pdf)
-
-

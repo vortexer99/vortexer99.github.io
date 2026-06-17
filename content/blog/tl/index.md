@@ -1,4 +1,4 @@
-﻿---
+---
 title: '科研数据记录与存储的细节问题分析'
 date: 2021-10-17
 url: /posts/2021/10/tl/
@@ -13,5 +13,3 @@ authors:
 《学术道德与学术写作-通论》课程作业。
 
 [Click to download](/files/hw/tl.pdf)
-
-

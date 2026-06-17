@@ -1,4 +1,4 @@
-﻿---
+---
 title: '着陆阶段垂直气流对无动力返回舱的影响'
 date: 2019-01-16
 url: /posts/2019/01/introeng/
@@ -17,5 +17,3 @@ authors:
 并议空天往返运输系统伞降返回舱配备动力的必要性与注意点。
 
 [Click to download](/files/hw/introeng.pdf)
-
-

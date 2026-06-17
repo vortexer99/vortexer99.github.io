@@ -1,4 +1,4 @@
-﻿---
+---
 title: '2020春伯克利访学记'
 date: 2020-05-25
 url: /posts/2020/05/ucb/
@@ -13,4 +13,3 @@ authors:
 介绍了2020年春季在伯克利访学一学期的见闻，包括出行前准备，上课吃饭等。
 
 [Click to download](/files/blog/200525UCB.pdf)
-

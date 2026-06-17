@@ -1,4 +1,4 @@
-﻿---
+---
 title: '数理方法期中复习-复变函数部分'
 date: 2018-11-11
 url: /posts/2018/11/mmop-review/
@@ -15,5 +15,3 @@ authors:
 崇试《数学物理方法》。大家可以自行保存食用，转载请注明来源，网址即可。
 
 [Click to download](/files/lecnote/rommop-1.pdf)
-
-

@@ -1,4 +1,4 @@
-﻿---
+---
 title: 'LMD MARS PCM相关整理'
 date: 2022-09-01
 url: /posts/2022/09/lmdmars/
@@ -13,4 +13,3 @@ authors:
 如题，使用notion记录整理。
 
 [Click to view](https://vortexer.notion.site/LMDZ-MARS-fac926c6cd484f6185fb1233a9b31a2d)
-

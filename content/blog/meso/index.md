@@ -1,4 +1,4 @@
-﻿---
+---
 title: '中小尺度天气学整理'
 date: 2022-01-01
 url: /posts/2022/01/meso/
@@ -14,5 +14,3 @@ authors:
 2021年秋季学期，基于《中小尺度天气学》课程中高守亭老师，冉令坤老师主讲部分内容整理而成。
 
 [Click to download](/files/lecnote/meso.pdf)
-
-

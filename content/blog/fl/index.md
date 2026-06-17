@@ -1,4 +1,4 @@
-﻿---
+---
 title: '论文精读：非线性奇异强迫向量在二维准地转模型中的应用'
 date: 2021-10-20
 url: /posts/2021/10/fl/
@@ -12,5 +12,3 @@ authors:
 《学术道德与学术写作-分论》课程作业。
 
 [Click to download](/files/hw/fl.pdf)
-
-

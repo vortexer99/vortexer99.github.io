@@ -1,4 +1,4 @@
-﻿---
+---
 title: '非线性海洋内波致流的物质输运能力探究'
 date: 2021-01-12
 url: /posts/2021/01/internalwave/
@@ -16,5 +16,3 @@ authors:
 十分感谢王老师。
 
 [Click to download](/files/hw/kysj.pdf)
-
-

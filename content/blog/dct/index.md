@@ -1,4 +1,4 @@
-﻿---
+---
 title: '组合求和对偶定理及其应用'
 date: 2018-10-18
 url: /posts/2018/10/dct
@@ -21,5 +21,3 @@ authors:
 没错，定理名字又是我自己取的，因为我还没在什么资料上见过。
 
 [Click to download](/files/blog/181018dct.pdf)
-
-

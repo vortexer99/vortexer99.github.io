@@ -1,4 +1,4 @@
-﻿---
+---
 title: 'Personal Interest Projects'
 date: 2026-06-17
 aliases:
@@ -53,5 +53,3 @@ PIPs (Inactive)
   * “高中数学学习参考” or 《学霸带你玩转高中数学》
   * Word for formatting. 
 ***
-
-

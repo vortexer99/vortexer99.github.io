@@ -1,4 +1,4 @@
-﻿---
+---
 title: '引力模型下的粒子空间分布问题'
 date: 2020-01-03
 url: /posts/2020/01/particles/
@@ -15,5 +15,3 @@ authors:
 
 [Click to download](/files/hw/particles.pdf)
 [Click to download slides](/files/hw/particlesslide.pdf)
-
-

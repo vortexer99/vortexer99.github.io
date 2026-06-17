@@ -1,4 +1,4 @@
-﻿---
+---
 title: 'Liouville 方程的导出及一些性质讨论'
 date: 2025-03-24
 url: /posts/2025/03/liouville/

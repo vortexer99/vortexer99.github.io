@@ -1,4 +1,4 @@
-﻿---
+---
 title: '金工实习新闻稿'
 date: 2020-01-04
 url: /posts/2020/01/jgsx/
@@ -15,5 +15,3 @@ authors:
 之前经编辑同学加工后发在学校公众号上，但是我一时半会找不着链接了，谁找到了可以email我一下。
 
 [Click to download](/files/blog/jgsx.pdf)
-
-

@@ -1,4 +1,4 @@
-﻿---
+---
 title: '基础物理实验报告集'
 date: 2019-01-22
 url: /posts/2019/01/phyexp/
@@ -66,5 +66,3 @@ authors:
 报告的逐渐发展进步，更具有意义。
 
 [Click to download](/files/lecnote/physical-exps.pdf)
-
-

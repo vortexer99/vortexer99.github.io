@@ -1,4 +1,4 @@
-﻿---
+---
 title: '一定个数事件发生的概率上界估计'
 date: 2018-09-28
 url: /posts/2018/09/epub/
@@ -16,5 +16,3 @@ authors:
 求证：至少有 k 个事件发生的概率不大于 pk/k!
 
 [Click to download](/files/blog/180928eventpub.pdf)
-
-

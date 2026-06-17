@@ -1,6 +1,6 @@
-﻿---
+---
 title: '新老生经验交流会：创新学习方式经验'
-date: 2018-09-16  
+date: 2018-09-16
 url: /posts/2018/09/jiaoliuhui/
 tags:
   - Blogpost
@@ -16,5 +16,3 @@ authors:
 [Click to download PPT](/files/blog/180916jiaoliuhui-ppt.pdf)
 
 [Click to download Lines](/files/blog/180916jiaoliuhui-lines.pdf)
-
-

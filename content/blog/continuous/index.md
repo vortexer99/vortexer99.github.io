@@ -1,4 +1,4 @@
-﻿---
+---
 title: '连续介质力学笔记'
 date: 2019-02-25
 url: /posts/2019/02/continous
@@ -18,5 +18,3 @@ authors:
 完善度较低。
 
 [Click to download](/files/lecnote/continuousmedium.pdf)
-
-

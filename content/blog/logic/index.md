@@ -1,4 +1,4 @@
-﻿---
+---
 title: '信息的发展演变：认知模态逻辑与归纳谜题'
 date: 2022-05-04
 url: /posts/2022/05/logic/
@@ -36,5 +36,3 @@ authors:
 6.2 引言中命题的证明过程
 
 [Click to download](/files/hw/logic.pdf)
-
-

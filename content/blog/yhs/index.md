@@ -1,4 +1,4 @@
-﻿---
+---
 title: '隐函数求导技巧'
 date: 2019-08-16
 url: /posts/2019/08/yhs/
@@ -17,6 +17,3 @@ $$
 $$
 
 [Click to download](/files/blog/190816yinhanshu.pdf)
-
-
-

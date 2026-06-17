@@ -1,4 +1,4 @@
-﻿---
+---
 title: 'Environmental fluid Lecnote'
 date: 2020-02-01
 url: /posts/2020/02/envflow/
@@ -16,5 +16,3 @@ authors:
 可惜因为疫情，只旁听了半截。
 
 [Click to download](/files/lecnote/EnvironmentalFluidNote.pdf)
-
-

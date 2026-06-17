@@ -1,4 +1,4 @@
-﻿---
+---
 title: '《世说新语》中魏晋士人傲娇之处析评'
 date: 2018-06-20
 url: /posts/2018/06/ssxy/
@@ -21,5 +21,3 @@ authors:
 当今社会的比较。
 </details>
 [Click to download](/files/hw/ssxy.pdf)
-
-

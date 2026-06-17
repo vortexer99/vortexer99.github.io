@@ -1,4 +1,4 @@
-﻿---
+---
 title: 'Gallery'
 date: 2026-06-17
 type: landing

@@ -1,4 +1,4 @@
-﻿---
+---
 title: 'Blog Post General Information'
 date: 2099-01-01
 url: /posts/2099/01/blog-general/

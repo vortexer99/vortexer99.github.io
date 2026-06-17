@@ -1,4 +1,4 @@
-﻿---
+---
 title: 'GPA计算器'
 date: 2019-07-20
 url: /posts/2019/07/gpacalc/
@@ -14,4 +14,4 @@ authors:
 [程序下载](/files/blog/gpacalc4.0.zip)  
 [4.0版本的使用说明](/files/blog/190720gpacalcguide-ver4.pdf)  
 [3.0版本的使用说明](/files/blog/190720gpacalcguide.pdf)
-[计算的理论基础](/posts/2019/07/gpacalc-math/)  
+[计算的理论基础](/posts/2019/07/gpacalc-math/)

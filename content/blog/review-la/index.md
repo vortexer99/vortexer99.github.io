@@ -1,4 +1,4 @@
-﻿---
+---
 title: '线性代数期末复习'
 date: 2018-01-23
 url: /posts/2018/01/reviewla/
@@ -24,5 +24,3 @@ authors:
 凯莱定理，环和整环的关系，拉格朗日/牛顿插值公式，斯图姆定理，艾森斯坦既约性判别法，霍纳法。
 
 [Click to download](/files/blog/180123review-la.pdf)
-
-

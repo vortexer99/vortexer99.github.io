@@ -1,4 +1,4 @@
-﻿---
+---
 title: '感知-影像的启示'
 date: 2017-12-17
 url: /posts/2017/12/movie/
@@ -17,5 +17,3 @@ authors:
 “有生命的影像”概念，同时也得到了关于人类、社会、世界的一些启示。
 
 [Click to download](/files/hw/movie.pdf)
-
-

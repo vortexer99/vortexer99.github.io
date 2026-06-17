@@ -1,4 +1,4 @@
-﻿---
+---
 title: '三维矩阵不变量与平行六面体体积'
 date: 2019-05-02
 url: /posts/2019/05/evap/
@@ -14,6 +14,3 @@ authors:
 矩阵不变量为何可以通过矩阵对任意不共面矢量uvw的运算推出？特征值与特征分解。
 
 [Click to download](/files/blog/190502eigenvalueandprod.pdf)
-
-
-

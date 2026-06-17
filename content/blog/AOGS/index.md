@@ -1,4 +1,4 @@
-﻿---
+---
 title: '2025AOGS会议报告列表'
 date: 2025-07-21
 url: /posts/2025/07/aogs/

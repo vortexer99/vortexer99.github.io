@@ -1,4 +1,4 @@
-﻿---
+---
 title: '三层流体中非线性内波与地形的作用'
 date: 2021-06-02
 url: /posts/2021/06/thesis/
@@ -16,5 +16,3 @@ authors:
 十分感谢王老师。
 
 [Click to download](/files/hw/thesis.pdf)
-
-

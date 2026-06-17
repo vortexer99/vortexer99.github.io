@@ -1,6 +1,6 @@
-﻿---
+---
 title: '汽车博物馆游记'
-date: 2019-06-17-car
+date: 2019-06-17
 url: /posts/2019/06/car/
 tags:
   - Homework
@@ -13,5 +13,3 @@ authors:
 《设计与制造》课程中有去北京汽车博物馆参观的内容，此游记为相应作业。
 
 [Click to download](/files/hw/car.pdf)
-
-

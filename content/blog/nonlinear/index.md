@@ -1,4 +1,4 @@
-﻿---
+---
 title: 'Nonlinear Dynamics Lecnote'
 date: 2020-02-01
 url: /posts/2020/02/nonlinear/
@@ -19,5 +19,3 @@ authors:
 Much thanks to Jonas Katona (and other "teachers"), who designed the whole course but is only one year elder than me.
 
 [Click to download](/files/lecnote/NonlinearDynamicNote.pdf)
-
-

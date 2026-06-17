@@ -1,4 +1,4 @@
-﻿---
+---
 title: 'nabla 算子运算规则的作用对象修正'
 date: 2019-03-25
 url: /posts/2019/03/nabla/

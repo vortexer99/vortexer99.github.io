@@ -1,4 +1,4 @@
-﻿---
+---
 title: '作业脚本中频繁执行mpirun导致slurm请求过于频繁的问题'
 date: 2025-04-15
 url: /posts/2025/04/srun/
