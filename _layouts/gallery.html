@@ -32,7 +32,7 @@ layout: default
         {{ content }}
 
         <div class="gallery-grid">
-          {% assign gallery_images = site.static_files | sort: "path" %}
+          {% assign gallery_images = site.static_files | sort: "path" | reverse %}
           {% for image in gallery_images %}
             {% if image.path contains page.gallery_folder %}
               <figure class="gallery-grid__item">

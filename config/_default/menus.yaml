@@ -1,0 +1,21 @@
+# Navigation Links
+
+main:
+  - name: Bio
+    url: /
+    weight: 10
+  - name: Blog
+    url: blog/
+    weight: 20
+  - name: Gallery
+    url: gallery/
+    weight: 30
+  - name: Milestones
+    url: milestones/
+    weight: 40
+  - name: PIP
+    url: pip/
+    weight: 50
+  - name: CV
+    url: cv/
+    weight: 60
