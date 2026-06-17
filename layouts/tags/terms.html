@@ -1,0 +1,28 @@
+{{ define "main" }}
+
+<div data-pagefind-ignore>
+  <section class="tag-index max-w-5xl mx-auto px-6 py-10">
+    <header class="tag-index__header">
+      <h1>{{ .Title }}</h1>
+      {{ with .Content }}
+        <div class="tag-index__intro">{{ . }}</div>
+      {{ end }}
+    </header>
+
+    <div class="tag-index__grid">
+      {{- $type := .Type }}
+      {{- range .Data.Terms.ByCount }}
+        {{- $name := .Name }}
+        {{- $count := .Count }}
+        {{- with site.GetPage (printf "/%s/%s" $type $name) }}
+          <a id="{{ .Title | anchorize }}" class="tag-index__item" href="{{ .RelPermalink }}">
+            <span>{{ .Title }}</span>
+            <small>{{ $count }}</small>
+          </a>
+        {{- end }}
+      {{- end }}
+    </div>
+  </section>
+</div>
+
+{{ end }}

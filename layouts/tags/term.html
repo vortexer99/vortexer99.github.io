@@ -1,0 +1,35 @@
+{{ define "main" }}
+
+<div data-pagefind-ignore>
+  <section class="tag-term max-w-5xl mx-auto px-6 py-10">
+    <header class="tag-term__header">
+      <a class="tag-term__back" href="{{ "/tags/" | relURL }}">All tags</a>
+      <h1>{{ .Title }}</h1>
+      <p>{{ len .Pages }} post{{ if ne (len .Pages) 1 }}s{{ end }}</p>
+    </header>
+
+    {{ $view := "date-title-summary" }}
+    {{ $block := . }}
+    {{ $paginator := .Paginate .Pages.ByDate.Reverse }}
+    {{ $config := dict
+      "columns" 1
+      "len" (len $paginator.Pages)
+      "fill_image" false
+      "show_date" true
+      "show_read_time" true
+      "show_read_more" true
+    }}
+
+    <div class="tag-term__posts">
+      {{ partial "functions/render_view" (dict "fragment" "start" "page" $block "item" . "view" $view "config" $config) }}
+      {{ range $index, $item := $paginator.Pages }}
+        {{ partial "functions/render_view" (dict "page" $block "item" $item "view" $view "index" $index "config" $config) }}
+      {{ end }}
+      {{ partial "functions/render_view" (dict "fragment" "end" "page" $block "item" . "view" $view) }}
+    </div>
+
+    {{ partial "components/paginator" . }}
+  </section>
+</div>
+
+{{ end }}
