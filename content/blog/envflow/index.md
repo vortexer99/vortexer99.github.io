@@ -1,0 +1,20 @@
+﻿---
+title: 'Environmental fluid Lecnote'
+date: 2020-02-01
+url: /posts/2020/02/envflow/
+tags:
+  - Lecnote
+  - Mathematic
+  - Fluid Mechanics
+  - 11-30 Pages
+authors:
+  - me
+---
+
+2020年春季学期于UCB访学时，上Environmental flow课程所整理的笔记。
+
+可惜因为疫情，只旁听了半截。
+
+[Click to download](/files/lecnote/EnvironmentalFluidNote.pdf)
+
+

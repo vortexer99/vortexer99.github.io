@@ -1,0 +1,20 @@
+﻿---
+title: '三层流体中非线性内波与地形的作用'
+date: 2021-06-02
+url: /posts/2021/06/thesis/
+tags:
+  - Homework
+  - Mathematic
+  - Fluid Mechanics
+  - 31-100 Pages
+authors:
+  - me
+---
+
+2020年夏到2021年夏期间，在中科院力学研究所王展老师指导下完成的毕业设计。
+
+十分感谢王老师。
+
+[Click to download](/files/hw/thesis.pdf)
+
+

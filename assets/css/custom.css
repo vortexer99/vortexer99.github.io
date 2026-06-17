@@ -1,0 +1,36 @@
+﻿.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.gallery-grid figure {
+  margin: 0;
+}
+
+.gallery-grid a {
+  display: block;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  background: rgb(243 244 246);
+}
+
+.gallery-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.2s ease-in-out;
+}
+
+.gallery-grid a:hover img {
+  transform: scale(1.04);
+}
+
+.gallery-grid figcaption {
+  margin-top: 0.5rem;
+  color: rgb(107 114 128);
+  font-size: 0.9rem;
+  line-height: 1.35;
+}

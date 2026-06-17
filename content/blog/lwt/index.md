@@ -1,0 +1,17 @@
+﻿---
+title: '实验现象，事实与社会：由《利维坦与空气泵》引发的若干思考'
+date: 2022-04-20
+url: /posts/2022/04/lwt/
+tags:
+  - Homework
+  - Humanity
+  - 1-5 Pages
+authors:
+  - me
+---
+
+《自然辩证法概论》课程作业。
+
+[Click to download](/files/hw/lwt.pdf)
+
+

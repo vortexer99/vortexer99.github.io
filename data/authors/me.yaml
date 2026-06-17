@@ -1,0 +1,91 @@
+schema: hugoblox/author/v1
+slug: me
+is_owner: true
+name:
+  display: Yi Zhuang
+  given: Yi
+  family: Zhuang
+  alternate: 庄逸
+  pronunciation: ''
+  pronouns: ''
+status:
+  icon: "🪐"
+role: PhD student in Meteorology
+bio: |
+  Yi Zhuang is a PhD student at the Institute of Atmospheric Physics,
+  Chinese Academy of Sciences. His research focuses on the predictability
+  of the Martian atmosphere, numerical modeling, CNOP, and nonlinear dynamics.
+
+affiliations:
+  - name: Institute of Atmospheric Physics, Chinese Academy of Sciences
+    url: https://iap.cas.cn/
+
+links:
+  - icon: at-symbol
+    url: mailto:zhuangyi17@mails.ucas.ac.cn
+    label: E-mail Me
+  - icon: brands/github
+    url: https://github.com/vortexer99
+
+interests:
+  - Predictability of the Martian atmosphere
+  - Planetary atmosphere dynamics
+  - Numerical modeling
+  - CNOP and nonlinear optimization
+  - Nonlinear dynamics
+
+education:
+  - degree: PhD in Meteorology
+    institution: Institute of Atmospheric Physics, Chinese Academy of Sciences
+    start: 2021-09-01
+    end: 2026-06-30
+    summary: |
+      Research on the predictability of the Martian atmosphere under the supervision of Prof. Wansuo Duan.
+    button:
+      text: Download CV
+      url: /uploads/resume.pdf
+      icon: hero/arrow-down-tray
+  - degree: BS in Theoretical and Applied Mechanics
+    institution: University of Chinese Academy of Sciences
+    start: 2017-09-01
+    end: 2021-06-30
+  - degree: Exchange Student
+    institution: University of California, Berkeley
+    start: 2020-01-01
+    end: 2020-05-31
+
+skills:
+  - name: Research
+    items:
+      - label: Predictability study
+        level: 5
+      - label: Martian atmosphere modeling
+        level: 5
+      - label: Numerical experiments
+        level: 5
+      - label: Nonlinear dynamics
+        level: 4
+  - name: Technical
+    items:
+      - label: Python
+        level: 5
+      - label: Shell
+        level: 4
+      - label: MATLAB
+        level: 4
+      - label: LaTeX
+        level: 4
+
+languages:
+  - name: Chinese
+    level: 5
+    label: Native
+  - name: English
+    level: 4
+    label: TOEFL 100
+  - name: French
+    level: 1
+    label: Novice
+  - name: Japanese
+    level: 1
+    label: Novice

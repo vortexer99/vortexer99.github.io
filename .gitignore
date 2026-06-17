@@ -1,5 +1,9 @@
 # Ignore the contents of the _site directory
 _site/
+public/
+resources/
+.hugo_build.lock
+.codex_tmp_hugoblox/
 
 # Ignore the directory for local files during development
 local/
