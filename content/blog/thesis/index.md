@@ -7,6 +7,13 @@ tags:
   - Mathematic
   - Fluid Mechanics
   - 31-100 Pages
+types:
+  - homework
+topics:
+  - mathematics
+  - fluid-mechanics
+lengths:
+  - 31-100-pages
 authors:
   - me
 ---

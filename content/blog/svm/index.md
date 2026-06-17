@@ -6,6 +6,12 @@ tags:
   - Homework
   - AI
   - 11-30 Pages
+types:
+  - homework
+topics:
+  - ai
+lengths:
+  - 11-30-pages
 authors:
   - me
 ---

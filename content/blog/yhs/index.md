@@ -7,6 +7,13 @@ tags:
   - Mathematic
   - Mathematical Analysis
   - 1-5 Pages
+types:
+  - blogpost
+topics:
+  - mathematics
+  - mathematical-analysis
+lengths:
+  - 1-5-pages
 authors:
   - me
 ---

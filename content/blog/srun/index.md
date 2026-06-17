@@ -6,6 +6,12 @@ tags:
   - Blogpost
   - Software Engineering
   - not-in-pages
+types:
+  - blogpost
+topics:
+  - software-engineering
+lengths:
+  - not-in-pages
 authors:
   - me
 ---

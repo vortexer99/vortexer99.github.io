@@ -6,6 +6,12 @@ tags:
   - Blogpost
   - Nonlinear Dynamics
   - not-in-pages
+types:
+  - blogpost
+topics:
+  - nonlinear-dynamics
+lengths:
+  - not-in-pages
 authors:
   - me
 ---

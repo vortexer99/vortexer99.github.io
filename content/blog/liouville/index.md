@@ -10,6 +10,17 @@ tags:
   - Linear Algebra
   - PIP-RANDPDE
   - 11-30 Pages
+types:
+  - blogpost
+topics:
+  - mathematics
+  - dynamical-systems
+  - ensemble-forecasting
+  - linear-algebra
+projects:
+  - pip-randpde
+lengths:
+  - 11-30-pages
 authors:
   - me
 ---

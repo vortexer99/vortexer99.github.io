@@ -7,6 +7,13 @@ tags:
   - Mathematic
   - Linear Algebra
   - 100+ Pages
+types:
+  - lecture-note
+topics:
+  - mathematics
+  - linear-algebra
+lengths:
+  - 100-plus-pages
 authors:
   - me
 ---

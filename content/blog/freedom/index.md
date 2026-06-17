@@ -6,6 +6,12 @@ tags:
   - Homework
   - Humanities
   - 1-5 Pages
+types:
+  - homework
+topics:
+  - humanities
+lengths:
+  - 1-5-pages
 authors:
   - me
 ---

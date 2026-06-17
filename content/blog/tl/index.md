@@ -6,6 +6,11 @@ tags:
   - Homework
   - Life-Exp
   - 6-10 Pages
+types:
+  - homework
+  - life-exp
+lengths:
+  - 6-10-pages
 authors:
   - me
 ---

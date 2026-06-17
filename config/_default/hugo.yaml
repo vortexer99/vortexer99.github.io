@@ -54,6 +54,10 @@ timeout: 600000
 taxonomies:
   author: authors
   tag: tags
+  content_type: types
+  topic: topics
+  project: projects
+  length: lengths
   publication_type: publication_types
 markup:
   _merge: deep

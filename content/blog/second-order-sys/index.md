@@ -7,6 +7,13 @@ tags:
   - Mathematic
   - Cybernetics
   - 6-10 Pages
+types:
+  - homework
+topics:
+  - mathematics
+  - cybernetics
+lengths:
+  - 6-10-pages
 authors:
   - me
 ---

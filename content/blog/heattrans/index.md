@@ -8,6 +8,14 @@ tags:
   - Physic
   - Heat Transfer
   - 31-100 Pages
+types:
+  - lecture-note
+topics:
+  - mathematics
+  - physics
+  - heat-transfer
+lengths:
+  - 31-100-pages
 authors:
   - me
 ---

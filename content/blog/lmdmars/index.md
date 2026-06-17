@@ -6,6 +6,12 @@ tags:
   - Blogpost
   - Atmospheric Model
   - Not in pages
+types:
+  - blogpost
+topics:
+  - numerical-modelling
+lengths:
+  - not-in-pages
 authors:
   - me
 ---

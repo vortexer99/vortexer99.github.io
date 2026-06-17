@@ -8,6 +8,14 @@ tags:
   - Mechanics
   - Thermal-Dynamic
   - 11-30 Pages
+types:
+  - homework
+topics:
+  - mathematics
+  - mechanics
+  - thermodynamics
+lengths:
+  - 11-30-pages
 authors:
   - me
 ---

@@ -5,6 +5,10 @@ url: /posts/2018/05/quicksort/
 tags:
   - Homework
   - 11-30 Pages
+types:
+  - homework
+lengths:
+  - 11-30-pages
 authors:
   - me
 ---

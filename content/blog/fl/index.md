@@ -5,6 +5,10 @@ url: /posts/2021/10/fl/
 tags:
   - Homework
   - 6-10 Pages
+types:
+  - homework
+lengths:
+  - 6-10-pages
 authors:
   - me
 ---

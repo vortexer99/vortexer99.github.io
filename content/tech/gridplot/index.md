@@ -6,6 +6,11 @@ tags:
   - Blogpost
   - Tools
   - Not in pages
+types:
+  - blogpost
+  - tool
+lengths:
+  - not-in-pages
 authors:
   - me
 ---

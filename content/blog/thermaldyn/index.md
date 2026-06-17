@@ -8,6 +8,14 @@ tags:
   - Physic
   - Thermal-Dynamic
   - 11-30 Pages
+types:
+  - blogpost
+topics:
+  - mathematics
+  - physics
+  - thermodynamics
+lengths:
+  - 11-30-pages
 authors:
   - me
 ---

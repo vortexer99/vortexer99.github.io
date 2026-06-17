@@ -7,6 +7,12 @@ tags:
   - Life-Exp
   - 31-60 Slides
   - 1-5 Pages
+types:
+  - blogpost
+  - life-exp
+lengths:
+  - 31-60-slides
+  - 1-5-pages
 authors:
   - me
 ---

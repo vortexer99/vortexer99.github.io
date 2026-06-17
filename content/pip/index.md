@@ -17,7 +17,7 @@ aliases:
   * First diffusion eq. (Linear), then Bergers equation or Lorenz models (Nonlinear).
   * Still learning mathematical tools (So difficult!).
   * Currently start with ODE first.
-  * See [Relevant blogposts](/tags/pip-randpde/).
+  * See [Relevant blogposts](/projects/pip-randpde/).
 1. **Personal Website**. 2023/10. *Still updating*.
   * [Current website](https://vortexer99.github.io)
   * Jekyll and Github Pages for deployment, academicpages for template, Markdown for texts.

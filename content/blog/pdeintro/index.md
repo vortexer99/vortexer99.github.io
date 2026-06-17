@@ -6,6 +6,12 @@ tags:
   - Homework
   - Mathematic
   - 11-30 Pages
+types:
+  - homework
+topics:
+  - mathematics
+lengths:
+  - 11-30-pages
 authors:
   - me
 ---

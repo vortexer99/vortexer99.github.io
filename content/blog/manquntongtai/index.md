@@ -7,6 +7,13 @@ tags:
   - Mathematic
   - Linear Algebra
   - 1-5 Pages
+types:
+  - blogpost
+topics:
+  - mathematics
+  - linear-algebra
+lengths:
+  - 1-5-pages
 authors:
   - me
 ---

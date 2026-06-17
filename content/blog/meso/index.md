@@ -7,6 +7,13 @@ tags:
   - Mathematic
   - Atmospheres
   - 31-100 Pages
+types:
+  - lecture-note
+topics:
+  - mathematics
+  - atmospheric-science
+lengths:
+  - 31-100-pages
 authors:
   - me
 ---

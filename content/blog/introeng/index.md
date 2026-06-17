@@ -7,6 +7,13 @@ tags:
   - Mathematic
   - Mechanics
   - 6-10 Pages
+types:
+  - homework
+topics:
+  - mathematics
+  - mechanics
+lengths:
+  - 6-10-pages
 authors:
   - me
 ---

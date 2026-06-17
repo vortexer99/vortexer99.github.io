@@ -8,6 +8,14 @@ tags:
   - Mathematical Analysis
   - Vector calculus
   - 6-10 Pages
+types:
+  - blogpost
+topics:
+  - mathematics
+  - mathematical-analysis
+  - vector-calculus
+lengths:
+  - 6-10-pages
 authors:
   - me
 ---

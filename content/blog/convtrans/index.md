@@ -9,6 +9,15 @@ tags:
   - Heat Transfer
   - Fluid Mechanics
   - 31-100 Pages
+types:
+  - lecture-note
+topics:
+  - mathematics
+  - physics
+  - heat-transfer
+  - fluid-mechanics
+lengths:
+  - 31-100-pages
 authors:
   - me
 ---

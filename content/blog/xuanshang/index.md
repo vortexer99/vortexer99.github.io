@@ -9,6 +9,15 @@ tags:
   - Mathematical Analysis
   - Linear Algebra
   - 11-30 Pages
+types:
+  - blogpost
+topics:
+  - mathematics
+  - combinatorics
+  - mathematical-analysis
+  - linear-algebra
+lengths:
+  - 11-30-pages
 authors:
   - me
 ---

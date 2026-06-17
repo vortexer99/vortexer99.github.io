@@ -7,6 +7,13 @@ tags:
   - Mathematic
   - Vector calculus
   - 1-5 Pages
+types:
+  - blogpost
+topics:
+  - mathematics
+  - vector-calculus
+lengths:
+  - 1-5-pages
 authors:
   - me
 ---

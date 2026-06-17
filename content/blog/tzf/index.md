@@ -6,6 +6,12 @@ tags:
   - Blogpost
   - Mathematic
   - 1-5 Pages
+types:
+  - blogpost
+topics:
+  - mathematics
+lengths:
+  - 1-5-pages
 authors:
   - me
 ---

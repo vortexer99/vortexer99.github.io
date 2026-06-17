@@ -5,6 +5,9 @@ url: /posts/2024/09/hmwkindex/
 tags:
   - Homework
   - Index
+types:
+  - homework
+  - index
 authors:
   - me
 ---

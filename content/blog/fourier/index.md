@@ -7,6 +7,13 @@ tags:
   - Mathematic
   - Mathematical method of Physics
   - 1-5 Pages
+types:
+  - blogpost
+topics:
+  - mathematics
+  - mathematical-methods-in-physics
+lengths:
+  - 1-5-pages
 authors:
   - me
 ---

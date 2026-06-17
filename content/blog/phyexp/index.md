@@ -8,6 +8,14 @@ tags:
   - Physic
   - Experiments
   - 100+ Pages
+types:
+  - lecture-note
+topics:
+  - mathematics
+  - physics
+  - experiments
+lengths:
+  - 100-plus-pages
 authors:
   - me
 ---

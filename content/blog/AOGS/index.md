@@ -6,6 +6,11 @@ tags:
   - Blogpost
   - Life-exp
   - not-in-pages
+types:
+  - blogpost
+  - life-exp
+lengths:
+  - not-in-pages
 authors:
   - me
 ---

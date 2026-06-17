@@ -7,6 +7,13 @@ tags:
   - Mathematic
   - Logic
   - 11-30 Pages
+types:
+  - homework
+topics:
+  - mathematics
+  - logic
+lengths:
+  - 11-30-pages
 authors:
   - me
 ---

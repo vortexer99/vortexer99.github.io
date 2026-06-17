@@ -7,6 +7,13 @@ tags:
   - Mathematic
   - Fluid Mechanics
   - 11-30 Pages
+types:
+  - lecture-note
+topics:
+  - mathematics
+  - fluid-mechanics
+lengths:
+  - 11-30-pages
 authors:
   - me
 ---

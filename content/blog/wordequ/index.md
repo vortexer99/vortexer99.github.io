@@ -6,6 +6,11 @@ tags:
   - Blogpost
   - Life-Exp
   - 6-10 Pages
+types:
+  - blogpost
+  - life-exp
+lengths:
+  - 6-10-pages
 authors:
   - me
 ---

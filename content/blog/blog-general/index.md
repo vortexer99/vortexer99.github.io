@@ -4,6 +4,8 @@ date: 2099-01-01
 url: /posts/2099/01/blog-general/
 tags:
   - index
+types:
+  - index
 authors:
   - me
 ---
@@ -18,53 +20,54 @@ This is a complete archive of my blog posts. The content primarily covers course
 
 ## 按类型分 (By type)
 
-· [index](/tags/index/)
-· [blogpost](/tags/blogpost/)
-· [lecture note](/tags/lecnote/)
-· [homework](/tags/homework/)
-· [life-exp](/tags/life-exp/)
-· [tools](/tags/tools/)
+· [index](/types/index/)
+· [blogpost](/types/blogpost/)
+· [lecture note](/types/lecture-note/)
+· [homework](/types/homework/)
+· [life-exp](/types/life-exp/)
+· [tool](/types/tool/)
 
 [课程作业的介绍 Introduction to **homework** type](/posts/2024/09/hmwkindex)
 
 ## 按学科主题分 (By Subject)
 感觉还有点混乱，以后再整理整理
 
-· [mathematic](/tags/mathematic/)
-· [physic](/tags/physic/)
-· [mechanics](/tags/mechanics/)
-· [atmospheres](/tags/atmospheres/)
-· [linear-algebra](/tags/linear-algebra/)
-· [mathematical-analysis](/tags/mathematical-analysis/)
-· [mathematical-method-of-physics](/tags/mathematical-method-of-physics/)
-· [dynamical-system](/tags/dynamical-system/)
-· [nonlinear-dynamics](/tags/nonlinear-dynamics/)
-· [probability-and-mathematical-statistics](/tags/probability-and-mathematical-statistics/)
-· [combinatorics](/tags/combinatorics/)
-· [heat-transfer](/tags/heat-transfer/)
-· [thermal-dynamic](/tags/thermal-dynamic/)
-· [experiments](/tags/experiments/)
-· [fluid-mechanics](/tags/fluid-mechanics/)
-· [ensemble-forecast](/tags/ensemble-forecast/)
-· [vector-calculus](/tags/vector-calculus/)
-· [cybernetics](/tags/cybernetics/)
-· [logic](/tags/logic/)
-· [AI](/tags/ai/)
-· [optimization](/tags/optimization/)
-· [humanity](/tags/humanity/)
+· [mathematics](/topics/mathematics/)
+· [physics](/topics/physics/)
+· [mechanics](/topics/mechanics/)
+· [atmospheric science](/topics/atmospheric-science/)
+· [numerical modelling](/topics/numerical-modelling/)
+· [linear algebra](/topics/linear-algebra/)
+· [mathematical analysis](/topics/mathematical-analysis/)
+· [mathematical methods in physics](/topics/mathematical-methods-in-physics/)
+· [dynamical systems](/topics/dynamical-systems/)
+· [nonlinear dynamics](/topics/nonlinear-dynamics/)
+· [probability and statistics](/topics/probability-statistics/)
+· [combinatorics](/topics/combinatorics/)
+· [heat transfer](/topics/heat-transfer/)
+· [thermodynamics](/topics/thermodynamics/)
+· [experiments](/topics/experiments/)
+· [fluid mechanics](/topics/fluid-mechanics/)
+· [ensemble forecasting](/topics/ensemble-forecasting/)
+· [vector calculus](/topics/vector-calculus/)
+· [cybernetics](/topics/cybernetics/)
+· [logic](/topics/logic/)
+· [AI](/topics/ai/)
+· [optimization](/topics/optimization/)
+· [humanities](/topics/humanities/)
 
 ## 按长度分 (By Length)
-· [1-5 Pages](/tags/1-5-pages/)
-· [6-10 Pages](/tags/6-10-pages/)
-· [11-30 Pages](/tags/11-30-pages/)
-· [31-100 Pages](/tags/31-100-pages/)
-· [100+ Pages](/tags/100-pages/)
-· [31-60 Slides](/tags/31-60-slides/)
-· [not in pages](/tags/not-in-pages/)
+· [1-5 Pages](/lengths/1-5-pages/)
+· [6-10 Pages](/lengths/6-10-pages/)
+· [11-30 Pages](/lengths/11-30-pages/)
+· [31-100 Pages](/lengths/31-100-pages/)
+· [100+ Pages](/lengths/100-plus-pages/)
+· [31-60 Slides](/lengths/31-60-slides/)
+· [not in pages](/lengths/not-in-pages/)
 
 ## 按PIP分 (By PIP)
 
-· [PIP-RANDPDE](/tags/pip-randpde/)
+· [PIP-RANDPDE](/projects/pip-randpde/)
 
 [WHAT is PIP?](/pip)
 

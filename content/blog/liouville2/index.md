@@ -11,6 +11,18 @@ tags:
   - Nonlinear Dynamics
   - PIP-RANDPDE
   - 11-30 Pages
+types:
+  - blogpost
+topics:
+  - mathematics
+  - dynamical-systems
+  - ensemble-forecasting
+  - linear-algebra
+  - nonlinear-dynamics
+projects:
+  - pip-randpde
+lengths:
+  - 11-30-pages
 authors:
   - me
 ---

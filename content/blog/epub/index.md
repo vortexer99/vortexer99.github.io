@@ -7,6 +7,13 @@ tags:
   - Mathematic
   - Probability and Mathematical Statistics
   - 1-5 Pages
+types:
+  - blogpost
+topics:
+  - mathematics
+  - probability-statistics
+lengths:
+  - 1-5-pages
 authors:
   - me
 ---

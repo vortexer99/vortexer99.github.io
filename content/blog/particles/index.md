@@ -7,6 +7,13 @@ tags:
   - Mathematic
   - Optimization
   - 11-30 Pages
+types:
+  - homework
+topics:
+  - mathematics
+  - optimization
+lengths:
+  - 11-30-pages
 authors:
   - me
 ---

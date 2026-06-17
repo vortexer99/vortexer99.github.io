@@ -7,6 +7,13 @@ tags:
   - Mathematic
   - Mathematical method of Physics
   - 31-100 Pages
+types:
+  - lecture-note
+topics:
+  - mathematics
+  - mathematical-methods-in-physics
+lengths:
+  - 31-100-pages
 authors:
   - me
 ---

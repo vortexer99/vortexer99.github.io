@@ -75,7 +75,7 @@ sections:
                   <time datetime="2022-09-01">2022-09-01</time>
                   <h2><a href="/posts/2022/09/lmdmars/">LMD MARS PCM 相关整理</a></h2>
                   <p>围绕 LMDZ.MARS / Mars PCM 使用、配置和资料整理的一组工作笔记。</p>
-                  <div class="tech-note__tags"><span>Mars PCM</span><span>Atmospheric Model</span></div>
+                  <div class="tech-note__tags"><span>Mars PCM</span><span>Numerical modelling</span></div>
                 </article>
 
                 <article class="tech-note">

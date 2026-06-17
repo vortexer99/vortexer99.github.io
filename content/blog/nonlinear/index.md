@@ -8,6 +8,14 @@ tags:
   - Nonlinear Dynamics
   - Dynamical System
   - 31-100 Pages
+types:
+  - lecture-note
+topics:
+  - mathematics
+  - nonlinear-dynamics
+  - dynamical-systems
+lengths:
+  - 31-100-pages
 authors:
   - me
 ---

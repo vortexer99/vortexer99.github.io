@@ -5,6 +5,9 @@ url: /posts/2019/07/gpacalc/
 tags:
   - Blogpost
   - Tools
+types:
+  - blogpost
+  - tool
 authors:
   - me
 ---

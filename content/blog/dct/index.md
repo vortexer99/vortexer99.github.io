@@ -7,6 +7,13 @@ tags:
   - Mathematic
   - Combinatorics
   - 6-10 Pages
+types:
+  - blogpost
+topics:
+  - mathematics
+  - combinatorics
+lengths:
+  - 6-10-pages
 authors:
   - me
 ---
