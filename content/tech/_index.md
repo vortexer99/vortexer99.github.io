@@ -11,12 +11,10 @@ sections:
         <div class="tech-page">
           <input class="tech-tab-input" type="radio" name="tech-view" id="tech-view-projects" checked>
           <input class="tech-tab-input" type="radio" name="tech-view" id="tech-view-notes">
-
           <div class="tech-tabs" role="tablist" aria-label="Tech content">
             <label role="tab" for="tech-view-projects">Projects</label>
             <label role="tab" for="tech-view-notes">Notes</label>
           </div>
-
           <div class="tech-panels">
             <section class="tech-panel tech-panel--projects" aria-label="Projects">
               <div class="tech-showcase">
@@ -39,7 +37,6 @@ sections:
                     </div>
                   </div>
                 </article>
-
                 <article class="tech-card">
                   <a class="tech-card__media" href="https://github.com/vortexer99/github-radar" target="_blank" rel="noopener">
                     <img src="/assets/images/tech/github-radar-reader.png" alt="GitHub Radar desktop reader screenshot">
@@ -61,7 +58,6 @@ sections:
                 </article>
               </div>
             </section>
-
             <section class="tech-panel tech-panel--notes" aria-label="Tech notes">
               <div class="tech-notes">
                 <article class="tech-note">
@@ -70,28 +66,24 @@ sections:
                   <p>一次 HPC 作业排查记录：频繁循环调用 mpirun 触发 Slurm 请求限流，导致程序空转和运行变慢。</p>
                   <div class="tech-note__tags"><span>HPC</span><span>Slurm</span><span>Debugging</span></div>
                 </article>
-
                 <article class="tech-note">
                   <time datetime="2022-09-01">2022-09-01</time>
                   <h2><a href="/posts/2022/09/lmdmars/">LMD MARS PCM 相关整理</a></h2>
                   <p>围绕 LMDZ.MARS / Mars PCM 使用、配置和资料整理的一组工作笔记。</p>
                   <div class="tech-note__tags"><span>Mars PCM</span><span>Numerical modelling</span></div>
                 </article>
-
                 <article class="tech-note">
                   <time datetime="2021-11-30">2021-11-30</time>
                   <h2><a href="/posts/2021/11/svm/">Extreme weather prediction by Support Vector Machine</a></h2>
                   <p>使用支持向量机做极端天气预测的课程项目记录。</p>
                   <div class="tech-note__tags"><span>Machine Learning</span><span>SVM</span></div>
                 </article>
-
                 <article class="tech-note">
                   <time datetime="2019-07-20">2019-07-20</time>
                   <h2><a href="/posts/2019/07/gpacalc/">GPA 计算器</a></h2>
                   <p>一个 Excel 工具，用于导入成绩、按学期和课程类型筛选计算 GPA，并估计课程边际贡献。</p>
                   <div class="tech-note__tags"><span>Excel Tool</span><span>Automation</span></div>
                 </article>
-
                 <article class="tech-note">
                   <time datetime="2018-12-24">2018-12-24</time>
                   <h2><a href="/posts/2018/12/gridplot/">庄啾的格点绘图助手</a></h2>
