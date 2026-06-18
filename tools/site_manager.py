@@ -71,6 +71,13 @@ class ContentItem:
         return SECTION_LABELS.get(self.section, self.section)
 
 
+@dataclass
+class RecentUpdate:
+    date: str
+    title: str
+    body_html: str
+
+
 SECTION_LABELS = {
     "blog": "Blog",
     "tech": "Tech",
@@ -229,6 +236,9 @@ class SiteManager(QMainWindow):
         self.current: ContentItem | None = None
         self.dirty = False
         self.loading_editor = False
+        self.recent_updates: list[RecentUpdate] = []
+        self.updates_dirty = False
+        self.loading_updates = False
 
         self.setWindowTitle("Site Content Manager")
         self.resize(1500, 840)
@@ -423,6 +433,54 @@ class SiteManager(QMainWindow):
         editor_layout.addWidget(self.body_edit, 1)
 
         self.detail_tabs.addTab(editor, "Edit")
+
+        updates = QWidget()
+        updates_layout = QVBoxLayout(updates)
+        updates_layout.setContentsMargins(0, 0, 0, 0)
+        updates_layout.setSpacing(10)
+
+        self.updates_list = QListWidget()
+        self.updates_list.currentRowChanged.connect(self.show_recent_update)
+        updates_layout.addWidget(self.updates_list, 1)
+
+        update_form = QFormLayout()
+        update_form.setLabelAlignment(Qt.AlignRight)
+        self.update_date_edit = QLineEdit()
+        self.update_title_edit = QLineEdit()
+        self.update_body_edit = QTextEdit()
+        self.update_body_edit.setAcceptRichText(False)
+        self.update_body_edit.setFixedHeight(120)
+        self.update_date_edit.textChanged.connect(self.mark_updates_dirty)
+        self.update_title_edit.textChanged.connect(self.mark_updates_dirty)
+        self.update_body_edit.textChanged.connect(self.mark_updates_dirty)
+        update_form.addRow("Date", self.update_date_edit)
+        update_form.addRow("Title", self.update_title_edit)
+        update_form.addRow("Body HTML", self.update_body_edit)
+        updates_layout.addLayout(update_form)
+
+        updates_toolbar = QHBoxLayout()
+        self.add_update_button = QPushButton("Add")
+        self.add_update_button.clicked.connect(self.add_recent_update)
+        updates_toolbar.addWidget(self.add_update_button)
+        self.move_update_up_button = QPushButton("Move Up")
+        self.move_update_up_button.clicked.connect(self.move_recent_update_up)
+        updates_toolbar.addWidget(self.move_update_up_button)
+        self.move_update_down_button = QPushButton("Move Down")
+        self.move_update_down_button.clicked.connect(self.move_recent_update_down)
+        updates_toolbar.addWidget(self.move_update_down_button)
+        self.delete_update_button = QPushButton("Delete")
+        self.delete_update_button.clicked.connect(self.delete_recent_update)
+        updates_toolbar.addWidget(self.delete_update_button)
+        self.save_updates_button = QPushButton("Save Updates")
+        self.save_updates_button.clicked.connect(self.save_recent_updates)
+        updates_toolbar.addWidget(self.save_updates_button)
+        self.revert_updates_button = QPushButton("Revert")
+        self.revert_updates_button.clicked.connect(self.load_recent_updates)
+        updates_toolbar.addWidget(self.revert_updates_button)
+        updates_toolbar.addStretch(1)
+        updates_layout.addLayout(updates_toolbar)
+
+        self.detail_tabs.addTab(updates, "Recent Updates")
         detail_layout.addWidget(self.detail_tabs, 1)
 
         button_row = QHBoxLayout()
@@ -527,8 +585,12 @@ class SiteManager(QMainWindow):
     def reload(self) -> None:
         if self.dirty and not self.confirm_discard_changes():
             return
+        if self.updates_dirty and not self.confirm_discard_updates():
+            return
         self.set_dirty(False)
+        self.set_updates_dirty(False)
         self.items = scan_content(ROOT)
+        self.load_recent_updates()
         self.populate_filters()
         self.apply_filters()
         self.status.showMessage(f"Loaded {len(self.items)} content files", 4000)
@@ -671,6 +733,116 @@ class SiteManager(QMainWindow):
             url = "https://vortexer99.github.io" + url
         if not QDesktopServices.openUrl(QUrl(url)):
             webbrowser.open(url)
+
+    def load_recent_updates(self) -> None:
+        if self.updates_dirty and not self.confirm_discard_updates():
+            return
+        self.loading_updates = True
+        self.recent_updates = parse_recent_updates(ROOT / "content" / "_index.md")
+        self.updates_list.clear()
+        for update in self.recent_updates:
+            self.updates_list.addItem(format_recent_update_label(update))
+        self.loading_updates = False
+        self.set_updates_dirty(False)
+        if self.recent_updates:
+            self.updates_list.setCurrentRow(0)
+        else:
+            self.clear_recent_update_editor()
+
+    def show_recent_update(self, row: int) -> None:
+        if self.loading_updates:
+            return
+        self.loading_updates = True
+        if row < 0 or row >= len(self.recent_updates):
+            self.clear_recent_update_editor()
+            self.loading_updates = False
+            return
+        update = self.recent_updates[row]
+        self.update_date_edit.setText(update.date)
+        self.update_title_edit.setText(update.title)
+        self.update_body_edit.setPlainText(update.body_html)
+        self.loading_updates = False
+
+    def clear_recent_update_editor(self) -> None:
+        self.update_date_edit.clear()
+        self.update_title_edit.clear()
+        self.update_body_edit.clear()
+
+    def mark_updates_dirty(self) -> None:
+        if self.loading_updates:
+            return
+        row = self.updates_list.currentRow()
+        if 0 <= row < len(self.recent_updates):
+            self.recent_updates[row] = RecentUpdate(
+                date=self.update_date_edit.text().strip(),
+                title=self.update_title_edit.text().strip(),
+                body_html=self.update_body_edit.toPlainText().strip(),
+            )
+            self.updates_list.item(row).setText(format_recent_update_label(self.recent_updates[row]))
+        self.set_updates_dirty(True)
+
+    def set_updates_dirty(self, dirty: bool) -> None:
+        self.updates_dirty = dirty
+        index = self.detail_tabs.indexOf(self.updates_list.parentWidget())
+        if index >= 0:
+            self.detail_tabs.setTabText(index, "Recent Updates" + (" *" if dirty else ""))
+
+    def confirm_discard_updates(self) -> bool:
+        result = QMessageBox.question(
+            self,
+            "Unsaved Recent Updates",
+            "Discard unsaved Recent Updates changes?",
+            QMessageBox.Discard | QMessageBox.Cancel,
+            QMessageBox.Cancel,
+        )
+        return result == QMessageBox.Discard
+
+    def add_recent_update(self) -> None:
+        update = RecentUpdate(date=datetime.now().date().isoformat(), title="New update", body_html="")
+        row = max(self.updates_list.currentRow(), -1) + 1
+        self.recent_updates.insert(row, update)
+        self.updates_list.insertItem(row, format_recent_update_label(update))
+        self.updates_list.setCurrentRow(row)
+        self.set_updates_dirty(True)
+
+    def delete_recent_update(self) -> None:
+        row = self.updates_list.currentRow()
+        if row < 0 or row >= len(self.recent_updates):
+            return
+        del self.recent_updates[row]
+        self.updates_list.takeItem(row)
+        self.updates_list.setCurrentRow(min(row, len(self.recent_updates) - 1))
+        self.set_updates_dirty(True)
+
+    def move_recent_update_up(self) -> None:
+        self.move_recent_update(-1)
+
+    def move_recent_update_down(self) -> None:
+        self.move_recent_update(1)
+
+    def move_recent_update(self, direction: int) -> None:
+        row = self.updates_list.currentRow()
+        new_row = row + direction
+        if row < 0 or new_row < 0 or new_row >= len(self.recent_updates):
+            return
+        self.recent_updates[row], self.recent_updates[new_row] = self.recent_updates[new_row], self.recent_updates[row]
+        item = self.updates_list.takeItem(row)
+        self.updates_list.insertItem(new_row, item)
+        self.updates_list.setCurrentRow(new_row)
+        self.set_updates_dirty(True)
+
+    def save_recent_updates(self) -> None:
+        row = self.updates_list.currentRow()
+        if 0 <= row < len(self.recent_updates):
+            self.recent_updates[row] = RecentUpdate(
+                date=self.update_date_edit.text().strip(),
+                title=self.update_title_edit.text().strip(),
+                body_html=self.update_body_edit.toPlainText().strip(),
+            )
+        path = ROOT / "content" / "_index.md"
+        write_recent_updates(path, self.recent_updates)
+        self.set_updates_dirty(False)
+        self.status.showMessage("Saved Recent Updates", 5000)
 
     def load_editor(self, item: ContentItem) -> None:
         self.loading_editor = True
@@ -856,6 +1028,118 @@ def scan_content(root: Path) -> list[ContentItem]:
             )
         )
     return items
+
+
+def parse_recent_updates(path: Path) -> list[RecentUpdate]:
+    if not path.exists():
+        return []
+    text = read_text(path)
+    block = extract_recent_updates_block(text)
+    if not block:
+        return []
+    article_pattern = re.compile(
+        r'<article class="recent-update">\s*'
+        r'<time datetime="(?P<date>[^"]*)">[^<]*</time>\s*'
+        r"<div>\s*"
+        r"<h3>(?P<title>.*?)</h3>\s*"
+        r"<p>(?P<body>.*?)</p>\s*"
+        r"</div>\s*"
+        r"</article>",
+        flags=re.S,
+    )
+    updates: list[RecentUpdate] = []
+    for match in article_pattern.finditer(block["body"]):
+        updates.append(
+            RecentUpdate(
+                date=html.unescape(match.group("date").strip()),
+                title=html.unescape(strip_inline_html(match.group("title").strip())),
+                body_html=collapse_html_line(match.group("body")),
+            )
+        )
+    return updates
+
+
+def write_recent_updates(path: Path, updates: list[RecentUpdate]) -> None:
+    text = read_text(path)
+    block = extract_recent_updates_block(text)
+    if not block:
+        raise ValueError("Could not find <div class=\"recent-updates\"> in content/_index.md")
+    indent = block["indent"]
+    new_block = render_recent_updates_block(updates, indent)
+    new_text = text[: block["start"]] + new_block + text[block["end"] :]
+    path.write_text(new_text, encoding="utf-8", newline="\n")
+
+
+def extract_recent_updates_block(text: str) -> dict[str, object] | None:
+    lines = text.splitlines(keepends=True)
+    offset = 0
+    start_index = -1
+    start_offset = -1
+    indent = ""
+    for index, line in enumerate(lines):
+        stripped = line.strip()
+        if stripped == '<div class="recent-updates">':
+            start_index = index
+            start_offset = offset
+            indent = line[: len(line) - len(line.lstrip())]
+            break
+        offset += len(line)
+    if start_index < 0:
+        return None
+
+    body_lines: list[str] = []
+    end_offset = start_offset + len(lines[start_index])
+    for line in lines[start_index + 1 :]:
+        line_indent = line[: len(line) - len(line.lstrip())]
+        if line.strip() == "</div>" and line_indent == indent:
+            end_offset += len(line)
+            return {
+                "start": start_offset,
+                "end": end_offset,
+                "indent": indent,
+                "body": "".join(body_lines),
+            }
+        body_lines.append(line)
+        end_offset += len(line)
+    return None
+
+
+def render_recent_updates_block(updates: list[RecentUpdate], indent: str) -> str:
+    lines = [f'{indent}<div class="recent-updates">']
+    article_indent = indent + "  "
+    inner_indent = indent + "    "
+    content_indent = indent + "      "
+    for update in updates:
+        date = update.date.strip()
+        title = html.escape(update.title.strip())
+        body = collapse_html_line(update.body_html)
+        lines.extend(
+            [
+                f'{article_indent}<article class="recent-update">',
+                f'{inner_indent}<time datetime="{html.escape(date)}">{html.escape(date)}</time>',
+                f"{inner_indent}<div>",
+                f"{content_indent}<h3>{title}</h3>",
+                f"{content_indent}<p>{body}</p>",
+                f"{inner_indent}</div>",
+                f"{article_indent}</article>",
+            ]
+        )
+    lines.append(f"{indent}</div>")
+    return "\n".join(lines) + "\n"
+
+
+def format_recent_update_label(update: RecentUpdate) -> str:
+    title = update.title.strip() or "(untitled)"
+    date = update.date.strip() or "no date"
+    return f"{date} / {title}"
+
+
+def collapse_html_line(value: str) -> str:
+    return re.sub(r"\s+", " ", value.strip())
+
+
+def strip_inline_html(value: str) -> str:
+    return re.sub(r"<[^>]+>", "", value)
 
 
 def parse_tech_note_urls(path: Path) -> set[str]:
