@@ -27,22 +27,36 @@ sections:
         shape: circle
   - block: markdown
     content:
-      title: 'Research'
-      text: |-
-        I work on the predictability of the Martian atmosphere, CNOP, and nonlinear dynamics.
-        I also write blogs, build small tools, and keep a gallery of talks and field photos.
-    design:
-      columns: '1'
-  - block: markdown
-    content:
       title: 'Recent Updates'
       text: |-
         <div class="recent-updates">
           <article class="recent-update">
-            <time datetime="2026-06-17">2026-06-17</time>
-            <div>
+            <div class="recent-update__date">
+              <time datetime="2026-06-18">Jun 18</time>
+              <span>2026</span>
+            </div>
+            <div class="recent-update__body">
+              <div class="recent-update__meta">
+                <span>Site</span>
+                <span>Polish</span>
+              </div>
+              <h3>网站结构继续整理</h3>
+              <p>Tech 页面拆成项目展示和技术随笔两类视图，Blog 增加标签入口，并重新整理了若干视觉细节。</p>
+            </div>
+          </article>
+
+          <article class="recent-update">
+            <div class="recent-update__date">
+              <time datetime="2026-06-17">Jun 17</time>
+              <span>2026</span>
+            </div>
+            <div class="recent-update__body">
+              <div class="recent-update__meta">
+                <span>Migration</span>
+                <span>HugoBlox</span>
+              </div>
               <h3>迁移到了新框架</h3>
-              <p>12分钟，AI就帮我迁移好了！目前站点可能还是有些大大小小的问题，会慢慢修复。</p>
+              <p>站点从旧的 Academic Pages 迁移到 HugoBlox。当前版本会继续修掉迁移后留下的页面、搜索和样式问题。</p>
             </div>
           </article>
         </div>
