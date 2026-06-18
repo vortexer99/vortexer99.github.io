@@ -1,0 +1,33 @@
+{{ $item := .item }}
+{{ $summary := partial "functions/get_summary" $item }}
+{{ $summary = $summary | page.RenderString }}
+{{ $displayDate := $item.Params.event_start | default $item.Date }}
+
+<article class="post-list-item">
+  <time class="post-list-item__date" datetime="{{ time.Format "2006-01-02" $displayDate }}">
+    {{ time.Format (site.Params.hugoblox.locale.date_format | default ":date_long") $displayDate }}
+  </time>
+
+  <div class="post-list-item__body">
+    <h2>
+      <a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a>
+    </h2>
+
+    {{ with $item.Params.awards }}
+      <div class="post-list-item__award">
+        {{ partial "components/award_badge.html" (dict "award" (index . 0) "page" $item "variant" "pill") }}
+      </div>
+    {{ end }}
+
+    {{ with $summary }}
+      <div class="post-list-item__summary">{{ . }}</div>
+    {{ end }}
+
+    <a class="post-list-item__more" href="{{ $item.RelPermalink }}">
+      {{ T "read_more" | default "Read more" }}
+      <svg aria-hidden="true" fill="none" viewBox="0 0 16 16">
+        <path d="M6.75 5.75 9.25 8l-2.5 2.25" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+      </svg>
+    </a>
+  </div>
+</article>
