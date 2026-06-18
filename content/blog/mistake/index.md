@@ -54,25 +54,25 @@ authors:
 对于一般同学可以直接用定义验证。 $$\nabla\times(\phi \bm{u})=
   \begin{vmatrix}
     \bm{i}&\bm{j}&\bm{k}\\
-    \pp{}{x}&\pp{}{y}&\pp{}{z}\\
+    \frac{\partial}{\partial x}&\frac{\partial}{\partial y}&\frac{\partial}{\partial z}\\
     \phi u_x&\phi u_y&\phi u_z
   \end{vmatrix}$$
 
 只需要考虑$\bm{i}$方向的分量，其他类似。 $$\nabla\times(\phi \bm{u})=
   \begin{vmatrix}
-    \pp{}{y}&\pp{}{z}\\
+    \frac{\partial}{\partial y}&\frac{\partial}{\partial z}\\
     \phi u_y&\phi u_z
   \end{vmatrix}
   \bm{i}+\dots$$ 二阶行列式的值为 $$\begin{aligned}
-  &=\pp{(\phi u_z)}{y}-\pp{(\phi u_y)}{z}=\pp{\phi}{y}u_z+\pp{u_z}{y}\phi-\pp{\phi}{z}u_y-\pp{u_y}{z}\phi\\
-  &=\brack{\pp{u_z}{y}\phi-\pp{u_y}{z}\phi}+\brack{\pp{\phi}{y}u_z-\pp{\phi}{z}u_y}\\
+  &=\frac{\partial (\phi u_z)}{\partial y}-\frac{\partial (\phi u_y)}{\partial z}=\frac{\partial \phi}{\partial y}u_z+\frac{\partial u_z}{\partial y}\phi-\frac{\partial \phi}{\partial z}u_y-\frac{\partial u_y}{\partial z}\phi\\
+  &=\left(\frac{\partial u_z}{\partial y}\phi-\frac{\partial u_y}{\partial z}\phi\right)+\left(\frac{\partial \phi}{\partial y}u_z-\frac{\partial \phi}{\partial z}u_y\right)\\
   &=\phi
     \begin{vmatrix}
-      \pp{}{y}&\pp{}{z}\\
+      \frac{\partial}{\partial y}&\frac{\partial}{\partial z}\\
       u_y&u_z
     \end{vmatrix}
  +\begin{vmatrix}
-      \pp{\phi}{y}&\pp{\phi}{z}\\
+      \frac{\partial \phi}{\partial y}&\frac{\partial \phi}{\partial z}\\
       u_y&u_z
     \end{vmatrix}
 \end{aligned}$$ 这两项正分别是$\phi(\nabla\times \bm{u})$和$(\nabla\phi)\times \bm{u}$的$i$分量。写出相应的三阶行列式即可简单验证。
@@ -82,10 +82,10 @@ authors:
 通过引入Levi-Civita符号$\varepsilon_{ijk}$，当$ijk$是$123$的偶置换是取$1$，奇置换时取$0$，$i,j,k$有任意两个相等时取$0$， 可方便地计算旋度。（$x_i=x,y,z$，当$i=1,2,3$）
 
 $$\begin{aligned}
-  \nabla\times(\phi \bm{u})&=\pp{}{x_i}\bm{e}_i\times(\phi u_j\bm{e}_j)\\
-                           &=\pp{(\phi u_j)}{x_i}\bm{e}_k\varepsilon_{ijk}\\
-                           &=\brack{\pp{\phi}{x_i}u_j+\pp{u_j}{x_i}\phi}\varepsilon_{ijk}\bm{e}_k\\
-                           &=\pp{\phi}{x_i}u_j\varepsilon_{ijk}\bm{e}_k+\phi\pp{u_j}{x_i}\varepsilon_{ijk}\bm{e}_k\\
-                           &=\brack{\pp{\phi}{x_i}\bm{e}_i}\times u_j\bm{e}_j+\phi\brack{\pp{}{x_i}\bm{e}_i}\times u_j\bm{e}_j\\
+  \nabla\times(\phi \bm{u})&=\frac{\partial}{\partial x_i}\bm{e}_i\times(\phi u_j\bm{e}_j)\\
+                           &=\frac{\partial (\phi u_j)}{\partial x_i}\bm{e}_k\varepsilon_{ijk}\\
+                           &=\left(\frac{\partial \phi}{\partial x_i}u_j+\frac{\partial u_j}{\partial x_i}\phi\right)\varepsilon_{ijk}\bm{e}_k\\
+                           &=\frac{\partial \phi}{\partial x_i}u_j\varepsilon_{ijk}\bm{e}_k+\phi\frac{\partial u_j}{\partial x_i}\varepsilon_{ijk}\bm{e}_k\\
+                           &=\left(\frac{\partial \phi}{\partial x_i}\bm{e}_i\right)\times u_j\bm{e}_j+\phi\left(\frac{\partial}{\partial x_i}\bm{e}_i\right)\times u_j\bm{e}_j\\
   &=(\nabla \phi)\times \bm{u}+\phi  (\nabla\times \bm{u})
 \end{aligned}$$ 和矢量叉乘$\bm{a}\times \bm{b}=a_ib_j\varepsilon_{ijk}\bm{e}_k$进行比较，立即得到上面的第一项为$(\nabla \phi)\times \bm{u}$。

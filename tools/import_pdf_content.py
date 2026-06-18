@@ -10,6 +10,7 @@ import sys
 import os
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Callable
 
 
 PDF_LINK_RE = re.compile(r"(?P<full>\[(?P<label>[^\]]+)\]\((?P<href>/files/[^)]+?\.pdf)\))", re.I)
@@ -353,7 +354,103 @@ def clean_unrenderable_latex(text: str) -> str:
     text = re.sub(r"`\\printbibliography(?:\{[^}]*\})?`\{=latex\}", "\n\n## 参考文献\n\n", text)
     text = re.sub(r"`\\(?:label|vfill)\{[^}]*\}`\{=latex\}", "", text)
     text = re.sub(r"`\\vfill`\{=latex\}", "", text)
+    text = re.sub(r"\\(?:tableofcontents|newpage|vfill)\b", "", text)
+    text = re.sub(r"\\setstretch\{[^}]*\}", "", text)
     text = re.sub(r"\\label\{[^}]+\}", "", text)
+    text = expand_custom_latex_macros(text)
+    return text
+
+
+def parse_braced_argument(text: str, start: int) -> tuple[str, int] | None:
+    while start < len(text) and text[start].isspace():
+        start += 1
+    if start >= len(text) or text[start] != "{":
+        return None
+
+    depth = 0
+    for index in range(start, len(text)):
+        char = text[index]
+        if char == "{":
+            depth += 1
+        elif char == "}":
+            depth -= 1
+            if depth == 0:
+                return text[start + 1 : index], index + 1
+    return None
+
+
+def replace_two_arg_macro(text: str, command: str, replacement: Callable[[str, str], str]) -> str:
+    marker = f"\\{command}"
+    output: list[str] = []
+    index = 0
+    while index < len(text):
+        found = text.find(marker, index)
+        if found == -1:
+            output.append(text[index:])
+            break
+        after_marker = found + len(marker)
+        if after_marker < len(text) and text[after_marker].isalpha():
+            output.append(text[index : after_marker])
+            index = after_marker
+            continue
+        first = parse_braced_argument(text, after_marker)
+        if first is None:
+            output.append(text[index : after_marker])
+            index = after_marker
+            continue
+        second = parse_braced_argument(text, first[1])
+        if second is None:
+            output.append(text[index : first[1]])
+            index = first[1]
+            continue
+        output.append(text[index:found])
+        output.append(replacement(first[0], second[0]))
+        index = second[1]
+    return "".join(output)
+
+
+def replace_one_arg_macro(text: str, command: str, replacement: Callable[[str], str]) -> str:
+    marker = f"\\{command}"
+    output: list[str] = []
+    index = 0
+    while index < len(text):
+        found = text.find(marker, index)
+        if found == -1:
+            output.append(text[index:])
+            break
+        after_marker = found + len(marker)
+        if after_marker < len(text) and text[after_marker].isalpha():
+            output.append(text[index : after_marker])
+            index = after_marker
+            continue
+        argument = parse_braced_argument(text, after_marker)
+        if argument is None:
+            output.append(text[index : after_marker])
+            index = after_marker
+            continue
+        output.append(text[index:found])
+        output.append(replacement(argument[0]))
+        index = argument[1]
+    return "".join(output)
+
+
+def expand_custom_latex_macros(text: str) -> str:
+    def total_derivative(numerator: str, denominator: str) -> str:
+        if numerator.strip():
+            return rf"\frac{{\mathrm{{d}} {numerator}}}{{\mathrm{{d}} {denominator}}}"
+        return rf"\frac{{\mathrm{{d}}}}{{\mathrm{{d}} {denominator}}}"
+
+    def partial_derivative(numerator: str, denominator: str) -> str:
+        if numerator.strip():
+            return rf"\frac{{\partial {numerator}}}{{\partial {denominator}}}"
+        return rf"\frac{{\partial}}{{\partial {denominator}}}"
+
+    previous = None
+    while previous != text:
+        previous = text
+        text = replace_two_arg_macro(text, "dd", total_derivative)
+        text = replace_two_arg_macro(text, "pp", partial_derivative)
+        text = replace_one_arg_macro(text, "brack", lambda body: rf"\left({body}\right)")
     return text
 
 

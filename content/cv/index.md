@@ -105,7 +105,7 @@ Minor (for career)：
   * Characteristics and key processes of Martian atmosphere.
   * Normal and stochastic dynamical system, PDF evolution governed by Liouville equation.
   * Mathematical skills for solving ODE/PDE and deriving atmospheric equations.
-* Other practiced technical skills: \LATEX, Git, Vue.js, Mathematica (Wolfram Language Certified Level I), WordPress, etc.
+* Other practiced technical skills: LaTeX, Git, Vue.js, Mathematica (Wolfram Language Certified Level I), WordPress, etc.
 * Language
   * Language: English (TOEFL 100 in 2020), Novice French and Japanese.
 
