@@ -33,6 +33,21 @@ sections:
         I also write blogs, build small tools, and keep a gallery of talks and field photos.
     design:
       columns: '1'
+  - block: markdown
+    content:
+      title: 'Recent Updates'
+      text: |-
+        <div class="recent-updates">
+          <article class="recent-update">
+            <time datetime="2026-06-17">2026-06-17</time>
+            <div>
+              <h3>迁移到了新框架</h3>
+              <p>12分钟，AI就帮我迁移好了！目前站点可能还是有些大大小小的问题，会慢慢修复。</p>
+            </div>
+          </article>
+        </div>
+    design:
+      columns: '1'
   - block: collection
     id: papers
     content:

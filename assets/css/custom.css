@@ -134,6 +134,76 @@ aside a,
   font-weight: 500;
 }
 
+.recent-updates {
+  display: grid;
+  gap: 0;
+  margin-top: 1.25rem;
+  border-top: 1px solid rgb(229 231 235);
+}
+
+.dark .recent-updates {
+  border-color: rgb(63 63 70);
+}
+
+.recent-update {
+  display: grid;
+  gap: 0.45rem;
+  border-bottom: 1px solid rgb(229 231 235);
+  padding: 1rem 0;
+}
+
+.dark .recent-update {
+  border-color: rgb(63 63 70);
+}
+
+.recent-update time {
+  color: rgb(107 114 128);
+  font-size: 0.84rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.recent-update h3 {
+  margin: 0;
+  color: rgb(17 24 39);
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.dark .recent-update h3 {
+  color: rgb(244 244 245);
+}
+
+.recent-update p {
+  margin: 0.25rem 0 0;
+  color: rgb(75 85 99);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.dark .recent-update p {
+  color: rgb(212 212 216);
+}
+
+.recent-update a {
+  color: rgb(37 99 235);
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.recent-update a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+@media (min-width: 760px) {
+  .recent-update {
+    grid-template-columns: 8.5rem minmax(0, 1fr);
+    column-gap: 1.25rem;
+  }
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));

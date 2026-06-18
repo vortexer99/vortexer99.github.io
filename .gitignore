@@ -7,6 +7,8 @@ resources/
 .codex_tmp_hugoblox_kit/
 .codex_tmp_llm_cabinet/
 .codex_tmp_github_radar/
+.codex_tmp_pdf_import/
+__pycache__/
 
 # Ignore the directory for local files during development
 local/

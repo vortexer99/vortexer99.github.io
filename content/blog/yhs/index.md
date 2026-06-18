@@ -23,4 +23,19 @@ $$
   \frac{\mathrm{d}^2 y}{\mathrm{d}x^2}=\frac{\mathrm{d}y}{\mathrm{d}x}\frac{\mathrm{d}}{\mathrm{d}y}\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)
 $$
 
-[Click to download](/files/blog/190816yinhanshu.pdf)
+公式： $$\frac{\mathrm{d}^2y}{\mathrm{d}x^2}=\frac{\mathrm{d}y}{\mathrm{d}x}\frac{\mathrm{d}}{\mathrm{d}y}\brack{\frac{\mathrm{d}y}{\mathrm{d}x}}$$ 证： $$\frac{\mathrm{d}y}{\mathrm{d}x}\frac{\mathrm{d}}{\mathrm{d}y}\brack{\frac{\mathrm{d}y}{\mathrm{d}x}}=\frac{\mathrm{d}}{\mathrm{d}x}\brack{\frac{\mathrm{d}y}{\mathrm{d}x}}=\frac{\mathrm{d}^2y}{\mathrm{d}x^2}$$
+
+# 例子
+
+$$y=1+xe^y\qquad \text{求 }\frac{\mathrm{d}^2y}{\mathrm{d}x^2}$$ 两边求导得 $$\frac{\mathrm{d}y}{\mathrm{d}x}=e^y+xe^y\cdot\frac{\mathrm{d}y}{\mathrm{d}x}$$ 于是$$\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{e^y}{1-xe^y}$$ 继续两边对$x$求导会比较麻烦,注意到 $$1-xe^y=2-(1+xe^y)=2-y$$ 有$$\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{e^y}{2-y}$$ 应用公式，得 $$\frac{\mathrm{d}^2y}{\mathrm{d}x^2}=\frac{\mathrm{d}y}{\mathrm{d}x}\frac{\mathrm{d}}{\mathrm{d}y}\brack{\frac{e^y}{2-y}}=\frac{e^y}{2-y}\cdot\frac{e^y(2-y)+e^y}{(2-y)^2}=\frac{e^{2y}(3-y)}{(2-y)^3}$$
+
+# 小结
+
+此公式对于不便用自变量$x$表达函数及其导数，而方便用$y$表达的情况较为有用。
+
+此公式可进一步推得 $$\frac{\mathrm{d}^2y}{\mathrm{d}x^2}=\frac{1}{2}\frac{\mathrm{d}}{\mathrm{d}y}
+\left[
+  \brack{\frac{\mathrm{d}y}{\mathrm{d}x}}^2
+\right]$$ 请读者自行验证。
+
+最后感谢船的人工ocr。
