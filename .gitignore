@@ -9,6 +9,8 @@ resources/
 .codex_tmp_github_radar/
 .codex_tmp_pdf_import/
 __pycache__/
+site/
+old_site/
 
 # Ignore the directory for local files during development
 local/
