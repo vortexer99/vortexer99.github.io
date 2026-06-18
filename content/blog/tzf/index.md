@@ -42,7 +42,7 @@ $$\ln f(t)=\frac{\ln\left(\sum_{i=1}^n\alpha_ix_i^t\right)}{t}$$ 求导得到$$\
 
 在原题中，$x_i,\alpha_i$是给定，独立的，$\beta_i$是由他们构造出来的。但是这里可以把$\beta_i$和$\alpha_i$看成是独立的，而不去关注$x$。注意到不等式两边形式类似，只有对数中的项不同，且$\alpha_i$只出现在右边的对数项中。同时，还满足类似的性质： $$\sum_{i=1}^n\alpha_i=\sum_{i=1}^n \frac{\beta_i}{B}=1$$
 
-那么相当于说对于函数 $$\label{eq:1}
+那么相当于说对于函数 $$
 h(y_1,\dots,y_n)=h(y_i):=\sum_{i=1}^n\beta_i \ln y_i \qquad \sum y_i=1$$ 在$h(\beta_i/B)$时取到最大值。
 
 我们可以感性地认为$\beta_i/B$是一个"平衡"的分配，任何偏离平衡的影响都会导致函数值减小。下面来证明这一点。

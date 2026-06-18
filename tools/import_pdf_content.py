@@ -342,8 +342,19 @@ def cleanup_markdown(text: str, page_title: str) -> str:
             lines = lines[1:]
     text = "\n".join(lines).strip()
     text = text.replace("\\tightlist", "")
+    text = clean_unrenderable_latex(text)
     text = re.sub(r"\n{3,}", "\n\n", text)
     return text.strip() + "\n"
+
+
+def clean_unrenderable_latex(text: str) -> str:
+    text = re.sub(r"`\\eqref\{([^}]+)\}`\{=latex\}", r"(\1)", text)
+    text = re.sub(r"`\\ref\{([^}]+)\}`\{=latex\}", r"\1", text)
+    text = re.sub(r"`\\printbibliography(?:\{[^}]*\})?`\{=latex\}", "\n\n## 参考文献\n\n", text)
+    text = re.sub(r"`\\(?:label|vfill)\{[^}]*\}`\{=latex\}", "", text)
+    text = re.sub(r"`\\vfill`\{=latex\}", "", text)
+    text = re.sub(r"\\label\{[^}]+\}", "", text)
+    return text
 
 
 def cleanup_pdf_text(text: str) -> str:
