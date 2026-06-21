@@ -143,8 +143,8 @@ aside a,
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 22% 35%, rgb(15 23 42 / 0.18), rgb(2 6 23 / 0.58) 62%),
-    linear-gradient(90deg, rgb(2 6 23 / 0.76), rgb(2 6 23 / 0.38) 45%, rgb(2 6 23 / 0.66));
+    radial-gradient(circle at 22% 35%, rgb(15 23 42 / 0.06), rgb(2 6 23 / 0.22) 62%),
+    linear-gradient(90deg, rgb(2 6 23 / 0.38), rgb(2 6 23 / 0.12) 45%, rgb(2 6 23 / 0.30));
   pointer-events: none;
 }
 
@@ -171,7 +171,7 @@ aside a,
 }
 
 .home-hero-profile .resume-biography .bio-text {
-  max-width: 760px;
+  max-width: 912px;
   border: 1px solid rgb(148 163 184 / 0.16);
   border-radius: 8px;
   padding: 1rem 1.15rem;

@@ -25,7 +25,7 @@ sections:
           position: center
           parallax: false
           filters:
-            brightness: 0.58
+            brightness: 1
             saturate: 1.08
         text_color_light: true
       name:
