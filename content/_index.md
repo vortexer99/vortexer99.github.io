@@ -18,8 +18,15 @@ sections:
         interests: 'Interests'
     design:
       background:
-        gradient_mesh:
-          enable: true
+        image:
+          filename: mars-home-background.png
+          size: cover
+          position: center
+          parallax: false
+          filters:
+            brightness: 0.58
+            saturate: 1.08
+        text_color_light: true
       name:
         size: md
       avatar:
