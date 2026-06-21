@@ -17,6 +17,7 @@ sections:
         education: 'Education'
         interests: 'Interests'
     design:
+      css_class: home-hero-profile
       background:
         image:
           filename: mars-home-background.png
