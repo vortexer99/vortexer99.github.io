@@ -148,6 +148,10 @@ aside a,
   pointer-events: none;
 }
 
+.home-hero-profile .home-section-bg {
+  filter: brightness(0.95) saturate(1.08) !important;
+}
+
 .home-hero-profile .resume-biography {
   text-shadow: 0 1px 18px rgb(0 0 0 / 0.34);
 }
@@ -174,6 +178,9 @@ aside a,
   background: rgb(2 6 23 / 0.34);
   box-shadow: 0 16px 42px rgb(0 0 0 / 0.18);
   backdrop-filter: blur(8px);
+  font-size: 1.0625rem;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .home-hero-profile .resume-biography .avatar {
