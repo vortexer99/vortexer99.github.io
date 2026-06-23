@@ -5,18 +5,18 @@
 # Default language
 en:
   locale: en-us
-  # Uncomment for multi-lingual sites, and move English content into `en` sub-folder.
-  #contentDir: content/en
+  label: English
+  weight: 1
 
-# Uncomment the lines below to configure your website in a second language.
-#zh:
-#  locale: zh-Hans
-#  contentDir: content/zh
-#  title: Chinese website title...
-#  params:
-#    description: Site description in Chinese...
-#  menu:
-#    main:
-#      - name: 传
-#        url: '#about'
-#        weight: 1
+zh:
+  locale: zh-Hans
+  label: 中文
+  title: 庄逸
+  weight: 2
+  params:
+    description: 庄逸的个人学术网站。研究方向包括火星大气可预报性、数值模拟、CNOP 与非线性动力学。
+  menu:
+    main:
+      - name: 简介
+        url: /
+        weight: 10

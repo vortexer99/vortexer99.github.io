@@ -1,0 +1,80 @@
+name:
+  display: 庄逸
+  alternate: Yi Zhuang
+role: 气象学博士研究生
+bio: |
+  庄逸是中国科学院大气物理研究所气象学博士研究生，研究兴趣包括火星大气可预报性、数值模拟、条件非线性最优扰动（CNOP）与非线性动力学。
+
+affiliations:
+  - name: 中国科学院大气物理研究所
+    url: https://iap.cas.cn/
+
+links:
+  - icon: envelope
+    url: mailto:zhuangyi17@mails.ucas.ac.cn
+    label: 发送邮件
+  - icon: brands/github
+    url: https://github.com/vortexer99
+
+interests:
+  - 火星大气可预报性
+  - 行星大气动力学
+  - 数值模拟
+  - CNOP 与非线性优化
+  - 非线性动力学
+
+education:
+  - degree: 气象学博士
+    institution: 中国科学院大气物理研究所
+    start: 2021-09-01
+    end: 2026-06-30
+    summary: |
+      在段晚锁研究员指导下开展火星大气可预报性研究。
+    button:
+      text: 下载简历
+      url: /uploads/resume.pdf
+      icon: hero/arrow-down-tray
+  - degree: 理论与应用力学学士
+    institution: 中国科学院大学
+    start: 2017-09-01
+    end: 2021-06-30
+  - degree: 交换学生
+    institution: 加州大学伯克利分校
+    start: 2020-01-01
+    end: 2020-05-31
+
+skills:
+  - name: 研究
+    items:
+      - label: 可预报性研究
+        level: 5
+      - label: 火星大气模拟
+        level: 5
+      - label: 数值试验
+        level: 5
+      - label: 非线性动力学
+        level: 4
+  - name: 技术
+    items:
+      - label: Python
+        level: 5
+      - label: Shell
+        level: 4
+      - label: MATLAB
+        level: 4
+      - label: LaTeX
+        level: 4
+
+languages:
+  - name: 中文
+    level: 5
+    label: 母语
+  - name: 英语
+    level: 4
+    label: TOEFL 100
+  - name: 法语
+    level: 1
+    label: 初学
+  - name: 日语
+    level: 1
+    label: 初学

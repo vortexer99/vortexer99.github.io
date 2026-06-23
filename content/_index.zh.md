@@ -11,12 +11,12 @@ sections:
       username: me
       text: ''
       button:
-        text: Download CV
-        url: uploads/resume.pdf
+        text: 下载简历
+        url: /uploads/resume.pdf
       headings:
-        about: 'About'
-        education: 'Education'
-        interests: 'Interests'
+        about: '简介'
+        education: '教育经历'
+        interests: '研究兴趣'
     design:
       css_class: home-hero-profile
       background:
@@ -36,18 +36,18 @@ sections:
         shape: circle
   - block: markdown
     content:
-      title: 'Recent Updates'
+      title: '近期更新'
       text: |-
         <div class="recent-updates">
           <article class="recent-update">
             <div class="recent-update__date">
-              <time datetime="2026-06-18">Jun 18</time>
+              <time datetime="2026-06-18">6月18日</time>
               <span>2026</span>
             </div>
             <div class="recent-update__body">
               <div class="recent-update__meta">
-                <span>Site</span>
-                <span>Polish</span>
+                <span>站点</span>
+                <span>整理</span>
               </div>
               <h3>网站结构继续整理</h3>
               <p>Tech 页面拆成项目展示和技术随笔两类视图，Blog 增加标签入口，并重新整理了若干视觉细节。</p>
@@ -56,12 +56,12 @@ sections:
 
           <article class="recent-update">
             <div class="recent-update__date">
-              <time datetime="2026-06-17">Jun 17</time>
+              <time datetime="2026-06-17">6月17日</time>
               <span>2026</span>
             </div>
             <div class="recent-update__body">
               <div class="recent-update__meta">
-                <span>Migration</span>
+                <span>迁移</span>
                 <span>HugoBlox</span>
               </div>
               <h3>迁移到了新框架</h3>
@@ -71,29 +71,17 @@ sections:
         </div>
     design:
       columns: '1'
-  - block: collection
-    id: papers
+  - block: markdown
+    id: explore
     content:
-      title: Recent Posts
-      filters:
-        folders:
-          - blog
+      title: 继续浏览
+      text: |-
+        当前先开放中文首页。博客、技术项目、图集和简历仍沿用原有页面，后续可以逐步补齐对应的中文栏目。
+
+        - [博客归档](/blog/)
+        - [技术与项目](/tech/)
+        - [图集](/gallery/)
+        - [英文简历](/cv/)
     design:
-      view: article-grid
-      columns: 2
-  - block: collection
-    id: news
-    content:
-      title: Recent News
-      page_type: blog
-      count: 6
-      filters:
-        exclude_featured: false
-        exclude_future: false
-        exclude_past: false
-      order: desc
-    design:
-      view: card
-      spacing:
-        padding: [0, 0, 0, 0]
+      columns: '1'
 ---
