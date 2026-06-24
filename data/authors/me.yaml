@@ -26,6 +26,9 @@ links:
     label: E-mail Me
   - icon: brands/github
     url: https://github.com/vortexer99
+  - icon: brands/orcid
+    url: https://orcid.org/0009-0000-4434-214X
+    label: ORCID
 
 interests:
   - Predictability of the Martian atmosphere

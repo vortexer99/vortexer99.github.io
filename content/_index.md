@@ -81,19 +81,25 @@ sections:
     design:
       view: article-grid
       columns: 2
-  - block: collection
-    id: news
+  - block: markdown
+    id: friends
     content:
-      title: Recent News
-      page_type: blog
-      count: 6
-      filters:
-        exclude_featured: false
-        exclude_future: false
-        exclude_past: false
-      order: desc
+      title: Friends
+      text: |-
+        <div class="friend-links">
+          <a class="friend-link" href="https://example.com/" target="_blank" rel="noopener">
+            <span class="friend-link__name">Friend Site</span>
+            <span class="friend-link__desc">Personal homepage and notes.</span>
+          </a>
+          <a class="friend-link" href="https://example.org/" target="_blank" rel="noopener">
+            <span class="friend-link__name">Research Notes</span>
+            <span class="friend-link__desc">Academic blog and resources.</span>
+          </a>
+          <a class="friend-link" href="https://example.net/" target="_blank" rel="noopener">
+            <span class="friend-link__name">Tech Blog</span>
+            <span class="friend-link__desc">Programming, tools, and experiments.</span>
+          </a>
+        </div>
     design:
-      view: card
-      spacing:
-        padding: [0, 0, 0, 0]
+      columns: '1'
 ---
