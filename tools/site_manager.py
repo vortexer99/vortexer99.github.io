@@ -23,6 +23,7 @@ try:
         QMainWindow,
         QMessageBox,
         QPushButton,
+        QSizePolicy,
         QSplitter,
         QStatusBar,
         QStyledItemDelegate,
@@ -76,6 +77,18 @@ class RecentUpdate:
     date: str
     title: str
     body_html: str
+
+
+@dataclass
+class MilestoneCard:
+    year: str
+    tag: str
+    title: str
+    excerpt: str
+    preview_image: str
+    preview_alt: str
+    gallery_images: list[str] = field(default_factory=list)
+    detail_html: str = ""
 
 
 SECTION_LABELS = {
@@ -239,6 +252,9 @@ class SiteManager(QMainWindow):
         self.recent_updates: list[RecentUpdate] = []
         self.updates_dirty = False
         self.loading_updates = False
+        self.milestones: list[MilestoneCard] = []
+        self.milestones_dirty = False
+        self.loading_milestones = False
 
         self.setWindowTitle("Site Content Manager")
         self.resize(1500, 840)
@@ -280,9 +296,10 @@ class SiteManager(QMainWindow):
         self.status = QStatusBar()
         self.setStatusBar(self.status)
 
-        root = QSplitter(Qt.Horizontal)
-        root.setChildrenCollapsible(False)
-        self.setCentralWidget(root)
+        content_root = QSplitter(Qt.Horizontal)
+        content_root.setChildrenCollapsible(False)
+        self.main_tabs = QTabWidget()
+        self.setCentralWidget(self.main_tabs)
 
         sidebar = QWidget()
         sidebar.setObjectName("Sidebar")
@@ -333,7 +350,7 @@ class SiteManager(QMainWindow):
         self.stats_label.setWordWrap(True)
         sidebar_layout.addWidget(self.stats_label)
         sidebar_layout.addStretch(1)
-        root.addWidget(sidebar)
+        content_root.addWidget(sidebar)
 
         middle = QWidget()
         middle.setObjectName("ListPanel")
@@ -350,7 +367,7 @@ class SiteManager(QMainWindow):
         self.item_list.currentRowChanged.connect(self.show_current)
         self.item_list.setSpacing(2)
         middle_layout.addWidget(self.item_list, 1)
-        root.addWidget(middle)
+        content_root.addWidget(middle)
 
         detail = QWidget()
         detail.setObjectName("DetailPanel")
@@ -436,7 +453,7 @@ class SiteManager(QMainWindow):
 
         updates = QWidget()
         updates_layout = QVBoxLayout(updates)
-        updates_layout.setContentsMargins(0, 0, 0, 0)
+        updates_layout.setContentsMargins(16, 16, 16, 16)
         updates_layout.setSpacing(10)
 
         self.updates_list = QListWidget()
@@ -480,7 +497,100 @@ class SiteManager(QMainWindow):
         updates_toolbar.addStretch(1)
         updates_layout.addLayout(updates_toolbar)
 
-        self.detail_tabs.addTab(updates, "Recent Updates")
+        milestones = QWidget()
+        milestones_layout = QVBoxLayout(milestones)
+        milestones_layout.setContentsMargins(16, 16, 16, 16)
+        milestones_layout.setSpacing(10)
+
+        milestones_splitter = QSplitter(Qt.Horizontal)
+        milestones_splitter.setChildrenCollapsible(False)
+        milestones_layout.addWidget(milestones_splitter, 1)
+
+        self.milestones_list = QListWidget()
+        self.milestones_list.setMinimumWidth(320)
+        self.milestones_list.currentRowChanged.connect(self.show_milestone)
+        milestones_splitter.addWidget(self.milestones_list)
+
+        milestone_editor = QWidget()
+        milestone_editor_layout = QVBoxLayout(milestone_editor)
+        milestone_editor_layout.setContentsMargins(12, 0, 0, 0)
+        milestone_editor_layout.setSpacing(10)
+        milestones_splitter.addWidget(milestone_editor)
+
+        milestone_form = QFormLayout()
+        milestone_form.setLabelAlignment(Qt.AlignRight)
+        milestone_form.setFieldGrowthPolicy(QFormLayout.AllNonFixedFieldsGrow)
+        self.milestone_year_edit = QLineEdit()
+        self.milestone_tag_edit = QLineEdit()
+        self.milestone_title_edit = QLineEdit()
+        self.milestone_excerpt_edit = QLineEdit()
+        self.milestone_preview_image_edit = QLineEdit()
+        self.milestone_preview_alt_edit = QLineEdit()
+        self.milestone_gallery_edit = QTextEdit()
+        self.milestone_gallery_edit.setAcceptRichText(False)
+        self.milestone_gallery_edit.setFixedHeight(95)
+        self.milestone_detail_edit = QTextEdit()
+        self.milestone_detail_edit.setAcceptRichText(False)
+        for widget in [
+            self.milestone_year_edit,
+            self.milestone_tag_edit,
+            self.milestone_title_edit,
+            self.milestone_excerpt_edit,
+            self.milestone_preview_image_edit,
+            self.milestone_preview_alt_edit,
+        ]:
+            widget.setMinimumWidth(520)
+            widget.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        for widget in [self.milestone_gallery_edit, self.milestone_detail_edit]:
+            widget.setMinimumWidth(520)
+            widget.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        for widget in [
+            self.milestone_year_edit,
+            self.milestone_tag_edit,
+            self.milestone_title_edit,
+            self.milestone_excerpt_edit,
+            self.milestone_preview_image_edit,
+            self.milestone_preview_alt_edit,
+            self.milestone_gallery_edit,
+            self.milestone_detail_edit,
+        ]:
+            widget.textChanged.connect(self.mark_milestones_dirty)
+        milestone_form.addRow("Year", self.milestone_year_edit)
+        milestone_form.addRow("Tag", self.milestone_tag_edit)
+        milestone_form.addRow("Title", self.milestone_title_edit)
+        milestone_form.addRow("Excerpt", self.milestone_excerpt_edit)
+        milestone_form.addRow("Preview image", self.milestone_preview_image_edit)
+        milestone_form.addRow("Preview alt", self.milestone_preview_alt_edit)
+        milestone_form.addRow("Gallery images", self.milestone_gallery_edit)
+        milestone_form.addRow("Expanded body HTML", self.milestone_detail_edit)
+        milestone_editor_layout.addLayout(milestone_form, 1)
+
+        milestones_toolbar = QHBoxLayout()
+        self.add_milestone_button = QPushButton("Add")
+        self.add_milestone_button.clicked.connect(self.add_milestone)
+        milestones_toolbar.addWidget(self.add_milestone_button)
+        self.move_milestone_up_button = QPushButton("Move Up")
+        self.move_milestone_up_button.clicked.connect(self.move_milestone_up)
+        milestones_toolbar.addWidget(self.move_milestone_up_button)
+        self.move_milestone_down_button = QPushButton("Move Down")
+        self.move_milestone_down_button.clicked.connect(self.move_milestone_down)
+        milestones_toolbar.addWidget(self.move_milestone_down_button)
+        self.sort_milestones_button = QPushButton("Sort Year Desc")
+        self.sort_milestones_button.clicked.connect(self.sort_milestones_by_year_desc)
+        milestones_toolbar.addWidget(self.sort_milestones_button)
+        self.delete_milestone_button = QPushButton("Delete")
+        self.delete_milestone_button.clicked.connect(self.delete_milestone)
+        milestones_toolbar.addWidget(self.delete_milestone_button)
+        self.save_milestones_button = QPushButton("Save Milestones")
+        self.save_milestones_button.clicked.connect(self.save_milestones)
+        milestones_toolbar.addWidget(self.save_milestones_button)
+        self.revert_milestones_button = QPushButton("Revert")
+        self.revert_milestones_button.clicked.connect(self.load_milestones)
+        milestones_toolbar.addWidget(self.revert_milestones_button)
+        milestones_toolbar.addStretch(1)
+        milestone_editor_layout.addLayout(milestones_toolbar)
+        milestones_splitter.setSizes([360, 900])
+
         detail_layout.addWidget(self.detail_tabs, 1)
 
         button_row = QHBoxLayout()
@@ -492,9 +602,12 @@ class SiteManager(QMainWindow):
         button_row.addWidget(self.open_page_button)
         button_row.addStretch(1)
         detail_layout.addLayout(button_row)
-        root.addWidget(detail)
+        content_root.addWidget(detail)
 
-        root.setSizes([230, 500, 770])
+        content_root.setSizes([230, 500, 770])
+        self.main_tabs.addTab(content_root, "Content")
+        self.main_tabs.addTab(updates, "Recent Updates")
+        self.main_tabs.addTab(milestones, "Milestones")
 
     def apply_style(self) -> None:
         self.setStyleSheet(
@@ -587,10 +700,14 @@ class SiteManager(QMainWindow):
             return
         if self.updates_dirty and not self.confirm_discard_updates():
             return
+        if self.milestones_dirty and not self.confirm_discard_milestones():
+            return
         self.set_dirty(False)
         self.set_updates_dirty(False)
+        self.set_milestones_dirty(False)
         self.items = scan_content(ROOT)
         self.load_recent_updates()
+        self.load_milestones()
         self.populate_filters()
         self.apply_filters()
         self.status.showMessage(f"Loaded {len(self.items)} content files", 4000)
@@ -728,9 +845,17 @@ class SiteManager(QMainWindow):
     def open_current_page(self) -> None:
         if not self.current or not self.current.url:
             return
+        page_date = parse_date(self.current.date)
+        if page_date and page_date.date() > datetime.now().date():
+            QMessageBox.information(
+                self,
+                "Future-dated page",
+                "This page is dated in the future and is usually not published in the production site, so the online URL may return 404.",
+            )
+            return
         url = self.current.url
         if url.startswith("/"):
-            url = "https://vortexer99.github.io" + url
+            url = site_base_url(ROOT).rstrip("/") + normalize_site_url(url)
         if not QDesktopServices.openUrl(QUrl(url)):
             webbrowser.open(url)
 
@@ -783,9 +908,9 @@ class SiteManager(QMainWindow):
 
     def set_updates_dirty(self, dirty: bool) -> None:
         self.updates_dirty = dirty
-        index = self.detail_tabs.indexOf(self.updates_list.parentWidget())
+        index = self.main_tabs.indexOf(self.updates_list.parentWidget())
         if index >= 0:
-            self.detail_tabs.setTabText(index, "Recent Updates" + (" *" if dirty else ""))
+            self.main_tabs.setTabText(index, "Recent Updates" + (" *" if dirty else ""))
 
     def confirm_discard_updates(self) -> bool:
         result = QMessageBox.question(
@@ -843,6 +968,155 @@ class SiteManager(QMainWindow):
         write_recent_updates(path, self.recent_updates)
         self.set_updates_dirty(False)
         self.status.showMessage("Saved Recent Updates", 5000)
+
+    def load_milestones(self) -> None:
+        if self.milestones_dirty and not self.confirm_discard_milestones():
+            return
+        self.loading_milestones = True
+        self.milestones = parse_milestone_cards(ROOT / "content" / "milestones" / "index.md")
+        self.milestones_list.clear()
+        for card in self.milestones:
+            self.milestones_list.addItem(format_milestone_label(card))
+        self.loading_milestones = False
+        self.set_milestones_dirty(False)
+        if self.milestones:
+            self.milestones_list.setCurrentRow(0)
+        else:
+            self.clear_milestone_editor()
+
+    def show_milestone(self, row: int) -> None:
+        if self.loading_milestones:
+            return
+        self.loading_milestones = True
+        if row < 0 or row >= len(self.milestones):
+            self.clear_milestone_editor()
+            self.loading_milestones = False
+            return
+        card = self.milestones[row]
+        self.milestone_year_edit.setText(card.year)
+        self.milestone_tag_edit.setText(card.tag)
+        self.milestone_title_edit.setText(card.title)
+        self.milestone_excerpt_edit.setText(card.excerpt)
+        self.milestone_preview_image_edit.setText(card.preview_image)
+        self.milestone_preview_alt_edit.setText(card.preview_alt)
+        self.milestone_gallery_edit.setPlainText(image_list_to_text(card.gallery_images))
+        self.milestone_detail_edit.setPlainText(card.detail_html)
+        self.loading_milestones = False
+
+    def clear_milestone_editor(self) -> None:
+        self.milestone_year_edit.clear()
+        self.milestone_tag_edit.clear()
+        self.milestone_title_edit.clear()
+        self.milestone_excerpt_edit.clear()
+        self.milestone_preview_image_edit.clear()
+        self.milestone_preview_alt_edit.clear()
+        self.milestone_gallery_edit.clear()
+        self.milestone_detail_edit.clear()
+
+    def mark_milestones_dirty(self) -> None:
+        if self.loading_milestones:
+            return
+        row = self.milestones_list.currentRow()
+        if 0 <= row < len(self.milestones):
+            self.milestones[row] = MilestoneCard(
+                year=self.milestone_year_edit.text().strip(),
+                tag=self.milestone_tag_edit.text().strip(),
+                title=self.milestone_title_edit.text().strip(),
+                excerpt=self.milestone_excerpt_edit.text().strip(),
+                preview_image=self.milestone_preview_image_edit.text().strip(),
+                preview_alt=self.milestone_preview_alt_edit.text().strip(),
+                gallery_images=split_image_lines(self.milestone_gallery_edit.toPlainText()),
+                detail_html=self.milestone_detail_edit.toPlainText().strip(),
+            )
+            self.milestones_list.item(row).setText(format_milestone_label(self.milestones[row]))
+        self.set_milestones_dirty(True)
+
+    def set_milestones_dirty(self, dirty: bool) -> None:
+        self.milestones_dirty = dirty
+        index = self.main_tabs.indexOf(self.milestones_list.parentWidget())
+        if index >= 0:
+            self.main_tabs.setTabText(index, "Milestones" + (" *" if dirty else ""))
+
+    def confirm_discard_milestones(self) -> bool:
+        result = QMessageBox.question(
+            self,
+            "Unsaved Milestones",
+            "Discard unsaved Milestones changes?",
+            QMessageBox.Discard | QMessageBox.Cancel,
+            QMessageBox.Cancel,
+        )
+        return result == QMessageBox.Discard
+
+    def add_milestone(self) -> None:
+        card = MilestoneCard(
+            year=str(datetime.now().year),
+            tag="Milestone",
+            title="New milestone",
+            excerpt="",
+            preview_image="",
+            preview_alt="",
+            gallery_images=[],
+            detail_html="<p></p>",
+        )
+        row = max(self.milestones_list.currentRow(), -1) + 1
+        self.milestones.insert(row, card)
+        self.milestones_list.insertItem(row, format_milestone_label(card))
+        self.milestones_list.setCurrentRow(row)
+        self.set_milestones_dirty(True)
+
+    def delete_milestone(self) -> None:
+        row = self.milestones_list.currentRow()
+        if row < 0 or row >= len(self.milestones):
+            return
+        del self.milestones[row]
+        self.milestones_list.takeItem(row)
+        self.milestones_list.setCurrentRow(min(row, len(self.milestones) - 1))
+        self.set_milestones_dirty(True)
+
+    def move_milestone_up(self) -> None:
+        self.move_milestone(-1)
+
+    def move_milestone_down(self) -> None:
+        self.move_milestone(1)
+
+    def move_milestone(self, direction: int) -> None:
+        row = self.milestones_list.currentRow()
+        new_row = row + direction
+        if row < 0 or new_row < 0 or new_row >= len(self.milestones):
+            return
+        self.milestones[row], self.milestones[new_row] = self.milestones[new_row], self.milestones[row]
+        item = self.milestones_list.takeItem(row)
+        self.milestones_list.insertItem(new_row, item)
+        self.milestones_list.setCurrentRow(new_row)
+        self.set_milestones_dirty(True)
+
+    def sort_milestones_by_year_desc(self) -> None:
+        current = self.milestones_list.currentRow()
+        self.milestones.sort(key=milestone_sort_key, reverse=True)
+        self.milestones_list.clear()
+        for card in self.milestones:
+            self.milestones_list.addItem(format_milestone_label(card))
+        if self.milestones:
+            self.milestones_list.setCurrentRow(min(max(current, 0), len(self.milestones) - 1))
+        self.set_milestones_dirty(True)
+
+    def save_milestones(self) -> None:
+        row = self.milestones_list.currentRow()
+        if 0 <= row < len(self.milestones):
+            self.milestones[row] = MilestoneCard(
+                year=self.milestone_year_edit.text().strip(),
+                tag=self.milestone_tag_edit.text().strip(),
+                title=self.milestone_title_edit.text().strip(),
+                excerpt=self.milestone_excerpt_edit.text().strip(),
+                preview_image=self.milestone_preview_image_edit.text().strip(),
+                preview_alt=self.milestone_preview_alt_edit.text().strip(),
+                gallery_images=split_image_lines(self.milestone_gallery_edit.toPlainText()),
+                detail_html=self.milestone_detail_edit.toPlainText().strip(),
+            )
+        path = ROOT / "content" / "milestones" / "index.md"
+        write_milestone_cards(path, self.milestones)
+        self.set_milestones_dirty(False)
+        self.status.showMessage("Saved Milestones", 5000)
 
     def load_editor(self, item: ContentItem) -> None:
         self.loading_editor = True
@@ -1038,13 +1312,11 @@ def parse_recent_updates(path: Path) -> list[RecentUpdate]:
     if not block:
         return []
     article_pattern = re.compile(
-        r'<article class="recent-update">\s*'
-        r'<time datetime="(?P<date>[^"]*)">[^<]*</time>\s*'
-        r"<div>\s*"
-        r"<h3>(?P<title>.*?)</h3>\s*"
-        r"<p>(?P<body>.*?)</p>\s*"
-        r"</div>\s*"
-        r"</article>",
+        r'<article class="recent-update">.*?'
+        r'<time datetime="(?P<date>[^"]*)">[^<]*</time>.*?'
+        r'<h3>(?P<title>.*?)</h3>\s*'
+        r'<p>(?P<body>.*?)</p>.*?'
+        r'</article>',
         flags=re.S,
     )
     updates: list[RecentUpdate] = []
@@ -1113,11 +1385,18 @@ def render_recent_updates_block(updates: list[RecentUpdate], indent: str) -> str
         date = update.date.strip()
         title = html.escape(update.title.strip())
         body = collapse_html_line(update.body_html)
+        year = html.escape(date[:4]) if re.match(r"^\d{4}", date) else ""
         lines.extend(
             [
                 f'{article_indent}<article class="recent-update">',
-                f'{inner_indent}<time datetime="{html.escape(date)}">{html.escape(date)}</time>',
-                f"{inner_indent}<div>",
+                f'{inner_indent}<div class="recent-update__date">',
+                f'{content_indent}<time datetime="{html.escape(date)}">{html.escape(date)}</time>',
+                f"{content_indent}<span>{year}</span>",
+                f"{inner_indent}</div>",
+                f'{inner_indent}<div class="recent-update__body">',
+                f'{content_indent}<div class="recent-update__meta">',
+                f"{content_indent}  <span>Site</span>",
+                f"{content_indent}</div>",
                 f"{content_indent}<h3>{title}</h3>",
                 f"{content_indent}<p>{body}</p>",
                 f"{inner_indent}</div>",
@@ -1126,6 +1405,123 @@ def render_recent_updates_block(updates: list[RecentUpdate], indent: str) -> str
         )
     lines.append(f"{indent}</div>")
     return "\n".join(lines) + "\n"
+
+
+def parse_milestone_cards(path: Path) -> list[MilestoneCard]:
+    if not path.exists():
+        return []
+    text = read_text(path)
+    block = extract_milestone_feed(text)
+    if not block:
+        return []
+    cards: list[MilestoneCard] = []
+    for match in re.finditer(r'<details class="milestone-card">(?P<body>.*?)</details>', str(block["body"]), flags=re.S):
+        body = match.group("body")
+        details_match = re.search(r'<div class="milestone-card__details">(?P<details>.*?)</div>\s*$', body, flags=re.S)
+        details = details_match.group("details").strip() if details_match else ""
+        gallery_images = []
+        gallery_match = re.search(r'<div class="milestone-card__gallery">(?P<gallery>.*?)</div>', details, flags=re.S)
+        if gallery_match:
+            gallery_images = [m.group("src") for m in re.finditer(r'<img\s+src="(?P<src>[^"]+)"', gallery_match.group("gallery"))]
+            details = (details[: gallery_match.start()] + details[gallery_match.end() :]).strip()
+        preview = re.search(r'<span class="[^"]*\bmilestone-card__media\b[^"]*">\s*<img\s+src="(?P<src>[^"]*)"\s+alt="(?P<alt>[^"]*)"', body, flags=re.S)
+        cards.append(
+            MilestoneCard(
+                year=html.unescape(first_match(body, r'<span class="milestone-card__year">(.*?)</span>')),
+                tag=html.unescape(first_match(body, r'<span class="milestone-card__tag">(.*?)</span>')),
+                title=html.unescape(strip_inline_html(first_match(body, r'<span class="milestone-card__title">(.*?)</span>'))),
+                excerpt=html.unescape(strip_inline_html(first_match(body, r'<span class="milestone-card__excerpt">(.*?)</span>'))),
+                preview_image=html.unescape(preview.group("src") if preview else ""),
+                preview_alt=html.unescape(preview.group("alt") if preview else ""),
+                gallery_images=[html.unescape(value) for value in gallery_images],
+                detail_html=details,
+            )
+        )
+    return cards
+
+
+def write_milestone_cards(path: Path, cards: list[MilestoneCard]) -> None:
+    text = read_text(path)
+    block = extract_milestone_feed(text)
+    if not block:
+        raise ValueError("Could not find <section class=\"milestone-feed\"> in content/milestones/index.md")
+    new_block = render_milestone_feed(cards)
+    new_text = text[: block["start"]] + new_block + text[block["end"] :]
+    path.write_text(new_text, encoding="utf-8", newline="\n")
+
+
+def extract_milestone_feed(text: str) -> dict[str, object] | None:
+    match = re.search(r'<section class="milestone-feed"[^>]*>.*?</section>', text, flags=re.S)
+    if not match:
+        return None
+    body = match.group(0)
+    inner = re.sub(r'^<section class="milestone-feed"[^>]*>\s*', "", body, flags=re.S)
+    inner = re.sub(r'\s*</section>$', "", inner, flags=re.S)
+    return {"start": match.start(), "end": match.end(), "body": inner}
+
+
+def render_milestone_feed(cards: list[MilestoneCard]) -> str:
+    lines = ['<section class="milestone-feed" aria-label="Life milestones timeline">']
+    for card in cards:
+        gallery = render_milestone_gallery(card.gallery_images)
+        details = card.detail_html.strip()
+        if gallery:
+            details = gallery + ("\n" + details if details else "")
+        lines.extend(
+            [
+                '<details class="milestone-card">',
+                '<summary class="milestone-card__summary">',
+                '<span class="milestone-card__meta">'
+                f'<span class="milestone-card__year">{html.escape(card.year.strip())}</span>'
+                f'<span class="milestone-card__tag">{html.escape(card.tag.strip())}</span></span>',
+                '<span class="milestone-card__body">'
+                f'<span class="milestone-card__title">{html.escape(card.title.strip())}</span>'
+                f'<span class="milestone-card__excerpt">{html.escape(card.excerpt.strip())}</span></span>',
+                '<span class="milestone-card__media milestone-card__media--single">'
+                f'<img src="{html.escape(card.preview_image.strip())}" alt="{html.escape(card.preview_alt.strip())}"></span>',
+                '</summary>',
+                '<div class="milestone-card__details">',
+                details,
+                '</div>',
+                '</details>',
+                '',
+            ]
+        )
+    lines.append('</section>')
+    return "\n".join(lines) + "\n"
+
+
+def render_milestone_gallery(images: list[str]) -> str:
+    clean = [image.strip() for image in images if image.strip()]
+    if not clean:
+        return ""
+    rendered = "".join(f'<img src="{html.escape(image)}" alt="Milestone image">' for image in clean)
+    return f'<div class="milestone-card__gallery">{rendered}</div>'
+
+
+def first_match(text: str, pattern: str) -> str:
+    match = re.search(pattern, text, flags=re.S)
+    return match.group(1).strip() if match else ""
+
+
+def format_milestone_label(card: MilestoneCard) -> str:
+    year = card.year.strip() or "no year"
+    title = card.title.strip() or "(untitled)"
+    return f"{year} / {title}"
+
+
+def split_image_lines(text: str) -> list[str]:
+    return [line.strip() for line in text.splitlines() if line.strip()]
+
+
+def image_list_to_text(images: list[str]) -> str:
+    return "\n".join(images)
+
+
+def milestone_sort_key(card: MilestoneCard) -> tuple[int, str]:
+    match = re.search(r"\d{4}", card.year)
+    year = int(match.group(0)) if match else 0
+    return (year, card.title.casefold())
 
 
 def format_recent_update_label(update: RecentUpdate) -> str:
@@ -1311,6 +1707,15 @@ def normalize_site_url(url: str) -> str:
     if not url.startswith("/"):
         return url
     return "/" + url.strip("/") + "/"
+
+
+def site_base_url(root: Path) -> str:
+    config = root / "config" / "_default" / "hugo.yaml"
+    if config.exists():
+        match = re.search(r"^baseURL:\s*['\"]?([^'\"\n]+)['\"]?\s*$", read_text(config), flags=re.M)
+        if match:
+            return match.group(1).strip()
+    return "https://vortexer99.github.io/"
 
 
 def fallback_title(path: Path) -> str:

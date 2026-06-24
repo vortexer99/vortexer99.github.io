@@ -15,6 +15,7 @@ Current features:
 - Filters by section, legacy tag, type, topic, project, length, author, and free-text query.
 - Edits ordinary Markdown posts in place, including title, date, URL, authors, tags, types, topics, project tags, lengths, aliases, page type, and body text.
 - Edits the homepage `Recent Updates` list with add, delete, reorder, save, and revert controls.
+- Edits the `Milestones` card feed with add, delete, reorder, year sorting, preview image, gallery images, expanded text, save, and revert controls.
 - Normalizes `types`, `topics`, `project_tags`, and `lengths` from the imported legacy `tags`.
 - Protects complex landing pages by making them read-only in the editor. Use `Open File` for manual edits to pages with nested front matter such as `sections`.
 - Opens the source Markdown file or the published page URL.
