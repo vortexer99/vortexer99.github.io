@@ -16,6 +16,9 @@ main:
   - name: Milestones
     url: milestones/
     weight: 50
+  - name: CNOP Ask Me
+    url: cnop-ask/
+    weight: 55
   - name: PIP
     url: pip/
     weight: 60

@@ -6,12 +6,23 @@ This branch migrates the site from Academic Pages/Jekyll to HugoBlox Academic CV
 
 ## Local Preview
 
-Install Hugo Extended and Node.js, then run:
+Install Hugo Extended and Node.js, then install dependencies:
 
-```bash
+```powershell
 pnpm install
-hugo server
 ```
+
+On Windows, Hugo's Tailwind transform needs the Node `.JS` shim to be found
+before the `.CMD` shim. Start the local preview with:
+
+```powershell
+$repo = (Get-Location).Path
+$env:PATH = "$repo\node_modules\.bin;$env:PATH"
+$env:PATHEXT = ".JS;.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JSE;.WSF;.WSH;.MSC;.CPL"
+hugo server --disableFastRender
+```
+
+Then open <http://127.0.0.1:1313/>.
 
 ## Deployment
 

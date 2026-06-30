@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This repository hosts a personal academic site migrated from Jekyll/Academic Pages to HugoBlox. Current Hugo content lives in `content/`, with major sections such as `content/blog/`, `content/gallery/`, `content/tech/`, and `content/cv/`. Site configuration is under `config/`, HugoBlox metadata is in `hugoblox.yaml`, and custom templates live in `layouts/`. CSS and frontend assets belong in `assets/`; static legacy files that must keep their URLs go in `static/`, `files/`, or `images/`. Directories prefixed with `_` are legacy Jekyll material; avoid editing them unless working on migration or redirects.
+This repository hosts a personal academic site migrated from Jekyll/Academic Pages to HugoBlox. Current Hugo content lives in `content/`, with major sections such as `content/blog/`, `content/gallery/`, `content/tech/`, and `content/cv/`. Site configuration is under `config/`, HugoBlox metadata is in `hugoblox.yaml`, and custom templates live in `layouts/`. CSS and frontend assets belong in `assets/`; static legacy files that must keep their URLs go in `static/`. Directories prefixed with `_` are legacy Jekyll material; avoid editing them unless working on migration or redirects.
 
 ## Build, Test, and Development Commands
 
@@ -16,6 +16,15 @@ Run a local preview with:
 
 ```bash
 pnpm run dev
+```
+
+On Windows, if Hugo's Tailwind transform reports `binary "tailwindcss" is not a Node.js script`, run Hugo directly with the project `node_modules/.bin` first and `.JS` before `.CMD` in `PATHEXT`:
+
+```powershell
+$repo = (Get-Location).Path
+$env:PATH = "$repo\node_modules\.bin;$env:PATH"
+$env:PATHEXT = ".JS;.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JSE;.WSF;.WSH;.MSC;.CPL"
+hugo server --disableFastRender
 ```
 
 Build the production site and generate the Chinese Pagefind index with:
