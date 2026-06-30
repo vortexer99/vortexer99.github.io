@@ -214,7 +214,6 @@ toc: false
       items.forEach((it, idx) => {
         const details = document.createElement("details");
         details.className = "cnop-ask-recent__item";
-        if (idx === 0) details.open = true;
         const summary = document.createElement("summary");
         summary.className = "cnop-ask-recent__summary";
         const qSpan = document.createElement("span");
