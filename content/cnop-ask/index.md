@@ -23,7 +23,10 @@ toc: false
 </form>
 
 <div class="cnop-ask-answer" id="cnop-answer" aria-live="polite">
+<div class="cnop-ask-answer__head">
 <p class="cnop-ask-answer__label">Answer</p>
+<button type="button" class="cnop-ask-copy" id="cnop-copy" hidden>Copy</button>
+</div>
 <p class="cnop-ask-answer__text">Submit a question to see the response here.</p>
 </div>
 </section>
@@ -38,12 +41,16 @@ toc: false
   const clear = document.getElementById("cnop-clear");
   const answer = document.getElementById("cnop-answer");
   const answerText = answer.querySelector(".cnop-ask-answer__text");
+  const copyBtn = document.getElementById("cnop-copy");
 
   let timerInterval = null;
 
   function setAnswer(text, state = "idle") {
     answer.dataset.state = state;
     answerText.textContent = text;
+    copyBtn.hidden = state !== "success";
+    copyBtn.classList.remove("copied");
+    copyBtn.textContent = "Copy";
   }
 
   function startLoading() {
@@ -129,6 +136,22 @@ toc: false
     question.value = "";
     setAnswer("Submit a question to see the response here.");
     question.focus();
+  });
+
+  copyBtn.addEventListener("click", async () => {
+    const text = answerText.textContent;
+    try {
+      await navigator.clipboard.writeText(text);
+      copyBtn.classList.add("copied");
+      copyBtn.textContent = "Copied!";
+      setTimeout(() => {
+        copyBtn.classList.remove("copied");
+        copyBtn.textContent = "Copy";
+      }, 2000);
+    } catch {
+      copyBtn.textContent = "Failed";
+      setTimeout(() => { copyBtn.textContent = "Copy"; }, 2000);
+    }
   });
 })();
 </script>

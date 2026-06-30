@@ -1514,3 +1514,55 @@ aside a,
     padding: 1.25rem;
   }
 }
+
+.cnop-ask-answer__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.cnop-ask-copy {
+  flex-shrink: 0;
+  border: 1px solid rgb(209 213 219);
+  border-radius: 6px;
+  padding: 0.25rem 0.6rem;
+  background: rgb(255 255 255);
+  color: rgb(31 41 55);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+}
+
+.cnop-ask-copy:hover {
+  border-color: rgb(148 163 184);
+  background: rgb(249 250 251);
+}
+
+.cnop-ask-copy.copied {
+  border-color: rgb(22 163 74);
+  background: rgb(220 252 231);
+  color: rgb(22 101 52);
+}
+
+.dark .cnop-ask-copy {
+  border-color: rgb(82 82 91);
+  background: rgb(39 39 42);
+  color: rgb(244 244 245);
+}
+
+.dark .cnop-ask-copy:hover {
+  border-color: rgb(113 113 122);
+  background: rgb(63 63 70);
+}
+
+.dark .cnop-ask-copy.copied {
+  border-color: rgb(22 163 74);
+  background: rgb(20 83 45);
+  color: rgb(187 247 208);
+}
+
+.cnop-ask-copy[hidden] {
+  display: none;
+}
