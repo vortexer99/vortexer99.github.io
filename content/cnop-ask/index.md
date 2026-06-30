@@ -39,9 +39,32 @@ toc: false
   const answer = document.getElementById("cnop-answer");
   const answerText = answer.querySelector(".cnop-ask-answer__text");
 
+  let timerInterval = null;
+
   function setAnswer(text, state = "idle") {
     answer.dataset.state = state;
     answerText.textContent = text;
+  }
+
+  function startLoading() {
+    let seconds = 0;
+    const messages = [
+      "正在检索语料库… / Retrieving corpus…",
+      "正在匹配相关论文… / Matching relevant papers…",
+      "正在生成回答… / Generating answer…",
+      "仍在生成，请稍候… / Still generating, please wait…",
+    ];
+    setAnswer(messages[0], "loading");
+    timerInterval = setInterval(() => {
+      seconds++;
+      const idx = Math.min(Math.floor(seconds / 4), messages.length - 1);
+      const suffix = seconds >= 8 ? `（${seconds}s）` : "";
+      setAnswer(messages[idx] + suffix, "loading");
+    }, 1000);
+  }
+
+  function stopLoading() {
+    if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
   }
 
   form.addEventListener("submit", async (event) => {
@@ -55,26 +78,49 @@ toc: false
     }
 
     submit.disabled = true;
-    setAnswer("Asking the CNOP worker...", "loading");
+    startLoading();
+
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 60000);
 
     try {
       const response = await fetch(endpoint, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question: value }),
+        signal: controller.signal,
       });
 
+      clearTimeout(timeoutId);
+
+      if (response.status === 429) {
+        const data = await response.json().catch(() => ({}));
+        setAnswer(data.error || "今日额度已用完。/ Today's quota has been used up.", "error");
+        return;
+      }
+
       if (!response.ok) {
-        throw new Error(`Request failed with status ${response.status}`);
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.error || `HTTP ${response.status}`);
       }
 
       const data = await response.json();
-      setAnswer(data.answer || "The worker returned no answer.", "success");
+      stopLoading();
+      let text = data.answer || "The worker returned no answer.";
+      if (typeof data.remaining === "number") {
+        text += `\n\n（今日剩余 ${data.remaining} 次 / ${data.remaining} calls remaining today）`;
+      }
+      setAnswer(text, "success");
     } catch (error) {
-      setAnswer("Request failed. Please try again later.", "error");
+      clearTimeout(timeoutId);
+      stopLoading();
+      if (error.name === "AbortError") {
+        setAnswer("请求超时（60秒），请稍后重试。/ Request timed out (60s). Please try again later.", "error");
+      } else {
+        setAnswer("请求失败：" + error.message + " / Request failed: " + error.message, "error");
+      }
     } finally {
+      stopLoading();
       submit.disabled = false;
     }
   });
