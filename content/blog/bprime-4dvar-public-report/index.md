@@ -60,13 +60,15 @@ authors:
 
 用简化写法，模型近似求解：
 
-```text
-du/dt     = - dp/dx + diffusion
-dv/dt     = - dp/dy + diffusion
-dw/dt     = buoyancy(theta) - dp/dz + diffusion
-dtheta/dt = - wind . grad(theta) + Q - stable-stratification effect
-div(rho0 * wind) = 0
-```
+$$
+\begin{aligned}
+\frac{\mathrm{d}u}{\mathrm{d}t} &= -\frac{\partial p}{\partial x} + \text{diffusion}, \\
+\frac{\mathrm{d}v}{\mathrm{d}t} &= -\frac{\partial p}{\partial y} + \text{diffusion}, \\
+\frac{\mathrm{d}w}{\mathrm{d}t} &= \text{buoyancy}(\theta) - \frac{\partial p}{\partial z} + \text{diffusion}, \\
+\frac{\mathrm{d}\theta}{\mathrm{d}t} &= -\mathbf{u}\cdot\nabla\theta + Q - \text{stable-stratification effect}, \\
+\nabla\cdot(\rho_0\mathbf{u}) &= 0.
+\end{aligned}
+$$
 
 这几行分别表示：
 
@@ -141,27 +143,27 @@ div(rho0 * wind) = 0
 
 控制变量，也就是优化器可以修改的量，是初始时刻的 `u`、`v`、`w_interior` 和 `theta`。上下边界的 `w` 固定为 0，不作为自由变量；压力也不是控制变量。脚本按指定的稀疏掩膜抽取观测点；在本次设置下，每个观测时刻最终约使用 `25.0%` 的温度扰动点和 `25.0%` 的垂直速度点。
 
-目标函数可以用普通话写成：
-
-```text
-目标函数 J
-  = 多个观测时刻的温度扰动误差
-  + 多个观测时刻的内部垂直速度误差
-  + 背景约束项
-```
+目标函数可以用普通话写成：它由多个观测时刻的温度扰动误差、多个观测时刻的内部垂直速度误差，以及背景约束项组成。
 
 本次实验中背景约束权重是 `0`，所以误差主要来自观测项。水平风 `u`、`v` 虽然会被优化，因为它们会影响未来的温度和垂直速度；但观测没有直接要求最终水平风完全等于真值。这一点会影响后面对结果的解释。
 
 更具体一点，脚本实际使用的是带掩膜的均方误差。设观测时刻集合为 `T = {4、8、16}`，`M_theta` 和 `M_w` 是稀疏观测掩膜，`s_theta = 0.03`、`s_w = 0.012` 是归一化尺度，则
 
-```text
-J(c) = (1 / |T|) * sum over t in T [
-         0.5 * mean_mask( M_theta * ((theta_t(c) - theta_t*) / s_theta)^2 )
-       + 0.5 * mean_mask( M_w     * ((w_t(c)     - w_t*)     / s_w)^2 )
-       ] + beta * background_penalty
-```
+$$
+\begin{aligned}
+J(c) &= \frac{1}{|T|}\sum_{t\in T}\left[
+\frac{1}{2}E_{\theta}(t,c)+\frac{1}{2}E_{w}(t,c)
+\right]+\beta J_{b}, \\
+E_{\theta}(t,c) &= \operatorname{mean}_{m}\left[
+M_{\theta}\left(\frac{\theta_{t}(c)-\theta_{t}^{\mathrm{true}}}{s_{\theta}}\right)^2
+\right], \\
+E_{w}(t,c) &= \operatorname{mean}_{m}\left[
+M_{w}\left(\frac{w_{t}(c)-w_{t}^{\mathrm{true}}}{s_{w}}\right)^2
+\right].
+\end{aligned}
+$$
 
-这里 `c` 是初始控制量，星号表示由真实初始状态生成的目标轨迹。注意，目标函数里直接优化的是稀疏 `theta` 和稀疏内部 `w`，不是 `rho0*w`，也不是水平风终态。
+这里 `c` 是初始控制量，`true` 上标表示由真实初始状态生成的目标轨迹。注意，目标函数里直接优化的是稀疏 `theta` 和稀疏内部 `w`，不是 `rho0*w`，也不是水平风终态。
 
 
 ![图 6. 多时刻稀疏观测。同化系统只在第 4、8、16 步读取一部分温度扰动和垂直速度信息。](observation_schedule.png)
@@ -197,22 +199,26 @@ loss, gradient = value_and_grad(J)(initial_control)
 
 写成公式，令第 `k` 轮的归一化控制增量为 `z_k`，目标函数梯度为
 
-```text
-g_k = dJ/dz_k
-d_k = g_k / max(||g_k||, 1e-14)
-z_{k+1} = z_k - alpha_k * d_k
-```
+$$
+\begin{aligned}
+g_k &= \frac{\partial J}{\partial z_k}, \\
+d_k &= \frac{g_k}{\max\left(\lVert g_k\rVert, 10^{-14}\right)}, \\
+z_{k+1} &= z_k - \alpha_k d_k.
+\end{aligned}
+$$
 
 `alpha_k` 就是每一轮要决定的步长。脚本每轮都先试 `alpha = 1`；如果新误差没有下降，就依次试 `1/2`、`1/4`、`1/8`，最多试 `24` 次，直到找到第一个让 `J(z_k - alpha d_k) <= J(z_k)` 的步长。若所有候选都失败，这一轮就不接受更新。
 
 归一化控制量和真实初始物理量之间还有一层尺度换算。本例中：
 
-```text
-u0^{k+1}     = u0^k     - alpha_k * 0.025     * d_{u,k}
-v0^{k+1}     = v0^k     - alpha_k * 0.02     * d_{v,k}
-w0_int^{k+1} = w0_int^k - alpha_k * 0.012     * d_{w,k}
-theta0^{k+1} = theta0^k - alpha_k * 0.03 * d_{theta,k}
-```
+$$
+\begin{aligned}
+u_0^{k+1} &= u_0^k - \alpha_k\,0.025\,d_{u,k}, \\
+v_0^{k+1} &= v_0^k - \alpha_k\,0.02\,d_{v,k}, \\
+w_{0,\mathrm{int}}^{k+1} &= w_{0,\mathrm{int}}^k - \alpha_k\,0.012\,d_{w,k}, \\
+\theta_0^{k+1} &= \theta_0^k - \alpha_k\,0.03\,d_{\theta,k}.
+\end{aligned}
+$$
 
 上下边界的 `w` 始终固定为 0，不按这个公式更新；压力也不更新，因为它是每个时间步里诊断出来的约束变量。
 
@@ -273,3 +279,4 @@ theta0^{k+1} = theta0^k - alpha_k * 0.03 * d_{theta,k}
 
 
 这个案例仍然有明确边界。它是教学型、简化的局地非静力模型，不包含球面几何、地形、完整可压缩声波、预报密度或业务天气预报中的复杂物理过程。它展示的是资料同化思想、可微模型和初值优化机制，而不是完整业务模式的全部能力。
+
