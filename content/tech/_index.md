@@ -25,7 +25,7 @@ sections:
                   <div class="tech-card__body">
                     <p class="tech-card__eyebrow">Windows desktop / local-first file library</p>
                     <h2><a href="https://github.com/vortexer99/LLM-Cabinet" target="_blank" rel="noopener">LLM Cabinet</a></h2>
-                    <p>A project-centric file manager inspired by Calibre-style libraries, with custom metadata fields, tags, rich previews, and an LLM assistant for metadata suggestions.</p>
+                    <p>【AI 文本，暂未审核】A project-centric file manager inspired by Calibre-style libraries, with custom metadata fields, tags, rich previews, and an LLM assistant for metadata suggestions.</p>
                     <div class="tech-card__tags">
                       <span>PySide</span>
                       <span>SQLite</span>
@@ -44,7 +44,7 @@ sections:
                   <div class="tech-card__body">
                     <p class="tech-card__eyebrow">GitHub discovery / desktop reader</p>
                     <h2><a href="https://github.com/vortexer99/github-radar" target="_blank" rel="noopener">GitHub Radar</a></h2>
-                    <p>A local-first radar for trending GitHub repositories. It collects popular repos, ranks them by heat, growth, freshness, and personal feedback, then presents them in a desktop reader.</p>
+                    <p>【AI 文本，暂未审核】A local-first radar for trending GitHub repositories. It collects popular repos, ranks them by heat, growth, freshness, and personal feedback, then presents them in a desktop reader.</p>
                     <div class="tech-card__tags">
                       <span>GitHub API</span>
                       <span>PySide</span>
@@ -56,6 +56,38 @@ sections:
                     </div>
                   </div>
                 </article>
+                <div class="tech-mini-grid">
+                  <article class="tech-card tech-card--mini">
+                    <div class="tech-card__body">
+                      <p class="tech-card__eyebrow">Mars PCM / AI-assisted documentation</p>
+                      <h2><a href="https://vortexer99.github.io/lmdz-mars-ai-wiki/themes/index.html" target="_blank" rel="noopener">LMDZ.MARS AI Wiki</a></h2>
+                      <p>【AI 文本，暂未审核】A theme-based browsing entrance for the LMDZ.MARS AI wiki, collecting code-logic notes and model documentation around Mars atmospheric simulation.</p>
+                      <div class="tech-card__tags">
+                        <span>LMDZ.MARS</span>
+                        <span>Code wiki</span>
+                        <span>Hugo</span>
+                      </div>
+                      <div class="tech-card__links">
+                        <a href="https://vortexer99.github.io/lmdz-mars-ai-wiki/themes/index.html" target="_blank" rel="noopener">Open wiki</a>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="tech-card tech-card--mini">
+                    <div class="tech-card__body">
+                      <p class="tech-card__eyebrow">Interactive CNOP notes / Q&amp;A</p>
+                      <h2><a href="/cnop-ask/">CNOP Ask Me</a></h2>
+                      <p>【AI 文本，暂未审核】An interactive question box for CNOP-related concepts, workflows, and research notes, backed by a private corpus of papers and theses.</p>
+                      <div class="tech-card__tags">
+                        <span>CNOP</span>
+                        <span>Literature QA</span>
+                        <span>Workers</span>
+                      </div>
+                      <div class="tech-card__links">
+                        <a href="/cnop-ask/">Ask a question</a>
+                      </div>
+                    </div>
+                  </article>
+                </div>
               </div>
             </section>
             <section class="tech-panel tech-panel--notes" aria-label="Tech notes">
@@ -63,31 +95,31 @@ sections:
                 <article class="tech-note">
                   <time datetime="2025-04-15">2025-04-15</time>
                   <h2><a href="/posts/2025/04/srun/">作业脚本中频繁执行 mpirun 导致 slurm 请求过于频繁的问题</a></h2>
-                  <p>一次 HPC 作业排查记录：频繁循环调用 mpirun 触发 Slurm 请求限流，导致程序空转和运行变慢。</p>
+                  <p>【AI 文本，暂未审核】一次 HPC 作业排查记录：频繁循环调用 mpirun 触发 Slurm 请求限流，导致程序空转和运行变慢。</p>
                   <div class="tech-note__tags"><span>HPC</span><span>Slurm</span><span>Debugging</span></div>
                 </article>
                 <article class="tech-note">
                   <time datetime="2022-09-01">2022-09-01</time>
                   <h2><a href="/posts/2022/09/lmdmars/">LMD MARS PCM 相关整理</a></h2>
-                  <p>围绕 LMDZ.MARS / Mars PCM 使用、配置和资料整理的一组工作笔记。</p>
+                  <p>【AI 文本，暂未审核】围绕 LMDZ.MARS / Mars PCM 使用、配置和资料整理的一组工作笔记。</p>
                   <div class="tech-note__tags"><span>Mars PCM</span><span>Numerical modelling</span></div>
                 </article>
                 <article class="tech-note">
                   <time datetime="2021-11-30">2021-11-30</time>
                   <h2><a href="/posts/2021/11/svm/">Extreme weather prediction by Support Vector Machine</a></h2>
-                  <p>使用支持向量机做极端天气预测的课程项目记录。</p>
+                  <p>【AI 文本，暂未审核】使用支持向量机做极端天气预测的课程项目记录。</p>
                   <div class="tech-note__tags"><span>Machine Learning</span><span>SVM</span></div>
                 </article>
                 <article class="tech-note">
                   <time datetime="2019-07-20">2019-07-20</time>
                   <h2><a href="/posts/2019/07/gpacalc/">GPA 计算器</a></h2>
-                  <p>一个 Excel 工具，用于导入成绩、按学期和课程类型筛选计算 GPA，并估计课程边际贡献。</p>
+                  <p>【AI 文本，暂未审核】一个 Excel 工具，用于导入成绩、按学期和课程类型筛选计算 GPA，并估计课程边际贡献。</p>
                   <div class="tech-note__tags"><span>Excel Tool</span><span>Automation</span></div>
                 </article>
                 <article class="tech-note">
                   <time datetime="2018-12-24">2018-12-24</time>
                   <h2><a href="/posts/2018/12/gridplot/">庄啾的格点绘图助手</a></h2>
-                  <p>把真实坐标数据转换成格点纸上的横纵格子位置，减少手工换算。</p>
+                  <p>【AI 文本，暂未审核】把真实坐标数据转换成格点纸上的横纵格子位置，减少手工换算。</p>
                   <div class="tech-note__tags"><span>Excel Tool</span><span>Plotting</span></div>
                 </article>
               </div>

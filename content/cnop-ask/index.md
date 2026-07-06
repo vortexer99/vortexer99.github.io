@@ -8,7 +8,7 @@ toc: false
 <section class="cnop-ask-hero">
 <p class="cnop-ask-kicker">Interactive CNOP notes</p>
 <h1>CNOP Ask Me</h1>
-<p>Ask a question about CNOP-related concepts, workflows, or notes. Answers are distilled from a private corpus of 201 published papers and 47 theses covering predictability, targeted observation, ensemble prediction, and nonlinear optimization methods.</p>
+<p>【AI 文本，暂未审核】Ask a question about CNOP-related concepts, workflows, or notes. Answers are distilled from a private corpus of 201 published papers and 47 theses covering predictability, targeted observation, ensemble prediction, and nonlinear optimization methods.</p>
 <p>提出一个关于 CNOP 相关概念、工作流或笔记的问题。答案提炼自一个私有语料库，已炼化 201 篇论文和 47 篇学位论文，涵盖可预报性、目标观测、集合预报与非线性优化方法。</p>
 </section>
 

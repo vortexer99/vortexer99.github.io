@@ -8,7 +8,7 @@ toc: false
 <section class="milestones-hero">
 <p class="milestones-kicker">Selected memories</p>
 <h1>Life Milestones</h1>
-<p><strong>Life Milestones are selected important achivements in my life</strong>. On average only one achivement per year is worth mentioning here, which means, from another perspective, you are selecting roughly 80 events to summarize your presence in this world. The selection is very subjective so the milestones displayed below are subject to change, until it turns into a QR code on my tomb.</p>
+<p>【AI 文本，暂未审核】<strong>Life Milestones are selected important achivements in my life</strong>. On average only one achivement per year is worth mentioning here, which means, from another perspective, you are selecting roughly 80 events to summarize your presence in this world. The selection is very subjective so the milestones displayed below are subject to change, until it turns into a QR code on my tomb.</p>
 </section>
 
 <section class="milestone-feed" aria-label="Life milestones timeline">

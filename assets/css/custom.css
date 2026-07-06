@@ -752,6 +752,11 @@ aside a,
   gap: 1.25rem;
 }
 
+.tech-mini-grid {
+  display: grid;
+  gap: 1rem;
+}
+
 .tech-card {
   overflow: hidden;
   border: 1px solid rgb(229 231 235);
@@ -762,6 +767,14 @@ aside a,
 .dark .tech-card {
   border-color: rgb(63 63 70);
   background: rgb(24 24 27);
+}
+
+.tech-card--mini .tech-card__body {
+  padding: 1rem;
+}
+
+.tech-card--mini h2 {
+  font-size: 1.05rem;
 }
 
 .tech-card__media {
@@ -915,6 +928,11 @@ aside a,
 
 @media (min-width: 900px) {
   .tech-showcase {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tech-mini-grid {
+    grid-column: 1 / -1;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 

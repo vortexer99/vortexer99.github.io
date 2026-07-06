@@ -50,7 +50,7 @@ sections:
                 <span>整理</span>
               </div>
               <h3>网站结构继续整理</h3>
-              <p>Tech 页面拆成项目展示和技术随笔两类视图，Blog 增加标签入口，并重新整理了若干视觉细节。</p>
+              <p>【AI 文本，暂未审核】Tech 页面拆成项目展示和技术随笔两类视图，Blog 增加标签入口，并重新整理了若干视觉细节。</p>
             </div>
           </article>
 
@@ -65,7 +65,7 @@ sections:
                 <span>HugoBlox</span>
               </div>
               <h3>迁移到了新框架</h3>
-              <p>站点从旧的 Academic Pages 迁移到 HugoBlox。当前版本会继续修掉迁移后留下的页面、搜索和样式问题。</p>
+              <p>【AI 文本，暂未审核】站点从旧的 Academic Pages 迁移到 HugoBlox。当前版本会继续修掉迁移后留下的页面、搜索和样式问题。</p>
             </div>
           </article>
         </div>
