@@ -1,6 +1,6 @@
 ---
 title: 'CV'
-date: 2026-06-17
+date: 2026-07-21
 aliases:
   - /resume
 ---
@@ -20,7 +20,7 @@ aliases:
 
 ## Publications
 First-authored:
-1. Yi Zhuang, Wanduo Duan\*, Li Dong. **Season-dependent Weather predictability barrier phenomenon in the Martian atmosphere**, *Journal of Geophysical Research: Planets*, Under Consideration.
+1. Yi Zhuang, Wansuo Duan\*, & Li Dong. (2026). [**A Season-Dependent Weather Predictability Barrier Phenomenon in the Martian Atmosphere**](/publications/season-dependent-martian-predictability-barrier/). *Journal of Geophysical Research: Planets*, 131(7), e2025JE009522. https://doi.org/10.1029/2025JE009522
 
 <!-- Co-authored:
 * None
@@ -70,6 +70,7 @@ Advisor: [Prof. Zhan Wang](https://imech.cas.cn/people/zgj/default_94777.html?id
 
 ## Conferences
 Major (for career):
+1. **Distinguished Lectures on Planetary Atmospheres 2026**. 2026/07. Peking University, China.
 1. **Mars Through Time**. 2025/10. Paris, France. *poster*. Yi Zhuang, Wansuo Duan* and Li Dong. **Season-dependent Weather Predictability Barrier (S-WPB) phenomenon in the Martian atmosphere**.
 1. **第八届“非线性大气-海洋科学研讨会”**. 2025/08. 中国·内蒙古. *Outstanding poster (6/32)*. 庄逸, 段晚锁*, 董理. **火星大气的季节性天气可预报性障碍现象**.
 1. **Distinguished Lectures on Atmospheric & Oceanic Sciences at Peking University 2025**. 2025/08. Peking University, China.

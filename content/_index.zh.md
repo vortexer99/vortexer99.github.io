@@ -1,7 +1,7 @@
 ---
 title: ''
 summary: ''
-date: 2026-06-17
+date: 2026-07-21
 type: landing
 translationKey: home
 
@@ -41,6 +41,21 @@ sections:
         <div class="recent-updates">
           <article class="recent-update">
             <div class="recent-update__date">
+              <time datetime="2026-07-21">7月21日</time>
+              <span>2026</span>
+            </div>
+            <div class="recent-update__body">
+              <div class="recent-update__meta">
+                <span>科研</span>
+                <span>论文</span>
+              </div>
+              <h3><a href="/zh/publications/season-dependent-martian-predictability-barrier/">火星大气可预报性研究论文正式发表</a></h3>
+              <p>第一作者论文《A Season-Dependent Weather Predictability Barrier Phenomenon in the Martian Atmosphere》已在 <em>Journal of Geophysical Research: Planets</em> 正式发表。<a href="https://doi.org/10.1029/2025JE009522" target="_blank" rel="noopener">查看论文</a>。</p>
+            </div>
+          </article>
+
+          <article class="recent-update">
+            <div class="recent-update__date">
               <time datetime="2026-06-18">6月18日</time>
               <span>2026</span>
             </div>
@@ -50,7 +65,7 @@ sections:
                 <span>整理</span>
               </div>
               <h3>网站结构继续整理</h3>
-              <p>【AI 文本，暂未审核】Tech 页面拆成项目展示和技术随笔两类视图，Blog 增加标签入口，并重新整理了若干视觉细节。</p>
+              <p>Tech 页面拆成项目展示和技术随笔两类视图，Blog 增加标签入口，并重新整理了若干视觉细节。</p>
             </div>
           </article>
 
@@ -65,7 +80,7 @@ sections:
                 <span>HugoBlox</span>
               </div>
               <h3>迁移到了新框架</h3>
-              <p>【AI 文本，暂未审核】站点从旧的 Academic Pages 迁移到 HugoBlox。当前版本会继续修掉迁移后留下的页面、搜索和样式问题。</p>
+              <p>站点从旧的 Academic Pages 迁移到 HugoBlox。当前版本会继续修掉迁移后留下的页面、搜索和样式问题。</p>
             </div>
           </article>
         </div>

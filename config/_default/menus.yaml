@@ -13,6 +13,9 @@ main:
   - name: Gallery
     url: gallery/
     weight: 40
+  - name: Publications
+    url: publications/
+    weight: 45
   - name: Milestones
     url: milestones/
     weight: 50

@@ -9,9 +9,10 @@ aliases:
 **A Personal Interest Project (PIP) is a self-driven exploration fueled by curiosity and passion, much like an intellectual hobby.** These projects allow me to dive deep into **new mathematical concepts, programming frameworks, or other technical topics** that capture my interest. While I may seek guidance or discussions with others, the core work is independently pursued. Given their exploratory nature, these projects often demand sustained effort—sometimes spanning weeks of focused work or evolving intermittently over years. Each PIP serves as a testament to self-directed learning, persistence, and the joy of discovery.
 
 ## PIPs
-1. **Simple model for Atmosphere**. TBD. *Concept*.
-  * Dynamical core + Radiative transfer. Study atmosphere dynamics under various conditions.
-  * Python for simulations, which may make it easier for grad-calc in CNOP.
+1. **An Adjoint-friendly Atmospheric Model**. 2026/06. *Ongoing*.
+  * Study various kinds of planeraty atmosphere from ENDLESS POSSIBILITIES!!
+  * Based on Python JAX framework and adjoint verification criteria, the gradient is easy to calculate and effective.
+  * I've never imagined that this come true until agentic AI changed everything.
 1. **Evolution equation simulation, but random variables**. 2024/09. **Still updating**.
   * PDE simulation, but initial value is randomly given according to certain distribution, what is the evolution of the distribution?
   * First diffusion eq. (Linear), then Bergers equation or Lorenz models (Nonlinear).
@@ -36,8 +37,7 @@ aliases:
 1. **Damage calculator for Honkai Impact 3**. 2024/04. *Finish*.
   * Calculation by tag-matching from provided settings. 
   * Vue.js for UI, JavaScript for core logic. YAML for storing data.
-  * Deployed via GitHub Pages.
-
+  * Deployed via GitHub Pages (Hidden).
 1. **Element reaction simulator for Genshin Impact**. 2023/03. *Finish*.
   * Step forward in time to simulate state changes, given event series and rules.
   * wxPython for UI, matplotlib for display, Python for core logic. 

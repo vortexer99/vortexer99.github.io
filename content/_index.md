@@ -1,7 +1,7 @@
 ---
 title: ''
 summary: ''
-date: 2026-06-17
+date: 2026-07-21
 type: landing
 translationKey: home
 
@@ -41,6 +41,21 @@ sections:
         <div class="recent-updates">
           <article class="recent-update">
             <div class="recent-update__date">
+              <time datetime="2026-07-21">Jul 21</time>
+              <span>2026</span>
+            </div>
+            <div class="recent-update__body">
+              <div class="recent-update__meta">
+                <span>Research</span>
+                <span>Publication</span>
+              </div>
+              <h3><a href="/publications/season-dependent-martian-predictability-barrier/">【论文】First-author paper published in JGR: Planets</a></h3>
+              <p> Our study of a season-dependent weather predictability barrier in the Martian atmosphere has been published in <em>Journal of Geophysical Research: Planets</em>. <a href="https://doi.org/10.1029/2025JE009522" target="_blank" rel="noopener">Read the paper</a>.</p>
+            </div>
+          </article>
+
+          <article class="recent-update">
+            <div class="recent-update__date">
               <time datetime="2026-06-18">Jun 18</time>
               <span>2026</span>
             </div>
@@ -49,8 +64,8 @@ sections:
                 <span>Site</span>
                 <span>Polish</span>
               </div>
-              <h3>网站结构继续整理</h3>
-              <p>【AI 文本，暂未审核】Tech 页面拆成项目展示和技术随笔两类视图，Blog 增加标签入口，并重新整理了若干视觉细节。</p>
+              <h3>【技术】网站结构继续整理</h3>
+              <p>Tech 页面拆成项目展示和技术随笔两类视图，Blog 增加标签入口，并重新整理了若干视觉细节。</p>
             </div>
           </article>
 
@@ -64,8 +79,8 @@ sections:
                 <span>Migration</span>
                 <span>HugoBlox</span>
               </div>
-              <h3>迁移到了新框架</h3>
-              <p>【AI 文本，暂未审核】站点从旧的 Academic Pages 迁移到 HugoBlox。当前版本会继续修掉迁移后留下的页面、搜索和样式问题。</p>
+              <h3>【技术】迁移到了新框架</h3>
+              <p>站点从旧的 Academic Pages 迁移到 HugoBlox。当前版本会继续修掉迁移后留下的页面、搜索和一些文字问题，全部修完后我会再发对应的 update。</p>
             </div>
           </article>
         </div>
